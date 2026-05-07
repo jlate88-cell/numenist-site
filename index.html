@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Numenist · Numerology, Tarot, Astrology</title>
+<meta name="description" content="Working numerologist and tarot reader. Custom readings, ritual prints, digital drops, and original music for the dark-academia altar." />
+<meta name="theme-color" content="#06010f" />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<meta property="og:title" content="Numenist · Numerology, Tarot, Astrology" />
+<meta property="og:description" content="Working numerologist and tarot reader. Custom readings, ritual prints, digital drops, and original music." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://numenist.com" />
+<style>
+  :root {
+    --bg: #06010f;
+    --bg-2: #0d0420;
+    --ink: #f4ecd8;
+    --ink-soft: #c9bfa8;
+    --ink-faint: #6b6480;
+    --gold: #d4a857;
+    --plum: #6a3d8e;
+    --rose: #c75d7a;
+    --line: rgba(212, 168, 87, 0.14);
+    --serif: "Cormorant Garamond", "EB Garamond", Georgia, serif;
+    --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-weight: 300;
+    line-height: 1.6;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(106, 61, 142, 0.18), transparent 42%),
+      radial-gradient(circle at 88% 78%, rgba(199, 93, 122, 0.12), transparent 50%),
+      radial-gradient(circle at 50% 100%, rgba(212, 168, 87, 0.08), transparent 60%);
+  }
+  a { color: var(--gold); text-decoration: none; transition: color 0.2s ease; }
+  a:hover { color: var(--rose); }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+  /* Hero */
+  header.hero {
+    padding: 120px 24px 80px;
+    text-align: center;
+  }
+  .mark {
+    display: inline-block;
+    width: 64px; height: 64px;
+    margin-bottom: 28px;
+    color: var(--gold);
+    opacity: 0.92;
+  }
+  .mark svg { width: 100%; height: 100%; }
+  h1.brand {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(56px, 11vw, 132px);
+    letter-spacing: 0.02em;
+    line-height: 1;
+    color: var(--ink);
+  }
+  .brand .dot { color: var(--gold); }
+  .tagline {
+    margin: 28px auto 0;
+    max-width: 640px;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: clamp(18px, 2.6vw, 24px);
+    color: var(--ink-soft);
+    font-weight: 400;
+  }
+  .underline {
+    display: inline-block;
+    margin-top: 36px;
+    height: 1px;
+    width: 88px;
+    background: linear-gradient(to right, transparent, var(--gold), transparent);
+  }
+
+  /* Section */
+  section { padding: 64px 0; }
+  section.tight { padding: 32px 0 64px; }
+  h2 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(28px, 4vw, 40px);
+    letter-spacing: 0.04em;
+    color: var(--ink);
+    text-align: center;
+    margin-bottom: 12px;
+  }
+  .eyebrow {
+    text-align: center;
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .lede {
+    max-width: 700px; margin: 0 auto 48px;
+    text-align: center;
+    color: var(--ink-soft);
+    font-size: 17px;
+    font-family: var(--serif);
+    line-height: 1.55;
+    font-weight: 400;
+  }
+
+  /* Services grid */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 18px;
+  }
+  .card {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 32px 28px;
+    background: linear-gradient(180deg, rgba(13, 4, 32, 0.4), rgba(6, 1, 15, 0.2));
+    transition: border-color 0.25s ease, transform 0.25s ease, background 0.25s ease;
+    display: flex; flex-direction: column; gap: 14px;
+    min-height: 220px;
+  }
+  .card:hover {
+    border-color: rgba(212, 168, 87, 0.42);
+    transform: translateY(-2px);
+    background: linear-gradient(180deg, rgba(13, 4, 32, 0.7), rgba(6, 1, 15, 0.4));
+  }
+  .card .roman {
+    font-family: var(--serif);
+    color: var(--gold);
+    font-size: 14px;
+    letter-spacing: 0.18em;
+  }
+  .card h3 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 26px;
+    color: var(--ink);
+    line-height: 1.15;
+  }
+  .card p {
+    color: var(--ink-soft);
+    font-size: 15px;
+    line-height: 1.6;
+    flex: 1;
+  }
+  .card .cta {
+    color: var(--gold);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+
+  /* About */
+  .about {
+    max-width: 740px; margin: 0 auto;
+    text-align: center;
+    font-family: var(--serif);
+    font-size: 19px;
+    line-height: 1.7;
+    color: var(--ink-soft);
+  }
+  .about p + p { margin-top: 18px; }
+
+  /* Stack list of systems */
+  .systems {
+    margin-top: 42px;
+    display: flex; flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px 28px;
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--ink-faint);
+    font-size: 15px;
+  }
+  .systems span::before { content: "✦ "; color: var(--gold); margin-right: 4px; }
+
+  /* Contact */
+  .contact-box {
+    max-width: 540px; margin: 0 auto;
+    text-align: center;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 40px 32px;
+    background: rgba(13, 4, 32, 0.4);
+  }
+  .contact-box .email {
+    display: inline-block;
+    margin-top: 12px;
+    font-family: var(--serif);
+    font-size: 22px;
+    color: var(--gold);
+    letter-spacing: 0.04em;
+  }
+  .contact-box .note {
+    margin-top: 14px;
+    color: var(--ink-faint);
+    font-size: 14px;
+  }
+
+  /* Footer */
+  footer {
+    padding: 64px 24px 40px;
+    text-align: center;
+    color: var(--ink-faint);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+  }
+  footer .row {
+    display: flex; flex-wrap: wrap;
+    justify-content: center; gap: 24px;
+    margin-bottom: 24px;
+  }
+  footer .row a {
+    color: var(--ink-soft);
+    font-size: 13px;
+    letter-spacing: 0.08em;
+  }
+  footer .col { color: var(--ink-faint); font-size: 11px; }
+
+  @media (max-width: 600px) {
+    header.hero { padding: 80px 24px 56px; }
+    .card { padding: 28px 22px; min-height: 200px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="mark">
+    <!-- Sigil: a stylized circle-with-eye, sun-and-stars -->
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="32" cy="32" r="28" stroke="currentColor" stroke-width="1.2" opacity="0.55" />
+      <circle cx="32" cy="32" r="10" stroke="currentColor" stroke-width="1.2" />
+      <circle cx="32" cy="32" r="2.4" fill="currentColor" />
+      <path d="M32 4 L32 14 M32 50 L32 60 M4 32 L14 32 M50 32 L60 32" stroke="currentColor" stroke-width="1" opacity="0.7" />
+      <path d="M12 12 L19 19 M45 45 L52 52 M52 12 L45 19 M19 45 L12 52" stroke="currentColor" stroke-width="0.8" opacity="0.45" />
+    </svg>
+  </div>
+  <h1 class="brand">Numenist<span class="dot">.</span></h1>
+  <p class="tagline">Numerology, tarot, and astrology, written with the bluntness of the Tower card and the polish of a working shop.</p>
+  <span class="underline"></span>
+</header>
+
+<section class="wrap tight">
+  <div class="eyebrow">What you get</div>
+  <h2>Readings, prints, drops</h2>
+  <p class="lede">Every reading written for the person and the chart in front of me. Never templates, never disclaimers, no soft answers when the chart is direct.</p>
+
+  <div class="grid">
+    <!--
+      Each card's `href` should point at the live storefront once the URLs are confirmed.
+      Until then they fall through to a mailto so visitors can still reach us.
+    -->
+    <a class="card" href="mailto:hi@numenist.com?subject=Reading%20request" rel="noopener">
+      <div class="roman">I · READINGS</div>
+      <h3>Custom tarot, numerology, astrology</h3>
+      <p>One question, your name and birth date, a designed PDF in your inbox within twenty four hours. Pythagorean, Chaldean, Kabbalistic, full Rider-Waite, planetary cross-checks.</p>
+      <div class="cta">Request a reading →</div>
+    </a>
+
+    <a class="card" href="mailto:hi@numenist.com?subject=Prints%20question" rel="noopener">
+      <div class="roman">II · PRINTS</div>
+      <h3>Wall art for the altar</h3>
+      <p>Life Path posters, Major Arcana series, zodiac and chakra prints. Witchcore, dark academia, period-correct pigments. Made for ritual rooms and reading nooks.</p>
+      <div class="cta">Browse the catalog →</div>
+    </a>
+
+    <a class="card" href="mailto:hi@numenist.com?subject=Digital%20drops" rel="noopener">
+      <div class="roman">III · DIGITAL DROPS</div>
+      <h3>Reading PDFs, decks, ebooks</h3>
+      <p>Self-paced reading guides, downloadable spread layouts, archetype workbooks. Built from the same master prompt the readings come from.</p>
+      <div class="cta">See the drops →</div>
+    </a>
+
+    <a class="card" href="mailto:hi@numenist.com?subject=Music%20release" rel="noopener">
+      <div class="roman">IV · MUSIC</div>
+      <h3>Numan, indie folk and folk rap</h3>
+      <p>Original music tuned to the same archetypes the readings draw from. Fingerpicked acoustic, brushed drums, lyrics that don't flinch. Releasing.</p>
+      <div class="cta">Hear the catalog →</div>
+    </a>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="eyebrow">The substance</div>
+  <h2>Nine systems, one chart</h2>
+  <div class="about">
+    <p>Numenist works across nine sacred number sciences plus the full seventy-eight card Rider-Waite-Smith deck and a working astrology stack. Cross-referencing those traditions against your name and your birth date is what surfaces the things a single-system reading misses.</p>
+    <p>The brand voice is direct. No motivational filler, no horoscope-grade vagueness, no soft answers when the chart is sharp. If the deck calls a Tower week, the reading says Tower week.</p>
+  </div>
+  <div class="systems">
+    <span>Pythagorean</span>
+    <span>Chaldean</span>
+    <span>Kabbalistic</span>
+    <span>Hermetic</span>
+    <span>Soul Contract</span>
+    <span>Vedic</span>
+    <span>Yogic</span>
+    <span>Mayan Tzolk'in</span>
+    <span>Lo Shu Grid</span>
+  </div>
+</section>
+
+<section class="wrap tight" id="contact">
+  <div class="eyebrow">Get in touch</div>
+  <h2>Send a reading request</h2>
+  <div class="contact-box">
+    <p style="color: var(--ink-soft); font-family: var(--serif); font-size: 17px;">
+      For readings, commissions, collabs, or press,<br />reach me directly:
+    </p>
+    <a class="email" href="mailto:hi@numenist.com">hi@numenist.com</a>
+    <p class="note">Replies usually within twelve hours, always within twenty four.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="row">
+    <a href="mailto:hi@numenist.com">Contact</a>
+    <a href="#contact">Readings</a>
+  </div>
+  <div class="col">© 2026 Numenist · Numerology, tarot, and astrology readings · numenist.com</div>
+</footer>
+
+</body>
+</html>
