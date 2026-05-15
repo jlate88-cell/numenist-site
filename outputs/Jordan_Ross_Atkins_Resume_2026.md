@@ -1,99 +1,86 @@
 # JORDAN ROSS ATKINS
 
-Atlanta, GA · 678-300-5577 · jlate88@gmail.com
-*[ADD: LinkedIn or portfolio URL if you have one]*
+Atlanta, GA  |  678-300-5577  |  jlate88@gmail.com
 
 ---
 
-## PROFESSIONAL SUMMARY
+## SUMMARY
 
-Trained to read a scene before anyone else can. 17 years a filmmaker controlling
-composition, continuity, and pacing; now a Georgia blue-card armed agent making
-real-time threat assessments on private executive-protection details for national
-broadcast talent (Fox News, CNN); and self-taught builder of autonomous
-multi-agent AI, local-LLM robotics, and versioned LLM instruction architectures
-with verification protocols. One discipline across three arenas — spotting what is
-wrong, missing, or false before it ships. Seeking remote AI evaluation/training,
-AI video/commercial production, or technical support — measured on the
-assessment, not a transcript.
+Armed executive protection agent and self-taught AI builder. I work
+close-protection details for on-air talent at Fox News and CNN through a licensed
+Atlanta firm. On post downtime I taught myself to code. I built a working
+local-LLM robot out of a Raspberry Pi before that was common, and I now produce
+AI video commercials. Seventeen years making short films before any of this.
+Looking for remote work in AI evaluation, AI video, or technical support.
 
 ---
 
 ## CORE SKILLS
 
-- **AI / ML:** LLM output evaluation, prompt engineering, agentic systems design,
-  multi-agent orchestration, AI behavior/instruction design, model-output review
-- **AI Media:** end-to-end AI video & image generation — Higgsfield AI (full
-  suite), Google Veo / Google Labs, Kling, Midjourney (advanced: scene
-  construction, character consistency); hyper-realistic and animated commercial
-  production
-- **Film & Post:** cinematography, editing, color correction (DaVinci Resolve,
-  CapCut), music editing & recording; composition, continuity, scene flow
-- **Automation:** autonomous task pipelines, multi-session orchestration,
-  cross-application automation bridges, custom event-hook pipelines
-- **Development:** Python, Bash/Shell, HTML/CSS, Git, Linux system administration
-  *[CONFIRM/ADD: any other languages you use]*
-- **AI Tooling:** ChatGPT, Claude / LLM APIs, self-hosted/local LLM deployment,
-  Raspberry Pi, terminal-driven development *[CONFIRM/ADD: Agent SDK, n8n/Make]*
+- AI / ML: LLM output evaluation, prompt engineering, agent systems, model-output
+  review
+- AI video: Higgsfield AI, Google Veo, Kling, Midjourney. Hyper-real and animated
+  commercials, start to finish
+- Film and post: shooting, editing, color (DaVinci Resolve, CapCut), music
+  editing and recording
+- Code: Python, Bash, HTML/CSS, Git, Linux. Self-hosted and local LLMs, Raspberry
+  Pi, terminal-driven work
 
 ---
 
-## SELECTED PROJECTS
+## PROJECTS
 
-**J-5 — Personal Robotics & Local-LLM Build** *(2025)*
-Self-built robotics project: Raspberry Pi hardware, camera vision ("eyes"),
-laptop-hosted local LLM ("brain"). Hand-coded via terminal to run a private
-self-hosted LLM ahead of mainstream adoption.
+**J-5, personal robot** *(2025)*
+Built a robot from a Raspberry Pi. Camera for the eyes, my laptop running a local
+model as the brain. Hand-coded it through the terminal, learning as I went,
+because I wanted a private model running offline before that was easy to do.
 
-**Ultronos — Autonomous Multi-Agent System** *(2025–Present)*
-Multi-agent automation system that runs tasks independently and reports status
-across separate sessions.
+**Ultronos, multi-agent automation** *(2025 to now)*
+Runs agent tasks on its own and reports back across separate sessions.
 
-**LLM System-Prompt & Instruction Architecture** *(2026)*
-Authored large-scale, versioned system-prompt and multi-agent instruction
-frameworks (10,000+ words) with built-in verification/audit protocols and version
-control — advanced prompt engineering and AI behavior design.
+**LLM instruction systems** *(2026)*
+Wrote large versioned instruction frameworks for language models, over 10,000
+words, with my own verification and audit checks built in. Heavy
+prompt-engineering work.
 
-**AI Commercial & Video Production** *(2025–Present)*
-Trained under a mentor producing AI-driven commercial work. Direct Veo, Kling,
-Higgsfield, and Midjourney on a 17-year filmmaking foundation to produce
-hyper-realistic and animated commercials end to end — human taste, not the tool,
-is the deliverable; original animated short in development.
+**AI commercial production** *(2025 to now)*
+Learned this under a mentor who does AI commercial work. I direct Veo, Kling,
+Higgsfield and Midjourney off a real filmmaking background, which is why the
+output holds up. Hyper-real and animated. An original animated short is in the
+works.
 
 ---
 
 ## EXPERIENCE
 
-**Executive Protection / Armed Security Agent** — C2 Security Group, Atlanta, GA
-*October 2023–Present*
-- Close-protection details for national broadcast media personnel (Fox News,
-  CNN), entertainment and music-industry talent, private and preschool campuses,
-  and corporate/retail sites under managed-threat conditions
-- Armed agent with a veteran-owned firm (BBB A+, Voted Best of Georgia 2025)
-  contracted to the Jewish Federation of Greater Atlanta, the Secure Community
-  Network, and the MJCCA — sustained high-threat-environment protection
-- Georgia blue-card registered armed guard; real-time threat assessment,
-  zero-margin judgment; self-trained in software and AI systems on duty
+**Executive Protection / Armed Agent. C2 Security Group, Atlanta, GA. October
+2023 to present.**
+- Close-protection details for Fox News and CNN on-air talent, entertainment and
+  music clients, private and preschool campuses, and retail and corporate sites
+- Veteran-owned firm, BBB A+, Voted Best of Georgia 2025. Contracted to the
+  Jewish Federation of Greater Atlanta, the Secure Community Network, and the
+  MJCCA
+- Georgia blue-card armed guard. Real-time threat assessment with no margin for
+  error. Taught myself software and AI on the clock between posts
 
-**Independent Filmmaker, Editor & Music Producer** *(2008–Present)*
-- 17 years shooting, editing, acting, and co-starring in short films; intricate
-  music editing and recording
-- Frame-level command of composition, symmetry, continuity, and emotional pacing
-  — the craft eye AI generation lacks and the foundation that makes the AI film
-  work credible
+**Filmmaker and Editor. 2008 to present.**
+- Shooting, editing, acting and co-starring in short films since 2008. Did the
+  music editing and recording too
+- The eye for framing and timing came from doing it by hand for years. It is why
+  the AI video work actually looks right
 
-**Insurance Sales Closer** — Legacy Health Insurance, Los Angeles, CA
-*2018–2019*
-- Ranked #1 closer five consecutive months; cold-call acquisition, needs
-  analysis, objection handling, close; trained incoming sales staff
+**Insurance Sales Closer. Legacy Health Insurance, Los Angeles, CA. 2018 to
+2019.**
+- Number one closer five months running. Cold calls and closing. Trained the new
+  reps
 
-**Additional Experience** *(2003–2018, GA / LA)*
-- Saucier — Café Del Rey (fine dining, LA) · Stone Restoration — F.D. Atkins &
-  Associates · Repossession Scout — Wilder Repo · Auto Driver — Georgia's Elite
-  Auto Sales · Line Cook — Bones Restaurant, Atlanta
+**Earlier work** *(2003 to 2018)*
+- Saucier at Café Del Rey (fine dining, LA). Stone restoration with F.D. Atkins.
+  Repossession scout at Wilder. Auto driver at Georgia's Elite. Line cook at
+  Bones, Atlanta.
 
 ---
 
 ## EDUCATION
 
-**High School Diploma** — Alexander High School, Douglasville, GA
+High School Diploma. Alexander High School, Douglasville, GA.
