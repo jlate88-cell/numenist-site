@@ -8,14 +8,11 @@ Atlanta, GA · 678-300-5577 · jlate88@gmail.com
 ## PROFESSIONAL SUMMARY
 
 High-trust protection professional and self-taught AI systems builder. Armed
-executive-protection agent with a veteran-owned, BBB A+ firm (Best of Georgia
-2025) — close-protection details for national broadcast media, entertainment
-clients, and high-threat community institutions — while independently engineering
-autonomous multi-agent AI systems and large-scale LLM prompt architectures.
-Former #1-ranked insurance sales closer. Combines operational discipline,
-persuasive communication under pressure, and applied AI capability. Seeking
-remote work in AI evaluation/training, automation engineering, technical support,
-or customer success.
+executive-protection agent (national broadcast media, entertainment, high-threat
+institutions) who independently engineers autonomous multi-agent AI systems, LLM
+prompt architectures, and AI video/commercial production. Former #1-ranked sales
+closer. Seeking remote work in AI evaluation/training, automation, AI media, or
+technical support.
 
 ---
 
@@ -25,9 +22,13 @@ or customer success.
   multi-agent orchestration, AI behavior/instruction design, model-output review
 - **Automation:** autonomous task pipelines, multi-session orchestration,
   cross-application automation bridges, custom event-hook pipelines
+- **AI Media:** AI video & image generation (Higgsfield AI *[CONFIRM: + other
+  tools — Runway / Sora / Kling / Midjourney]*); hyper-realistic, animated, and
+  directed commercial content; video editing and color correction
 - **Development:** *[CONFIRM: languages — e.g., Python, JavaScript, HTML/CSS]*,
   Git version control, static web deployment, Linux command line, self-hosted tooling
-- **Tooling:** *[CONFIRM: e.g., Claude / LLM APIs, Agent SDK, n8n / Make / Zapier]*
+- **Tooling:** *[CONFIRM: e.g., Claude / LLM APIs, Agent SDK, n8n / Make / Zapier;
+  editing — Premiere / DaVinci Resolve / CapCut]*
 
 ---
 
@@ -46,6 +47,12 @@ Designed and built a custom AI assistant/agent.
 Authored large-scale, versioned, structured system-prompt and multi-agent
 instruction frameworks (10,000+ words) with built-in verification/audit protocols
 and version control — advanced prompt engineering and AI behavior design.
+
+**AI Commercial & Video Production** *(2025–Present)*
+Trained under a mentor producing AI-driven commercial work. Produce
+hyper-realistic, animated, and directed AI commercials and short-form films end
+to end; currently producing an animated short.
+*[CONFIRM 1 line: the cartoon/short you're building]*
 
 **Numenist — Web Project** *(2026)*
 Built and deployed a static website (HTML, Git version control).
@@ -66,13 +73,11 @@ Built and deployed a static website (HTML, Git version control).
 - Served within a firm contracted to the Jewish Federation of Greater Atlanta,
   the Secure Community Network, and the MJCCA — sustained high-threat-environment
   community protection
-- Completed Georgia state-required security licensing and training
-  *[CONFIRM: your individual GA guard / armed-guard license # if listing]*
-- Maintained full duty performance while completing intensive self-directed
-  training in software engineering and AI systems
+- Completed GA state security licensing/training *[CONFIRM: individual GA
+  guard/armed license # if listing]*; maintained full duty performance while
+  self-training in software and AI systems
 
-**Insurance Sales Closer** — Legacy Health Insurance, Los Angeles, CA
-*2018–2019*
+**Insurance Sales Closer** — Legacy Health Insurance, Los Angeles, CA *2018–2019*
 - Ranked #1 closer five consecutive months
 - Cold-call client acquisition, needs analysis, objection handling, close
 - Trained incoming sales staff; sustained ~$3,000/month commission performance

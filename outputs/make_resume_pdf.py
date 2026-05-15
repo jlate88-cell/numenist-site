@@ -48,7 +48,7 @@ def need(h):
     if y - h < MB:
         newpage()
 
-def line(txt, size=10, bold=False, gap=1.4, indent=0, bullet=False):
+def line(txt, size=9.7, bold=False, gap=1.0, indent=0, bullet=False):
     global y
     fnt = 'F2' if bold else 'F1'
     avail = CONTENT_W - indent - (12 if bullet else 0)
@@ -70,7 +70,7 @@ def rule():
 def H(txt):
     global y
     need(22)
-    y -= 6
+    y -= 4
     line(txt.upper(), size=10.5, bold=True, gap=2)
     rule()
 
@@ -86,14 +86,11 @@ gap(4)
 
 H("Professional Summary")
 line("High-trust protection professional and self-taught AI systems builder. "
-     "Armed executive-protection agent with a veteran-owned, BBB A+ firm (Best of "
-     "Georgia 2025) - close-protection details for national broadcast media, "
-     "entertainment clients, and high-threat community institutions - while "
-     "independently engineering autonomous multi-agent AI systems and large-scale "
-     "LLM prompt architectures. Former #1-ranked insurance sales closer. Combines "
-     "operational discipline, persuasive communication under pressure, and "
-     "applied AI capability. Seeking remote work in AI evaluation/training, "
-     "automation engineering, technical support, or customer success.")
+     "Armed executive-protection agent (national broadcast media, entertainment, "
+     "high-threat institutions) who independently engineers autonomous multi-agent "
+     "AI systems, LLM prompt architectures, and AI video/commercial production. "
+     "Former #1-ranked sales closer. Seeking remote work in AI "
+     "evaluation/training, automation, AI media, or technical support.")
 
 H("Technical Skills")
 line("AI / ML: LLM output evaluation, prompt engineering, agentic systems design, "
@@ -101,11 +98,15 @@ line("AI / ML: LLM output evaluation, prompt engineering, agentic systems design
      bullet=True)
 line("Automation: autonomous task pipelines, multi-session orchestration, "
      "cross-application automation bridges, custom event-hook pipelines", bullet=True)
+line("AI Media: AI video & image generation (Higgsfield AI [CONFIRM: + other "
+     "tools - Runway / Sora / Kling / Midjourney]); hyper-realistic, animated, "
+     "and directed commercial content; video editing and color correction",
+     bullet=True)
 line("Development: [CONFIRM: languages - e.g., Python, JavaScript, HTML/CSS], Git "
      "version control, static web deployment, Linux command line, self-hosted tooling",
      bullet=True)
-line("Tooling: [CONFIRM: e.g., Claude / LLM APIs, Agent SDK, n8n / Make / Zapier]",
-     bullet=True)
+line("Tooling: [CONFIRM: e.g., Claude / LLM APIs, Agent SDK, n8n / Make / Zapier; "
+     "editing - Premiere / DaVinci Resolve / CapCut]", bullet=True)
 
 H("Projects")
 line("Ultronos - Autonomous Multi-Agent System  (2025-Present)", bold=True, gap=2)
@@ -120,6 +121,11 @@ line("Authored large-scale, versioned, structured system-prompt and multi-agent 
      "instruction frameworks (10,000+ words) with built-in verification/audit "
      "protocols and version control - advanced prompt engineering and AI behavior "
      "design.")
+line("AI Commercial & Video Production  (2025-Present)", bold=True, gap=2)
+line("Trained under a mentor producing AI-driven commercial work. Produce "
+     "hyper-realistic, animated, and directed AI commercials and short-form "
+     "films end to end; currently producing an animated short. "
+     "[CONFIRM 1 line: the cartoon/short you're building]")
 line("Numenist - Web Project  (2026)", bold=True, gap=2)
 line("Built and deployed a static website (HTML, Git version control).")
 
@@ -137,11 +143,9 @@ line("Protective coverage for education campuses (preschools, private schools) "
 line("Served within a firm contracted to the Jewish Federation of Greater "
      "Atlanta, the Secure Community Network, and the MJCCA - sustained "
      "high-threat-environment community protection", bullet=True)
-line("Completed Georgia state-required security licensing and training "
-     "[CONFIRM: your individual GA guard / armed-guard license # if listing]",
-     bullet=True)
-line("Maintained full duty performance while completing intensive self-directed "
-     "training in software engineering and AI systems", bullet=True)
+line("Completed GA state security licensing/training [CONFIRM: individual GA "
+     "guard/armed license # if listing]; maintained full duty performance while "
+     "self-training in software and AI systems", bullet=True)
 gap(2)
 line("Insurance Sales Closer - Legacy Health Insurance, Los Angeles, CA  "
      "(2018-2019)", bold=True, gap=2)
