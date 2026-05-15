@@ -1,28 +1,30 @@
 # JORDAN ROSS ATKINS
 
 Atlanta, GA · 678-300-5577 · jlate88@gmail.com
-*[CONFIRM/ADD: LinkedIn or portfolio URL if you have one]*
+*[ADD: LinkedIn or portfolio URL if you have one]*
 
 ---
 
 ## PROFESSIONAL SUMMARY
 
-Self-directed technologist and high-trust operator. Three years in armed security
-while completing intensive self-led training in software development and applied
-AI — designing and running autonomous multi-agent automation systems. Former
-#1-ranked insurance sales closer (top closer five consecutive months). Combines
-hands-on technical capability, persuasive communication under pressure, and
-disciplined reliability. Seeking remote work in AI evaluation/training, automation
-engineering, technical support, or customer success.
+High-trust protection professional and self-taught AI systems builder. Armed
+executive-protection agent with a veteran-owned, BBB A+ firm (Best of Georgia
+2025) — close-protection details for national broadcast media, entertainment
+clients, and high-threat community institutions — while independently engineering
+autonomous multi-agent AI systems and large-scale LLM prompt architectures.
+Former #1-ranked insurance sales closer. Combines operational discipline,
+persuasive communication under pressure, and applied AI capability. Seeking
+remote work in AI evaluation/training, automation engineering, technical support,
+or customer success.
 
 ---
 
 ## TECHNICAL SKILLS
 
 - **AI / ML:** LLM output evaluation, prompt engineering, agentic systems design,
-  multi-agent orchestration, AI-assisted software development, model-output review
-- **Automation:** autonomous task pipelines, multi-session workflow orchestration,
-  cross-system integration and bridging
+  multi-agent orchestration, AI behavior/instruction design, model-output review
+- **Automation:** autonomous task pipelines, multi-session orchestration,
+  cross-application automation bridges, custom event-hook pipelines
 - **Development:** *[CONFIRM: languages — e.g., Python, JavaScript, HTML/CSS]*,
   Git version control, static web deployment, Linux command line, self-hosted tooling
 - **Tooling:** *[CONFIRM: e.g., Claude / LLM APIs, Agent SDK, n8n / Make / Zapier]*
@@ -32,53 +34,57 @@ engineering, technical support, or customer success.
 ## PROJECTS
 
 **Ultronos — Autonomous Multi-Agent System** *(2025–Present)*
-Designed and built a multi-agent automation system featuring cross-session
-orchestration and automated status reporting between independent agent processes.
-*[CONFIRM 1 line: what it actually does / produces — e.g., "automates X for Y"]*
+Designed and built a multi-agent automation system with cross-session
+orchestration and automated inter-process status reporting.
+*[CONFIRM 1 line: what it does / produces]*
+
+**J-5 — Custom AI Assistant** *(2026)*
+Designed and built a custom AI assistant/agent.
+*[CONFIRM 1 line: domain, capabilities, and stack J-5 runs on]*
+
+**LLM System-Prompt & Instruction Architecture** *(2026)*
+Authored large-scale, versioned, structured system-prompt and multi-agent
+instruction frameworks (10,000+ words) with built-in verification/audit protocols
+and version control — advanced prompt engineering and AI behavior design.
 
 **Numenist — Web Project** *(2026)*
 Built and deployed a static website (HTML, Git version control).
-*[CONFIRM 1 line of scope if you want it expanded]*
-
-**Independent Digital Content Operation** *(2026–Present)*
-Built and operate an independent content brand from zero — end-to-end production,
-audience growth, and engagement.
-*[OPTIONAL: include platform + follower/view metrics, OR remove this block —
-your call, since it can lead recruiters to the niche]*
 
 ---
 
 ## EXPERIENCE
 
-**Armed Security Officer** — *[CONFIRM: Company Name]*, Atlanta, GA
+**Executive Protection / Armed Security Agent** — C2 Security Group, Atlanta, GA
 *[CONFIRM: 2023]–Present*
-- Three years of high-trust protective services across client sites: access
-  control, situational awareness, incident documentation, sustained vigilance
-  during extended solo-post assignments
+- Armed protective-services agent with a veteran-owned firm (BBB A+, Voted Best
+  of Georgia 2025) delivering executive protection, close protection, and
+  threat-managed security to high-profile and high-sensitivity clients
+- Executive/close-protection details for national broadcast media personnel
+  (Fox News, CNN) and entertainment / music-industry clients
+- Protective coverage for education campuses (preschools, private schools) and
+  retail/corporate sites under managed-threat conditions
+- Served within a firm contracted to the Jewish Federation of Greater Atlanta,
+  the Secure Community Network, and the MJCCA — sustained high-threat-environment
+  community protection
+- Completed Georgia state-required security licensing and training
+  *[CONFIRM: your individual GA guard / armed-guard license # if listing]*
 - Maintained full duty performance while completing intensive self-directed
-  professional development in software engineering and AI systems
-- *[CONFIRM: Georgia security guard license / armed guard permit + number if listing]*
+  training in software engineering and AI systems
 
 **Insurance Sales Closer** — Legacy Health Insurance, Los Angeles, CA
 *2018–2019*
 - Ranked #1 closer five consecutive months
-- Cold-call client acquisition, needs analysis, objection handling, and close
+- Cold-call client acquisition, needs analysis, objection handling, close
 - Trained incoming sales staff; sustained ~$3,000/month commission performance
 
-**Saucier / Line Cook (Fine Dining)** — Café Del Rey, Los Angeles, CA
-*2018*
-- Owned a high-volume station in a fine-dining kitchen; covered grill, fish,
-  pizza, and pasta stations under pressure
-- Produced weekly full-staff "family meal"; rapid skill acquisition under
-  experienced chefs
+**Saucier / Line Cook (Fine Dining)** — Café Del Rey, Los Angeles, CA *2018*
+- Owned a high-volume station in a fine-dining kitchen; multi-station coverage
+  and rapid skill acquisition under pressure
 
-**Earlier Experience** *(2015–2017, GA)*
-- Line Cook — Bones Restaurant, Atlanta · Repossession Scout — Wilder Repo,
-  Lithia Springs · Auto Driver — Georgia's Elite Auto Sales, Fairburn
-
-**Skilled Trade — Stone Restoration** — F.D. Atkins & Associates, GA
-*(intermittent, 2003–2015)*
-- Client-facing natural-stone restoration; project scoping and negotiated pricing
+**Earlier Experience** *(2003–2017, GA)*
+- Stone Restoration — F.D. Atkins & Associates · Line Cook — Bones Restaurant,
+  Atlanta · Repossession Scout — Wilder Repo · Auto Driver — Georgia's Elite
+  Auto Sales
 
 ---
 
