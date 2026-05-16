@@ -86,89 +86,83 @@ gap(4)
 
 H("Summary")
 line("Armed executive protection agent and self-taught AI builder. I run "
-     "close-protection details for on-air talent at Fox News and CNN, plus "
-     "entertainment and high-threat institutional clients, through a licensed, "
-     "veteran-owned Atlanta firm. On post downtime over the last few years I "
-     "taught myself to code from the terminal and built real systems: a robot "
-     "running a local language model offline before that was common, an "
-     "autonomous AI content and automation factory that routes work across "
-     "multiple media providers and publishes finished products on its own, and a "
-     "shipped numerology product. Seventeen years making and editing films before "
-     "any of this, which is the eye behind the AI video work. I am looking for "
-     "remote work in AI evaluation and training, AI content and video production, "
-     "automation engineering, or technical support.")
+     "close-protection and advance details for Fox News and CNN on-air talent, "
+     "entertainment clients, and high-threat institutional sites through a "
+     "licensed, veteran-owned Atlanta firm. On post downtime over the last few "
+     "years I taught myself to code from the terminal and shipped working "
+     "systems: a robot running an offline LLM as its brain, an AI content "
+     "factory that routes jobs across image, video, and audio models and "
+     "publishes finished products to Etsy and Gumroad with no human in the loop, "
+     "and a paid numerology product. Seventeen years shooting and editing film "
+     "before any of it, which is the eye behind the AI video work. Looking for "
+     "remote work in AI evaluation and training, AI video production, automation "
+     "engineering, or technical support.")
 
 H("Core Skills")
 line("AI / ML: LLM output evaluation and audit, prompt engineering, agent "
-     "systems and orchestration, AI behavior and instruction design, building "
-     "structured verification frameworks", bullet=True)
+     "systems and orchestration, AI behavior and instruction design, structured "
+     "verification frameworks", bullet=True)
 line("AI media: image, video, and audio generation across Higgsfield AI, "
-     "Google Veo, Kling, and Midjourney; multi-provider routing; hyper-real and "
-     "animated commercial work start to finish", bullet=True)
+     "Google Veo, Kling, Midjourney; multi-provider routing; hyper-real and "
+     "animated commercial work end to end", bullet=True)
 line("Film and post: shooting, editing, color grading (DaVinci Resolve, "
-     "CapCut), music editing and recording; seventeen years hands-on", bullet=True)
-line("Code and systems: Python, Bash, HTML/CSS, Git, Linux. Self-hosted and "
-     "local LLMs, Raspberry Pi hardware, terminal-driven builds, automation "
-     "pipelines", bullet=True)
+     "CapCut), music editing and recording; 17 years hands-on", bullet=True)
+line("Code and systems: Python, Bash, HTML/CSS, Git, Linux; self-hosted and "
+     "local LLMs, Raspberry Pi, terminal-driven builds, automation pipelines",
+     bullet=True)
 
 H("Projects")
 line("Ultronos, AI content and automation factory  (2025 to now)", bold=True, gap=2)
-line("End-to-end pipeline that takes a content job, routes each step to the "
-     "right model across multiple image, video, and audio AI providers, then "
-     "runs the result through an autonomous audit gate that checks quality "
-     "before anything is released. Approved products auto-publish to Etsy and "
-     "Gumroad with no manual step. It runs on its own.", bullet=True)
-line("Numen / Quintiform, numerology product  (2025 to now)", bold=True, gap=2)
-line("Designed and shipped a numerology product built on a structured "
-     "calculation engine that turns birth data into full personalized written "
-     "readings. Packaged and sold as a paid digital product.", bullet=True)
-line("J-5, personal robot and local LLM  (2025)", bold=True, gap=2)
-line("Built a robot from a Raspberry Pi with a camera for vision and my laptop "
-     "running a local language model as the brain. Hand-coded the whole thing "
-     "through the terminal, learning as I went, to get a private model running "
-     "fully offline before that was common or easy.", bullet=True)
+line("Takes a job, routes each step to the right model across multiple image, "
+     "video, and audio providers, and runs an autonomous audit gate that checks "
+     "quality before release. Approved products auto-publish to Etsy and "
+     "Gumroad; runs unattended.", bullet=True)
+line("Numen / Quintiform, paid numerology product  (2025 to now)", bold=True, gap=2)
+line("Built a structured calculation engine that turns birth data into "
+     "personalized written readings. Shipped and sold as a paid digital "
+     "product.", bullet=True)
+line("J-5, offline robot  (2025)", bold=True, gap=2)
+line("Raspberry Pi with camera vision and a laptop running a local LLM as the "
+     "brain, hand-coded from the terminal. Ran a private offline model before "
+     "that was common.", bullet=True)
 line("LLM instruction systems  (2026)", bold=True, gap=2)
-line("Wrote large, versioned instruction frameworks for language models, over "
-     "10,000 words each, with my own verification and audit checks, version "
-     "control, and behavior rules built in. Deep prompt engineering and AI "
-     "behavior design.", bullet=True)
+line("Versioned instruction frameworks of 10,000+ words with their own "
+     "verification and audit checks, version control, and behavior rules.",
+     bullet=True)
 line("AI commercial production  (2025 to now)", bold=True, gap=2)
-line("Trained under a mentor who produces AI commercial work. I direct Veo, "
-     "Kling, Higgsfield, and Midjourney off a real filmmaking background, which "
-     "is why the output reads like film instead of generated clips. Hyper-real "
-     "and animated. An original animated short is in progress.", bullet=True)
+line("Direct Veo, Kling, Higgsfield, and Midjourney off a 17-year filmmaking "
+     "background, hyper-real and animated; original animated short in progress. "
+     "Trained under a mentor.", bullet=True)
 
 H("Experience")
 line("Executive Protection / Armed Agent. C2 Security Group, Atlanta, GA. "
      "October 2023 to present.", bold=True, gap=2)
-line("Close-protection and advance details for on-air talent at Fox News and "
-     "CNN, entertainment and music clients, private and preschool campuses, and "
-     "corporate and retail sites", bullet=True)
-line("Real-time threat assessment and protective coverage with no margin for "
-     "error; armed post and detail work across high-profile and high-sensitivity "
-     "clients", bullet=True)
-line("C2 is veteran-owned, BBB A+, and Voted Best of Georgia 2025, contracted "
-     "to the Jewish Federation of Greater Atlanta, the Secure Community Network, "
+line("Close-protection and advance details for Fox News and CNN on-air talent, "
+     "entertainment and music clients, private and preschool campuses, corporate "
+     "and retail sites", bullet=True)
+line("Real-time threat assessment and protective coverage across high-profile "
+     "and high-sensitivity clients; Georgia blue-card armed guard", bullet=True)
+line("C2 is veteran-owned, BBB A+, Voted Best of Georgia 2025, contracted to "
+     "the Jewish Federation of Greater Atlanta, the Secure Community Network, "
      "and the MJCCA", bullet=True)
-line("Georgia blue-card armed guard. Taught myself software and AI on post "
-     "between assignments and shipped the systems above while working full duty",
-     bullet=True)
+line("Taught myself software and AI on post between assignments; shipped the "
+     "systems above while on full duty", bullet=True)
 gap(2)
-line("Filmmaker, Editor, and Music Producer. 2008 to present.", bold=True, gap=2)
-line("Seventeen years shooting, editing, acting, and co-starring in short "
-     "films, plus music editing and recording", bullet=True)
-line("Hands-on command of framing, continuity, color, and timing; this is the "
-     "craft eye that makes the AI video work hold up", bullet=True)
+line("Filmmaker, Editor, Music Producer. 2008 to present.", bold=True, gap=2)
+line("17 years shooting and editing film; acting and co-starring in shorts; "
+     "music editing and recording", bullet=True)
+line("Hands-on command of framing, continuity, color, and timing; the eye "
+     "behind the AI video work", bullet=True)
 gap(2)
 line("Insurance Sales Closer. Legacy Health Insurance, Los Angeles, CA. "
      "2018 to 2019.", bold=True, gap=2)
 line("Number one closer five months running. Cold-call acquisition, needs "
-     "analysis, and closing. Trained new reps", bullet=True)
+     "analysis, and close; trained new reps", bullet=True)
 gap(2)
 line("Earlier work  (2003 to 2018)", bold=True, gap=2)
-line("Saucier at Cafe Del Rey (fine dining, LA). Stone restoration with F.D. "
-     "Atkins. Repossession scout at Wilder. Auto driver at Georgia's Elite. Line "
-     "cook at Bones, Atlanta.", bullet=True)
+line("Saucier, Cafe Del Rey (LA fine dining). Stone restoration, F.D. Atkins. "
+     "Repo scout, Wilder. Driver, Georgia's Elite. Line cook, Bones (Atlanta).",
+     bullet=True)
 
 H("Education")
 line("High School Diploma. Alexander High School, Douglasville, GA.")
