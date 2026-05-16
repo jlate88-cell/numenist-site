@@ -54,6 +54,11 @@ technical support.
   editing and recording
 - Years of doing it by hand is why I know framing, continuity, color, and timing
 
+**Roofing Salesman / Closer. Southern Renovation Specialists, Georgia. 2020 to
+2023.**
+- Sold and closed residential roofing contracts in the field; ran the full cycle
+  from lead to close.
+
 **Insurance Sales Closer. Legacy Health Insurance, Los Angeles, CA. 2018 to
 2019.**
 - #1 closer five months straight. Cold calling, needs analysis, closing. Trained

@@ -131,6 +131,11 @@ line("17 years shooting and editing film; acting and co-starring in shorts; "
 line("Years of doing it by hand is why I know framing, continuity, color, and "
      "timing", bullet=True)
 gap(2)
+line("Roofing Salesman / Closer. Southern Renovation Specialists, Georgia. "
+     "2020 to 2023.", bold=True, gap=2)
+line("Sold and closed residential roofing contracts in the field; ran the full "
+     "cycle from lead to close.", bullet=True)
+gap(2)
 line("Insurance Sales Closer. Legacy Health Insurance, Los Angeles, CA. "
      "2018 to 2019.", bold=True, gap=2)
 line("#1 closer five months straight. Cold calling, needs analysis, closing. "
