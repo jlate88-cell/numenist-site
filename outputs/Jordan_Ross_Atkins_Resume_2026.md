@@ -35,8 +35,14 @@ Built a robot from a Raspberry Pi. Camera for the eyes, my laptop running a loca
 model as the brain. Hand-coded it through the terminal, learning as I went,
 because I wanted a private model running offline before that was easy to do.
 
-**Ultronos, multi-agent automation** *(2025 to now)*
-Runs agent tasks on its own and reports back across separate sessions.
+**Ultronos, AI content and automation factory** *(2025 to now)*
+Built a pipeline that routes jobs across multiple image, video, and audio AI
+providers, runs an autonomous audit gate that checks output before release, and
+auto-publishes finished products to Etsy and Gumroad.
+
+**Numen / Quintiform, numerology product** *(2025 to now)*
+Built and shipped a numerology product that generates personalized readings from
+a structured calculation engine. Sold as a digital product.
 
 **LLM instruction systems** *(2026)*
 Wrote large versioned instruction frameworks for language models, over 10,000

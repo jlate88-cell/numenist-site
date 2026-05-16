@@ -109,8 +109,13 @@ line("Built a robot from a Raspberry Pi. Camera for the eyes, my laptop running 
      "a local model as the brain. Hand-coded it through the terminal, learning as "
      "I went, because I wanted a private model running offline before that was "
      "easy to do.")
-line("Ultronos, multi-agent automation  (2025 to now)", bold=True, gap=2)
-line("Runs agent tasks on its own and reports back across separate sessions.")
+line("Ultronos, AI content and automation factory  (2025 to now)", bold=True, gap=2)
+line("Built a pipeline that routes jobs across multiple image, video, and audio "
+     "AI providers, runs an autonomous audit gate that checks output before "
+     "release, and auto-publishes finished products to Etsy and Gumroad.")
+line("Numen / Quintiform, numerology product  (2025 to now)", bold=True, gap=2)
+line("Built and shipped a numerology product that generates personalized "
+     "readings from a structured calculation engine. Sold as a digital product.")
 line("LLM instruction systems  (2026)", bold=True, gap=2)
 line("Wrote large versioned instruction frameworks for language models, over "
      "10,000 words, with my own verification and audit checks built in. Heavy "
