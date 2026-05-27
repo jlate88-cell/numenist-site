@@ -8,6 +8,11 @@
             "type": "command",
             "command": "echo \"{\\\"hookSpecificOutput\\\":{\\\"hookEventName\\\":\\\"UserPromptSubmit\\\",\\\"additionalContext\\\":\\\"Current verified time at prompt submission (Atlanta EDT, user's local): $(TZ='America/New_York' date) | UTC: $(date -u)\\\"}}\"",
             "timeout": 5
+          },
+          {
+            "type": "command",
+            "command": "jq -Rs '{hookSpecificOutput:{hookEventName:\"UserPromptSubmit\",additionalContext:.}}' \"$CLAUDE_PROJECT_DIR/.claude/cosmological-directive.txt\"",
+            "timeout": 5
           }
         ]
       }
@@ -18,6 +23,11 @@
           {
             "type": "command",
             "command": "echo \"{\\\"hookSpecificOutput\\\":{\\\"hookEventName\\\":\\\"SessionStart\\\",\\\"additionalContext\\\":\\\"Session started. Current verified time (Atlanta EDT, user's local): $(TZ='America/New_York' date) | UTC: $(date -u). This time is injected at every UserPromptSubmit as well — never infer 'today' from stale context, master prompt compiled dates, or prior conversation. The verified timestamp is always above.\\\"}}\"",
+            "timeout": 5
+          },
+          {
+            "type": "command",
+            "command": "jq -Rs '{hookSpecificOutput:{hookEventName:\"SessionStart\",additionalContext:.}}' \"$CLAUDE_PROJECT_DIR/.claude/cosmological-directive.txt\"",
             "timeout": 5
           }
         ]
