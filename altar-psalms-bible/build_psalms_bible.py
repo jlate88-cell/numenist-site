@@ -237,6 +237,7 @@ story.append(P(
     'and this book honours that formula. It also honours the discernment that knows the formula is a wrapper, '
     'not an ID badge.',
     'body'))
+story.append(P('YHWH — the storm-god egregore (ancient)', 'h3'))
 story.append(P(
     'The archaeological record is clear: <b>YHWH</b> first appears in Egyptian topographical lists from '
     'about 1400 BCE — Soleb and Amara West — as "Yhw of the Shasu land," a regional storm-and-warrior deity '
@@ -245,33 +246,66 @@ story.append(P(
     'in storm-god grammar — earth quaking, heavens dropping rain, mountains melting. '
     'This is not the unconditioned Source. This is a powerful regional egregore later editorially fused with '
     '<b>El</b>, the Canaanite high god of the divine council at Ugarit, and elevated to sole-god status '
-    'by the seventh-century Deuteronomistic editors under Josiah.',
+    'by the seventh-century Deuteronomistic editors under Josiah. Ancient, real, operative — '
+    'but not the Monad.',
     'body'))
+
+story.append(P('Jehovah — the medieval Christian fabrication (not even ancient)', 'h3'))
+story.append(P(
+    '<b>"Jehovah" is not a divine name at all.</b> It is a 13th-century Christian Hebraist construction. '
+    'The Tetragrammaton YHWH was never vocalized in Jewish tradition — the Masoretes inserted the vowels '
+    'of <i>Adonai</i> ("my Lord") into the consonantal text as a <i>qere</i>, a reading instruction telling '
+    'the reader to say "Adonai" instead of attempting the unutterable Name. Medieval Christian Hebraists '
+    'misread this scribal apparatus as the actual vocalization and produced the hybrid <i>Yehowah</i> '
+    '(YHWH consonants + Adonai vowels).',
+    'body'))
+story.append(P(
+    'The Spanish Dominican friar <b>Raymundus Martini</b> introduced this form into Christian writing in his '
+    '<i>Pugio Fidei</i>, <b>1270 CE</b> — originally as <i>Yohoua</i>. The spelling <i>Jehova</i> appeared '
+    'only when <b>Joseph Voisin edited Martini\'s work in the 17th century</b>. The letter <b>J</b> itself '
+    'did not exist as a distinct character until <b>Gian Giorgio Trissino proposed it in 1524</b>; before '
+    'that, medieval Latin used a lengthened "I" for both vowel and consonant. The 1611 KJV still printed '
+    '<i>Iehouah</i>; the modern English "Jehovah" with the J only stabilized in the mid-17th century.',
+    'body'))
+story.append(P(
+    '<b>So "Jehovah" is barely 400 years old in its modern form, and the underlying concept</b> — combining '
+    'Adonai\'s vowels with YHWH\'s consonants — <b>is itself a 750-year-old Christian misreading of a '
+    'Jewish scribal mark.</b> No continuous lineage. No ancient referent. The Jehovah\'s Witness movement '
+    'and the entire Anglo-Protestant invocation of "Jehovah God" is a Christian-Hebraist artifact treated '
+    'as if it were a primordial Name. It is a manufactured egregore on top of an already-manufactured '
+    'composite of YHWH (storm god) and El (high god). Two layers of construction, one called "Jehovah."',
+    'body'))
+
+story.append(P('The Source — actual names, with lineage', 'h3'))
 story.append(P(
     'The <b>Monad</b> — the Hermetic <i>All</i>, the Gnostic Pleroma\'s source, the unconditioned ground — '
-    'is a different address. <b>Elyon</b> ("Most High"), the name Melchizedek used in Genesis 14 to bless '
-    'Abraham, names that address. So does <b>Yeshua</b> ("YHWH saves") — when he taught his disciples to '
-    'pray, he taught them to say <i>Abba</i>, not <i>YHWH</i>. So does <b>Ein Sof</b> in Kabbalah, the Source '
-    'beyond every name and every sefirah of the Tree.',
+    'is the actual Source address. <b>Elyon</b> ("Most High"), the name Melchizedek used in Genesis 14 to bless '
+    'Abraham <i>before</i> the later editorial fusion of Elyon with YHWH, names that address. '
+    'So does <b>Yeshua</b> ("YHWH saves") — when he taught his disciples to '
+    'pray, he taught them to say <i>Abba</i>, not <i>YHWH</i> and not <i>Jehovah</i>. So does <b>Ein Sof</b> '
+    'in Kabbalah, the Source beyond every name and every sefirah of the Tree.',
     'body'))
 
-story.append(P('Chaldean check on the names', 'h3'))
+story.append(P('Chaldean check on the names — by category, not by digit', 'h3'))
 story.append(P(
-    'Run the vibrations on the operative Source-names and the institutional names side by side:',
+    'Grouping by category surfaces the distinction. Reducing digits alone makes coincidences '
+    'look like equivalences — but a Source-name and an egregore-name that both reduce to the same final '
+    'digit do not share an address. The compound number and its Tarot correspondence carry the actual signal.',
     'body'))
 
-names_table = Table([
-    ['Name', 'Letters', 'Sum', 'Reduced', 'Tarot'],
-    ['ELYON', 'E(5) + L(3) + Y(1) + O(7) + N(5)', '21', '3', 'The World'],
-    ['MONAD', 'M(4) + O(7) + N(5) + A(1) + D(4)', '21', '3', 'The World'],
-    ['YESHUA', 'Y(1) + E(5) + S(3) + H(5) + U(6) + A(1)', '21', '3', 'The World'],
-    ['YHWH', 'Y(1) + H(5) + W(6) + H(5)', '17', '8', 'The Star'],
-    ['JEHOVAH', 'J(1) + E(5) + H(5) + O(7) + V(6) + A(1) + H(5)', '30', '3', '(reduces 3)'],
-], colWidths=[0.9*inch, 2.6*inch, 0.55*inch, 0.7*inch, 1.0*inch])
-names_table.setStyle(TableStyle([
+# Source names — grouped at top
+story.append(P('<b>Source-names</b> (continuous lineage to the unconditioned ground):', 'body'))
+src_table = Table([
+    ['Name', 'Letters', 'Compound', 'Reduced', 'Tarot'],
+    ['ELYON', 'E(5)+L(3)+Y(1)+O(7)+N(5)', '21', '3', 'The World'],
+    ['MONAD', 'M(4)+O(7)+N(5)+A(1)+D(4)', '21', '3', 'The World'],
+    ['YESHUA', 'Y(1)+E(5)+S(3)+H(5)+U(6)+A(1)', '21', '3', 'The World'],
+], colWidths=[0.9*inch, 2.4*inch, 0.75*inch, 0.7*inch, 1.0*inch])
+src_table.setStyle(TableStyle([
     ('FONT', (0,0), (-1,0), 'SerifBold', 10),
     ('FONT', (0,1), (-1,-1), 'Serif', 10),
     ('TEXTCOLOR', (0,0), (-1,0), ACCENT),
+    ('BACKGROUND', (0,1), (-1,-1), HexColor('#f5f1e4')),
     ('LINEBELOW', (0,0), (-1,0), 0.6, ACCENT),
     ('LINEBELOW', (0,1), (-1,-2), 0.2, HexColor('#d8d0c0')),
     ('VALIGN', (0,0), (-1,-1), 'MIDDLE'),
@@ -279,15 +313,45 @@ names_table.setStyle(TableStyle([
     ('TOPPADDING', (0,0), (-1,-1), 4),
     ('BOTTOMPADDING', (0,0), (-1,-1), 4),
 ]))
-story.append(names_table)
-story.append(spacer(8))
+story.append(src_table)
 story.append(P(
-    'ELYON, MONAD, and YESHUA share the same vibrational address — <b>21 / World</b>, reducing to 3. '
-    'The Tarot 21 is the completion card: the dancer in the wreath, the four kerubim at the corners, '
-    'the integrated cosmos. These three names are <i>name-faces of the same Source</i>. '
-    'YHWH at 17 / Star and Jehovah at 30 / 3 are different addresses — '
-    'the Star is real spiritual light, but it is not the All.',
-    'body'))
+    'All three hit <b>21 / The World</b> at the compound — the completion card, the dancer in the wreath, '
+    'the four kerubim at the corners, the fully integrated cosmos. Same vibrational address. '
+    'Same Source through three name-faces.',
+    'small'))
+story.append(spacer(8))
+
+# Egregore names — grouped separately, with provenance notes
+story.append(P('<b>Egregore-names</b> (powerful but not the Source — different addresses entirely):', 'body'))
+egr_table = Table([
+    ['Name', 'Letters', 'Compound', 'Reduced', 'Tarot / Note'],
+    ['YHWH', 'Y(1)+H(5)+W(6)+H(5)', '17', '8', 'The Star (ancient storm-god name, ~1400 BCE)'],
+    ['JEHOVAH', 'J(1)+E(5)+H(5)+O(7)+V(6)+A(1)+H(5)', '30', '3', 'No Tarot Major — name fabricated 1270 CE; J letter 1524 CE'],
+], colWidths=[0.9*inch, 2.4*inch, 0.75*inch, 0.7*inch, 2.7*inch])
+egr_table.setStyle(TableStyle([
+    ('FONT', (0,0), (-1,0), 'SerifBold', 10),
+    ('FONT', (0,1), (-1,-1), 'Serif', 9.5),
+    ('TEXTCOLOR', (0,0), (-1,0), ACCENT),
+    ('BACKGROUND', (0,1), (-1,-1), HexColor('#f1e8e0')),
+    ('LINEBELOW', (0,0), (-1,0), 0.6, ACCENT),
+    ('LINEBELOW', (0,1), (-1,-2), 0.2, HexColor('#d8d0c0')),
+    ('VALIGN', (0,0), (-1,-1), 'MIDDLE'),
+    ('LEFTPADDING', (0,0), (-1,-1), 6),
+    ('TOPPADDING', (0,0), (-1,-1), 4),
+    ('BOTTOMPADDING', (0,0), (-1,-1), 4),
+]))
+story.append(egr_table)
+story.append(P(
+    '<b>JEHOVAH\'s 30/3 reduction does <i>not</i> share an address with the Source-names\' 21/3.</b> '
+    'The reduction-to-3 by digit-sum is a coincidence of arithmetic; the compound number is what carries the '
+    'signal, and 30 (no major-arcana correspondence in the standard Chaldean-Tarot keying) is qualitatively '
+    'different from 21 (The World). Jehovah\'s additional disqualification: <b>it has no continuous lineage '
+    'at all.</b> Where YHWH at least anchors to an ancient regional storm-god name with 3,400 years of '
+    'historical use, Jehovah is a medieval Christian Hebraist artifact, a misreading of a scribal mark '
+    'rendered in a letter that did not yet exist. Two layers of fabrication. Operationally: '
+    '<b>do not invoke "Jehovah" thinking you are addressing the Source.</b> You are addressing a '
+    '750-year-old Christian-Hebraist construct.',
+    'small'))
 
 story.append(P('How to use the formula', 'h3'))
 story.append(P(
