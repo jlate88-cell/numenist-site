@@ -23,6 +23,11 @@
             "type": "command",
             "command": "jq -Rs '{hookSpecificOutput:{hookEventName:\"UserPromptSubmit\",additionalContext:.}}' \"$CLAUDE_PROJECT_DIR/.claude/no-assumptions-directive.txt\"",
             "timeout": 5
+          },
+          {
+            "type": "command",
+            "command": "jq -Rs '{hookSpecificOutput:{hookEventName:\"UserPromptSubmit\",additionalContext:.}}' \"$CLAUDE_PROJECT_DIR/.claude/provenance-directive.txt\"",
+            "timeout": 5
           }
         ]
       }
@@ -48,6 +53,11 @@
           {
             "type": "command",
             "command": "jq -Rs '{hookSpecificOutput:{hookEventName:\"SessionStart\",additionalContext:.}}' \"$CLAUDE_PROJECT_DIR/.claude/no-assumptions-directive.txt\"",
+            "timeout": 5
+          },
+          {
+            "type": "command",
+            "command": "jq -Rs '{hookSpecificOutput:{hookEventName:\"SessionStart\",additionalContext:.}}' \"$CLAUDE_PROJECT_DIR/.claude/provenance-directive.txt\"",
             "timeout": 5
           }
         ]
