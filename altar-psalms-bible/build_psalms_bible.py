@@ -1533,8 +1533,10 @@ story.append(P(
     'Two Ge\'ez gospel codices preserved at the Abba Garima monastery in Tigray, northern Ethiopia. '
     '<b>Radiocarbon dating at Oxford placed Garima 2 at approximately 390–570 CE and Garima 1 at '
     'approximately 530–660 CE.</b> Before this testing, Western scholars assumed they were medieval (~900 '
-    'years old). The actual dates make them <b>contemporary with or older than Codex Sinaiticus and Codex '
-    'Vaticanus.</b> Garima 2 is a candidate for the <b>earliest surviving complete illuminated Christian '
+    'years old). The actual dates make them <b>approximately contemporary with Codex Sinaiticus and Codex '
+    'Vaticanus</b> (both mid-4th c.) — Garima 2\'s earliest possible date (390 CE) lands within decades of '
+    'the great Greek codices. What distinguishes Garima 2 from them is that it is a candidate for the '
+    '<b>earliest surviving complete illuminated Christian '
     'manuscript on earth</b> — with evangelist portraits, canon tables, decorated headpieces. African '
     'Christians were producing fully illustrated bound Gospel books before the Lindisfarne Gospels were '
     'conceived — by at least 200 years.',
