@@ -612,22 +612,22 @@ story.append(P('Geneva Bible 1599 — Full Text', 'h2'))
 story.append(P('The Bible the Puritans and most pre-KJV English-speaking esotericists actually used. Pre-Jacobean. Lineage-faithful for Hoodoo working.', 'small'))
 story.append(spacer(4))
 for i, v in enumerate([
-    'Who so dwelleth in the secret of the most High, shall abide in the shadow of the Almighty.',
-    'I will say unto the Lord, O my hope, and my fortress: he is my God, in him will I trust.',
-    'Surely he will deliver thee from the snare of the hunter, and from the noisome pestilence.',
-    'He will cover thee under his wings, and thou shalt be sure under his feathers: his truth shall be thy shield and buckler.',
-    'Thou shalt not be afraid of the fear of the night: nor of the arrow that flieth by day:',
-    'Nor of the pestilence that walketh in the darkness: nor of the plague that destroyeth at noon day.',
-    'A thousand shall fall at thy side, and ten thousand at thy right hand, but it shall not come near thee.',
-    'Doubtless with thine eyes shalt thou behold and see the reward of the wicked.',
+    'Who so dwelleth in the secrete of the most High, shall abide in the shadowe of the Almightie.',
+    'I will say vnto the Lorde, O mine hope, and my fortresse: he is my God, in him will I trust.',
+    'Surely he will deliuer thee from the snare of the hunter, and from the noysome pestilence.',
+    'Hee will couer thee vnder his winges, and thou shalt be sure vnder his feathers: his trueth shall be thy shielde and buckler.',
+    'Thou shalt not be afraide of the feare of the night, nor of the arrowe that flyeth by day:',
+    'Nor of the pestilence that walketh in the darkenesse: nor of the plague that destroyeth at noone day.',
+    'A thousand shall fall at thy side, and tenne thousand at thy right hand, but it shall not come neere thee.',
+    'Doubtlesse with thine eyes shalt thou beholde and see the reward of the wicked.',
     'For thou hast said, The Lord is mine hope: thou hast set the most High for thy refuge.',
-    'There shall none evil come unto thee, neither shall any plague come near thy tabernacle.',
-    'For he shall give his Angels charge over thee to keep thee in all thy ways.',
-    'They shall bear thee in their hands, that thou hurt not thy foot against a stone.',
-    'Thou shalt walk upon the lion and asp: the young lion, and the <b>dragon</b> shalt thou tread under feet.',
-    'Because he hath loved me, therefore will I deliver him: I will exalt him because he hath known my Name.',
-    'He shall call upon me, and I will hear him: I will be with him in trouble: I will deliver him, and glorify him.',
-    'With long life will I satisfy him, and show him my salvation.',
+    'There shall none euill come vnto thee, neither shall any plague come neere thy tabernacle.',
+    'For hee shall giue his Angels charge ouer thee to keepe thee in all thy wayes.',
+    'They shall beare thee in their handes, that thou hurt not thy foote against a stone.',
+    'Thou shalt walke vpon the lyon and aspe: the yong lyon and the <b>dragon</b> shalt thou treade vnder feete.',
+    'Because he hath loued me, therefore will I deliuer him: I will exalt him because hee hath knowen my Name.',
+    'He shall call vpon me, and I wil heare him: I will be with him in trouble: I will deliuer him, and glorifie him.',
+    'With long life wil I satisfie him, and shew him my saluation.',
 ], start=1):
     story.append(verse_row(i, v))
 story.append(spacer(6))
@@ -640,12 +640,12 @@ story.append(pagebreak())
 
 story.append(P('Septuagint — Psalm 90, Brenton', 'h2'))
 for i, v in enumerate([
-    'He that dwells in the help of the Highest, shall sojourn under the shelter of the God of heaven.',
+    '[A Praise of a Song, by David.] He that dwells in the help of the Highest, shall sojourn under the shelter of the God of heaven.',
     'He shall say to the Lord, Thou art my helper and my refuge: my God; I will hope in him.',
     'For he shall deliver thee from the snare of the hunters, from every troublesome matter.',
     'He shall overshadow thee with his shoulders, and thou shalt trust under his wings: his truth shall cover thee with a shield.',
     'Thou shalt not be afraid of terror by night; nor of the arrow flying by day;',
-    'nor of the evil thing that walks in darkness; nor of calamity, and <b>the demon of noonday</b>.',
+    'nor of the evil thing that walks in darkness; nor of calamity, and <b>the evil spirit at noon-day</b>.',
     'A thousand shall fall at thy side, and ten thousand at thy right hand; but it shall not come nigh thee.',
     'Only with thine eyes shalt thou observe and see the reward of sinners.',
     'For thou, O Lord, art my hope: thou, my soul, hast made the Most High thy refuge.',
@@ -810,6 +810,15 @@ story.append(P(
     'kept these as Psalms of David. They were inside the working Psalter of the desert sect when Yeshua '
     'was alive.',
     'body'))
+story.append(P(
+    '<b>On the English text below.</b> Wright 1886 numbers these as Syriac Psalms II–V, with slightly '
+    'different ordering. The text presented in this book follows the modern Charlesworth/Sanders schema '
+    '(Psalms 152 = Wright IV, 153 = Wright V, 154 = Wright II, 155 = Wright III) and uses translation '
+    'choices documented in <i>Old Testament Pseudepigrapha</i> Vol. 2 (Charlesworth ed., 1985). For purely '
+    'period-faithful Wright 1886 wording, consult the tertullian.org transcription. The substance of each '
+    'psalm is the same; the diction differs slightly between editions. Use whichever your discernment lands '
+    'on as more lineage-faithful for the working at hand.',
+    'small'))
 story.append(pagebreak())
 
 # Psalm 152
