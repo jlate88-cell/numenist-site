@@ -1041,9 +1041,11 @@ story.append(P(
     'the central act of Kabbalistic prayer.',
     'body'))
 story.append(P(
-    'The four Names in verses 1–2 traverse the Tree from Keter (Elyon) down through Tiferet (YHWH), '
-    'Gevurah (Elohim), and Yesod (Shaddai) — <b>a complete vertical descent of the protective current.</b> '
-    'The reciter is not naming God four times; the reciter is <i>wiring a circuit</i>.',
+    'In one standard Kabbalistic mapping, the four Names in verses 1–2 traverse the Tree from Keter '
+    '(Elyon) down through Tiferet (YHWH), Gevurah/Binah (Elohim), and Yesod (Shaddai) — '
+    '<b>a vertical descent of the protective current.</b> '
+    'The reciter is not naming God four times; the reciter is <i>wiring a circuit</i>. '
+    '(The Elyon-Keter attribution is lineage-specific; the other three mappings are standard across Kabbalist schools.)',
     'body'))
 
 story.append(P('The Simple Chant for the Altar', 'h3'))
@@ -1496,7 +1498,7 @@ story.append(P(
 story.append(P(
     '<b>The Mudil Codex</b> (Coptic Museum Cairo, cat. 6614) is the load-bearing artifact. Discovered in '
     '1984 in a Coptic cemetery at al-Mudil, ~45 km from ancient Oxyrhynchus, placed as a <b>pillow</b> '
-    'beneath the head of an adolescent girl in her grave. 498 parchment folios. Late 4th / early 5th '
+    'beneath the head of an adolescent girl in her grave. 498 pages. Late 4th / early 5th '
     'century. <b>The oldest complete Coptic Psalter known.</b> Uniquely valuable: it descends from Greek '
     'manuscripts that <b>predate Origen\'s Hexapla</b> and the recensional corrections that reshaped the '
     'Greek text under Roman editorial pressure later. A window on what the Psalter looked like in Alexandria '
