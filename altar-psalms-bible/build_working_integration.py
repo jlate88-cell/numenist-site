@@ -415,8 +415,8 @@ story.append(L('WORK', 'The vv.14–16 first-person Source-promises are the clos
 story.append(L('KEEP', 'The verse is the reciprocal-cleaving Source-speech: <i>because he has clung to Me, I will deliver.</i> This is right-relationship — alignment is the condition, deliverance is the consequence. Speaking it back to oneself is the operative practice of remembering one\'s side of the cleaving. Monad-aligned.'))
 
 # Verse 15
-story.append(vh(15, 'He shall call vpon me, and I wil heare him: I will be with me in trouble: I will deliuer him, and glorifie him.'))
-story.append(L('TEXT', 'Geneva 1599 as above (note: the verse has been transcribed accurately from the existing build script). Hebrew: <i>yiqra\'eni v\'e\'enehu, immo anokhi v\'tzarah, achallatzehu v\'akhabbedehu</i>.'))
+story.append(vh(15, 'He shall call vpon me, and I wil heare him: I will be with him in trouble: I will deliuer him, and glorifie him.'))
+story.append(L('TEXT', 'Geneva 1599 as above. Hebrew: <i>yiqra\'eni v\'e\'enehu, immo anokhi v\'tzarah, achallatzehu v\'akhabbedehu</i>.'))
 story.append(L('HEB',  '<b>immo anokhi v\'tzarah</b> — "I am with him in distress." <i>anokhi</i> is the emphatic first-person — the same word that opens the Decalogue (<i>anokhi YHWH Elohekha</i>). Not the casual "I." The covenantal "I."'))
 story.append(L('KEEP', 'Pure presence-in-trouble promise. The Source is named as <i>with</i> the petitioner inside the distress, not as removing the distress. This is high-frequency — alignment doesn\'t mean exemption from the cut; alignment means companionship through it. Monad-aligned.'))
 
