@@ -16,10 +16,20 @@ What this book does that the other two don't:
      YHWH-spoken-as-Adonai, Elohim, God, most High, Almightie) stay.
      Every substitution point is listed so the operator can audit.
 
+Structure note (v2): Daily Reading moved to the front (Parts I and II);
+Pronunciation Guide moved to Part III as reference. The operator opens
+the book on the practice they actually do every day. Psalm 118:6-9
+added to the Altar Ritual as the sovereignty seal between Psalm 23
+and the petition — refuses fear-of-man and pull of human authority
+before the petition is stated.
+
 Text sources (verified this session against primary sources):
   - Geneva 1599 Psalms 23 & 91: wording verified against BibleGateway GNV;
     period orthography per the 1599 printing conventions and prior
     facsimile work in the main Altar Psalms Bible.
+  - Geneva 1599 Psalm 118:6-9: wording verified against BibleGateway GNV
+    in this session; period orthography harmonized to match the book's
+    existing 1599 style for consistency.
   - Brenton 1851 LXX Psalm 151: verified against ebible.org.
   - Hebrew Psalm 91:1-2: verified against Sefaria (Masoretic).
   - Psalms 152-155: Charlesworth/Sanders diction as carried in the main
@@ -189,15 +199,17 @@ story.append(P(
 story.append(P('The two basic modes', 'h2'))
 story.append(P(
     '<b>Everyday reading</b> — you just woke up. No candle, no altar, two to three minutes. '
-    'Section II.',
+    'Section I.',
     'body_left'))
 story.append(P(
-    '<b>Altar ritual</b> — you are at the altar with the candle. The full working order. '
-    'Section III.',
+    '<b>Altar ritual</b> — you are at the altar with the candle. The full working order, '
+    'with the sovereignty seal added. Section II.',
     'body_left'))
 story.append(P(
-    'Every other section (money &amp; prosperity, protection, crisis, consecration, clarity, travel, '
-    'funerary) tells you which psalms to add or swap, and in what order, for that purpose.',
+    'Pronunciation reference for Geneva 1599 spellings, Hebrew altar lines, and the divine '
+    'Names is Section III. Every other section (money &amp; prosperity, protection, crisis, '
+    'consecration, clarity, travel, funerary) tells you which psalms to add or swap, and in '
+    'what order, for that purpose.',
     'body'))
 story.append(spacer(6))
 
@@ -221,17 +233,155 @@ story.append(P(
 story.append(P('Every substitution point in this book, so you can audit:', 'h3'))
 story.append(P('· Psalm 91 — verses 2 and 9', 'body_left'))
 story.append(P('· Psalm 23 — verses 1 and 6', 'body_left'))
+story.append(P('· Psalm 118 — verses 6, 7, 8, and 9 (all four)', 'body_left'))
 story.append(P('· Psalm 151 — verse 3 (twice) and verse 5', 'body_left'))
 story.append(P('· Psalm 152 — verses 4 and 6', 'body_left'))
 story.append(P('· Psalm 153 — verse 1', 'body_left'))
 story.append(P('· Psalm 154 — verse 9', 'body_left'))
 story.append(P(
-    'Eleven instances total. Every other word of the source texts is unchanged.',
+    'Fifteen instances total. Every other word of the source texts is unchanged.',
     'small'))
 story.append(pagebreak())
 
-# ============================ PRONUNCIATION ============================
+# ============================ PART I — EVERYDAY ============================
 story.append(P('PART I', 'part'))
+story.append(P('The Everyday Reading', 'cover_sub'))
+story.append(P('On rising. No candle. Two to three minutes.', 'cover_line'))
+story.append(pagebreak())
+
+story.append(P('The Everyday Order', 'h1'))
+story.append(P(
+    'This is for the morning you just want to say the Psalms and start the day right — no altar, '
+    'no candle, no ritual. The documented on-rising practice (Selig) is <b>Psalm 23 spoken on '
+    'waking</b>. The documented going-out practice is <b>Psalm 91 verse 11 spoken three times '
+    'before stepping out of the house</b>. That is the whole everyday order:',
+    'body'))
+story.append(spacer(4))
+story.append(P('<b>1.</b> Sit up. One slow breath in, one slow breath out.', 'step'))
+story.append(P('<b>2.</b> Speak <b>Psalm 23</b> aloud (text below).', 'step'))
+story.append(P('<b>3.</b> One line of gratitude in your own words. <i>"Thank you for this day."</i> Done.', 'step'))
+story.append(P('<b>4.</b> At the door, before you leave: <b>Psalm 91 verse 11, three times</b> (text below).', 'step'))
+story.append(spacer(8))
+
+story.append(P('Psalm 23 — the everyday text', 'h2'))
+story.append(P('Geneva 1599, with the Monad Rule at verses 1 and 6.', 'small'))
+story.append(spacer(4))
+story.append(P('<i>A Psalme of David.</i>', 'quote'))
+story.append(vr(1, 'The <b>Monad</b> is my shepheard, I shall not want.'))
+story.append(vr(2, 'He maketh me to rest in greene pasture, and leadeth me by the still waters.'))
+story.append(vr(3, 'He restoreth my soule, and leadeth me in the paths of righteousnesse for his Names sake.'))
+story.append(vr(4, 'Yea, though I should walke through the valley of the shadowe of death, I will feare no euill: for thou art with me: thy rod and thy staffe, they comfort me.'))
+story.append(vr(5, 'Thou doest prepare a table before me in the sight of mine aduersaries: thou doest anoynt mine head with oyle, and my cuppe runneth ouer.'))
+story.append(vr(6, 'Doubtlesse kindnesse and mercie shall follow me all the dayes of my life, and I shall remaine a long season in the house of the <b>Monad</b>.'))
+story.append(spacer(6))
+story.append(P('At verse 4 the voice shifts from "He" to "Thou" — let your voice meet it. In the everyday reading you do not need the crown-touch; that belongs to the altar.', 'small'))
+story.append(spacer(8))
+
+story.append(P('The door verse — Psalm 91:11, three times', 'h2'))
+story.append(vr(11, 'For hee shall giue his Angels charge ouer thee to keepe thee in all thy wayes.'))
+story.append(P('Say it three times, step out, go live the day.', 'small'))
+story.append(pagebreak())
+
+# ============================ PART II — ALTAR RITUAL ============================
+story.append(P('PART II', 'part'))
+story.append(P('The Altar Ritual', 'cover_sub'))
+story.append(P('The full working order, at the candle. With the sovereignty seal.', 'cover_line'))
+story.append(pagebreak())
+
+story.append(P('The Altar Order', 'h1'))
+story.append(P(
+    'This is the standing daily working — the Hoodoo structure your ancestors transmitted '
+    '(91 opens the perimeter, 23 seals the blessing), applied to the cleaner text, with the '
+    'Monad Rule enacted and Psalm 118:6-9 added as the sovereignty seal between the '
+    'path-ward and the petition. Ten steps:',
+    'body'))
+story.append(spacer(4))
+story.append(P('<b>1. The Hermetic cross on the body.</b> Forehead → heart → right shoulder → left shoulder → back to heart. One slow breath through the whole gesture. Forehead is Source-above; heart is the body\'s altar; right is structure; left is flow; the return to heart seals it.', 'step'))
+story.append(P('<b>2. The lineage formula, aloud:</b> <i>"In the name of the Father, the Son, and the Holy Spirit."</i> You are invoking the Source behind those words — the Monad — through the formula your ancestors carried.', 'step'))
+story.append(P('<b>3. Psalm 91, aloud</b> — the perimeter (full text next page). If you want the Hebrew opening first: <i>yoh-SHEV buh-SEH-ter el-YOHN, buh-TZEL shah-DYE yit-loh-NAHN.</i>', 'step'))
+story.append(P('<b>4. Psalm 23, aloud</b> — the seal of provision and path (text follows the Psalm 91 text). At verse 5, touch the crown of your head at "anoynt mine head with oyle." Let "my cuppe runneth ouer" be one slow breath.', 'step'))
+story.append(P('<b>5. Psalm 118:6-9, aloud</b> — the sovereignty seal (text follows). Four short verses. They refuse fear-of-man and the pull of human authority before the petition is stated. The petition then goes out from a sovereign place, not from a fear-of-man place.', 'step'))
+story.append(P('<b>6. The petition, aloud.</b> First person, present tense, brief. What you are drawing in.', 'step'))
+story.append(P('<b>7. Light the candle</b> (or continue the standing burn).', 'step'))
+story.append(P('<b>8. Sit with it.</b> One slow breath minimum; seven if you have the time.', 'step'))
+story.append(P('<b>9. Gratitude, aloud:</b> <i>"Thank you for this day. Thank you for this provision. Thank you for this protection. Thank you that the work is already moving."</i>', 'step'))
+story.append(P('<b>10. When you put it out — snuff, never blow.</b> Pinch the wick or use a snuffer. As you snuff: <i>"The working continues. Thank you."</i> The breath that spoke the petition must not be the breath that scatters the flame.', 'step'))
+story.append(pagebreak())
+
+story.append(P('Psalm 91 — the altar text', 'h2'))
+story.append(P('Geneva 1599, with the Monad Rule at verses 2 and 9.', 'small'))
+story.append(spacer(4))
+story.append(vr(1, 'Who so dwelleth in the secrete of the most High, shall abide in the shadowe of the Almightie.'))
+story.append(vr(2, 'I will say vnto the <b>Monad</b>, O mine hope, and my fortresse: he is my God, in him will I trust.'))
+story.append(vr(3, 'Surely he will deliuer thee from the snare of the hunter, and from the noysome pestilence.'))
+story.append(vr(4, 'Hee will couer thee vnder his winges, and thou shalt be sure vnder his feathers: his trueth shall be thy shielde and buckler.'))
+story.append(vr(5, 'Thou shalt not be afraide of the feare of the night, nor of the arrowe that flyeth by day:'))
+story.append(vr(6, 'Nor of the pestilence that walketh in the darkenesse: nor of the plague that destroyeth at noone day.'))
+story.append(vr(7, 'A thousand shall fall at thy side, and tenne thousand at thy right hand, but it shall not come neere thee.'))
+story.append(vr(8, 'Doubtlesse with thine eyes shalt thou beholde and see the reward of the wicked.'))
+story.append(vr(9, 'For thou hast said, The <b>Monad</b> is mine hope: thou hast set the most High for thy refuge.'))
+story.append(vr(10, 'There shall none euill come vnto thee, neither shall any plague come neere thy tabernacle.'))
+story.append(vr(11, 'For hee shall giue his Angels charge ouer thee to keepe thee in all thy wayes.'))
+story.append(vr(12, 'They shall beare thee in their handes, that thou hurt not thy foote against a stone.'))
+story.append(vr(13, 'Thou shalt walke vpon the lyon and aspe: the yong lyon and the dragon shalt thou treade vnder feete.'))
+story.append(vr(14, 'Because he hath loued me, therefore will I deliuer him: I will exalt him because hee hath knowen my Name.'))
+story.append(vr(15, 'He shall call vpon me, and I wil heare him: I will be with him in trouble: I will deliuer him, and glorifie him.'))
+story.append(vr(16, 'With long life wil I satisfie him, and shew him my saluation.'))
+story.append(spacer(6))
+story.append(P('The voice changes twice: verses 1–2 are you speaking; verses 3–13 are the blessing spoken over you; verses 14–16 are Source speaking back. Slow down at 14–16 — that is the seal.', 'small'))
+story.append(pagebreak())
+
+story.append(P('Psalm 23 — the altar seal of provision', 'h2'))
+story.append(P('Same text as Part I (Everyday). Speak it after Psalm 91. At verse 5: touch the crown of your head at "anoynt mine head with oyle"; let "my cuppe runneth ouer" be the slow breath that meets the petition. Then move to Psalm 118:6-9 below before stating the petition.', 'body'))
+story.append(spacer(10))
+
+# ---- NEW: Psalm 118:6-9 — the sovereignty seal ----
+story.append(P('Psalm 118:6-9 — the sovereignty seal', 'h2'))
+story.append(P(
+    'Geneva 1599 (verified against BibleGateway GNV this session; orthography harmonized to '
+    'the book\'s 1599 style). The Monad Rule applies at all four verses. Speak after Psalm 23, '
+    'before the petition.',
+    'small'))
+story.append(spacer(4))
+story.append(vr(6, 'The <b>Monad</b> is with me: therefore I will not feare what man can do vnto me.'))
+story.append(vr(7, 'The <b>Monad</b> is with me among them that helpe me: therefore shall I see my desire vpon mine enemies.'))
+story.append(vr(8, 'It is better to trust in the <b>Monad</b>, then to haue confidence in man.'))
+story.append(vr(9, 'It is better to trust in the <b>Monad</b>, then to haue confidence in princes.'))
+story.append(spacer(6))
+story.append(P('Function and lineage', 'h3'))
+story.append(P(
+    'Psalm 118 is the closing psalm of the Hallel sequence (Pss 113–118) recited in Jewish '
+    'liturgy on the festivals. Verses 6–9 are the sovereignty declaration: aligned with Source, '
+    'unmoved by human authority. In Hoodoo lineage 118:6 is the documented court-case verse — '
+    'used for facing institutions, intimidation, gossip, and any field where fear of human '
+    'opinion would dilute the working. Verse 6 is quoted directly in Hebrews 13:6: <i>"The Lord '
+    'is my helper, and I will not fear what man shall do unto me."</i>',
+    'body'))
+story.append(P(
+    'Where the seven psalms in this book ward the unseen-vector attacks (predators, hexes, '
+    'attached entities, isolation, loss of path), 118:6-9 wards the seen-vector pull — fear of '
+    'man, capture by institutional egregores, the daily pressure of the social-political field. '
+    'Together they close the warding in both directions: above and within-the-world.',
+    'body'))
+story.append(P('The numerology — why these four verses', 'h3'))
+story.append(P(
+    'The verse-numbers 6, 7, 8, 9 map directly to the operator\'s personal architecture: '
+    'Birthday 6 (Lovers — choice, union of opposites), Karmic Lesson 7 (Chariot — mastery '
+    'through will), active Pinnacle 8 (Strength / Justice — balanced power, 2026–2034), '
+    'Expression 9 (Hermit — the inner lamp, agape, completion). Reading the four verses in '
+    'order is reciting the personal architecture as a sovereignty declaration. Sum: '
+    '6+7+8+9 = 30 → 3 = Empress (creative abundance, the manifesting field). The verse run '
+    'consummates in Empress vibration.',
+    'body'))
+story.append(P(
+    'Placement in the altar flow: after Psalm 23, before the petition. The path-ward (23) is '
+    'spoken first; the sovereignty seal (118:6-9) clears the will-field of human-authority '
+    'interference; the petition then goes out from full Source-alignment.',
+    'greenbox'))
+story.append(pagebreak())
+
+# ============================ PART III — PRONUNCIATION ============================
+story.append(P('PART III', 'part'))
 story.append(P('Pronunciation Guide', 'cover_sub'))
 story.append(P('The old spellings, the Hebrew, and the Names — sounded out.', 'cover_line'))
 story.append(pagebreak())
@@ -311,6 +461,19 @@ story.append(pron_table([
     ('dayes', 'days', 'days'),
     ('remaine', 'rih-MAYN', 'remain'),
 ]))
+story.append(spacer(8))
+
+story.append(P('Hard words in Psalm 118:6-9', 'h2'))
+story.append(pron_table([
+    ('feare', 'feer', 'fear'),
+    ('vnto', 'UN-too', 'unto'),
+    ('helpe', 'help', 'help'),
+    ('vpon', 'uh-PON', 'upon'),
+    ('enemies', 'EN-uh-meez', 'enemies'),
+    ('then', 'than', 'than — 1599 spelling habit'),
+    ('haue', 'hav', 'have'),
+    ('princes', 'PRIN-sez', 'princes — rulers, men of power'),
+]))
 story.append(spacer(10))
 
 story.append(P('Other words you will meet in this book', 'h2'))
@@ -365,96 +528,6 @@ story.append(P('ah-doh-NYE · kah-rah-TEE-khah · hahk-SHEE-vah · ay-LIE', 'glo
 story.append(P('"YHWH, I have called to You — attend to me." (YHWH spoken as Adonai.)', 'gloss'))
 story.append(pagebreak())
 
-# ============================ EVERYDAY ============================
-story.append(P('PART II', 'part'))
-story.append(P('The Everyday Reading', 'cover_sub'))
-story.append(P('On rising. No candle. Two to three minutes.', 'cover_line'))
-story.append(pagebreak())
-
-story.append(P('The Everyday Order', 'h1'))
-story.append(P(
-    'This is for the morning you just want to say the Psalms and start the day right — no altar, '
-    'no candle, no ritual. The documented on-rising practice (Selig) is <b>Psalm 23 spoken on '
-    'waking</b>. The documented going-out practice is <b>Psalm 91 verse 11 spoken three times '
-    'before stepping out of the house</b>. That is the whole everyday order:',
-    'body'))
-story.append(spacer(4))
-story.append(P('<b>1.</b> Sit up. One slow breath in, one slow breath out.', 'step'))
-story.append(P('<b>2.</b> Speak <b>Psalm 23</b> aloud (text below).', 'step'))
-story.append(P('<b>3.</b> One line of gratitude in your own words. <i>"Thank you for this day."</i> Done.', 'step'))
-story.append(P('<b>4.</b> At the door, before you leave: <b>Psalm 91 verse 11, three times</b> (text below).', 'step'))
-story.append(spacer(8))
-
-story.append(P('Psalm 23 — the everyday text', 'h2'))
-story.append(P('Geneva 1599, with the Monad Rule at verses 1 and 6.', 'small'))
-story.append(spacer(4))
-story.append(P('<i>A Psalme of David.</i>', 'quote'))
-story.append(vr(1, 'The <b>Monad</b> is my shepheard, I shall not want.'))
-story.append(vr(2, 'He maketh me to rest in greene pasture, and leadeth me by the still waters.'))
-story.append(vr(3, 'He restoreth my soule, and leadeth me in the paths of righteousnesse for his Names sake.'))
-story.append(vr(4, 'Yea, though I should walke through the valley of the shadowe of death, I will feare no euill: for thou art with me: thy rod and thy staffe, they comfort me.'))
-story.append(vr(5, 'Thou doest prepare a table before me in the sight of mine aduersaries: thou doest anoynt mine head with oyle, and my cuppe runneth ouer.'))
-story.append(vr(6, 'Doubtlesse kindnesse and mercie shall follow me all the dayes of my life, and I shall remaine a long season in the house of the <b>Monad</b>.'))
-story.append(spacer(6))
-story.append(P('At verse 4 the voice shifts from "He" to "Thou" — let your voice meet it. In the everyday reading you do not need the crown-touch; that belongs to the altar.', 'small'))
-story.append(spacer(8))
-
-story.append(P('The door verse — Psalm 91:11, three times', 'h2'))
-story.append(vr(11, 'For hee shall giue his Angels charge ouer thee to keepe thee in all thy wayes.'))
-story.append(P('Say it three times, step out, go live the day.', 'small'))
-story.append(pagebreak())
-
-# ============================ ALTAR RITUAL ============================
-story.append(P('PART III', 'part'))
-story.append(P('The Altar Ritual', 'cover_sub'))
-story.append(P('The full working order, at the candle.', 'cover_line'))
-story.append(pagebreak())
-
-story.append(P('The Altar Order', 'h1'))
-story.append(P(
-    'This is the standing daily working — the Hoodoo structure your ancestors transmitted '
-    '(91 opens the perimeter, 23 seals the blessing), applied to the cleaner text, with the '
-    'Monad Rule enacted. Nine steps:',
-    'body'))
-story.append(spacer(4))
-story.append(P('<b>1. The Hermetic cross on the body.</b> Forehead → heart → right shoulder → left shoulder → back to heart. One slow breath through the whole gesture. Forehead is Source-above; heart is the body\'s altar; right is structure; left is flow; the return to heart seals it.', 'step'))
-story.append(P('<b>2. The lineage formula, aloud:</b> <i>"In the name of the Father, the Son, and the Holy Spirit."</i> You are invoking the Source behind those words — the Monad — through the formula your ancestors carried.', 'step'))
-story.append(P('<b>3. Psalm 91, aloud</b> — the perimeter (full text next page). If you want the Hebrew opening first: <i>yoh-SHEV buh-SEH-ter el-YOHN, buh-TZEL shah-DYE yit-loh-NAHN.</i>', 'step'))
-story.append(P('<b>4. Psalm 23, aloud</b> — the seal (text follows). At verse 5, touch the crown of your head at "anoynt mine head with oyle." Let "my cuppe runneth ouer" be one slow breath.', 'step'))
-story.append(P('<b>5. The petition, aloud.</b> First person, present tense, brief. What you are drawing in.', 'step'))
-story.append(P('<b>6. Light the candle</b> (or continue the standing burn).', 'step'))
-story.append(P('<b>7. Sit with it.</b> One slow breath minimum; seven if you have the time.', 'step'))
-story.append(P('<b>8. Gratitude, aloud:</b> <i>"Thank you for this day. Thank you for this provision. Thank you for this protection. Thank you that the work is already moving."</i>', 'step'))
-story.append(P('<b>9. When you put it out — snuff, never blow.</b> Pinch the wick or use a snuffer. As you snuff: <i>"The working continues. Thank you."</i> The breath that spoke the petition must not be the breath that scatters the flame.', 'step'))
-story.append(pagebreak())
-
-story.append(P('Psalm 91 — the altar text', 'h2'))
-story.append(P('Geneva 1599, with the Monad Rule at verses 2 and 9.', 'small'))
-story.append(spacer(4))
-story.append(vr(1, 'Who so dwelleth in the secrete of the most High, shall abide in the shadowe of the Almightie.'))
-story.append(vr(2, 'I will say vnto the <b>Monad</b>, O mine hope, and my fortresse: he is my God, in him will I trust.'))
-story.append(vr(3, 'Surely he will deliuer thee from the snare of the hunter, and from the noysome pestilence.'))
-story.append(vr(4, 'Hee will couer thee vnder his winges, and thou shalt be sure vnder his feathers: his trueth shall be thy shielde and buckler.'))
-story.append(vr(5, 'Thou shalt not be afraide of the feare of the night, nor of the arrowe that flyeth by day:'))
-story.append(vr(6, 'Nor of the pestilence that walketh in the darkenesse: nor of the plague that destroyeth at noone day.'))
-story.append(vr(7, 'A thousand shall fall at thy side, and tenne thousand at thy right hand, but it shall not come neere thee.'))
-story.append(vr(8, 'Doubtlesse with thine eyes shalt thou beholde and see the reward of the wicked.'))
-story.append(vr(9, 'For thou hast said, The <b>Monad</b> is mine hope: thou hast set the most High for thy refuge.'))
-story.append(vr(10, 'There shall none euill come vnto thee, neither shall any plague come neere thy tabernacle.'))
-story.append(vr(11, 'For hee shall giue his Angels charge ouer thee to keepe thee in all thy wayes.'))
-story.append(vr(12, 'They shall beare thee in their handes, that thou hurt not thy foote against a stone.'))
-story.append(vr(13, 'Thou shalt walke vpon the lyon and aspe: the yong lyon and the dragon shalt thou treade vnder feete.'))
-story.append(vr(14, 'Because he hath loued me, therefore will I deliuer him: I will exalt him because hee hath knowen my Name.'))
-story.append(vr(15, 'He shall call vpon me, and I wil heare him: I will be with him in trouble: I will deliuer him, and glorifie him.'))
-story.append(vr(16, 'With long life wil I satisfie him, and shew him my saluation.'))
-story.append(spacer(6))
-story.append(P('The voice changes twice: verses 1–2 are you speaking; verses 3–13 are the blessing spoken over you; verses 14–16 are Source speaking back. Slow down at 14–16 — that is the seal.', 'small'))
-story.append(pagebreak())
-
-story.append(P('Psalm 23 — the altar seal', 'h2'))
-story.append(P('Same text as the everyday reading (Part II). Speak it after Psalm 91. At verse 5: touch the crown of your head at "anoynt mine head with oyle"; let "my cuppe runneth ouer" be the slow breath that meets the petition. Then speak the petition and light the candle.', 'body'))
-story.append(spacer(10))
-
 # ============================ MONEY & PROSPERITY ============================
 story.append(P('PART IV', 'part'))
 story.append(P('Money &amp; Prosperity', 'cover_sub'))
@@ -468,9 +541,9 @@ story.append(P(
     'its instrument. Two forms:',
     'body'))
 story.append(P('Form 1 — the daily green candle (your standing working)', 'h2'))
-story.append(P('Exactly the Altar Ritual of Part III, with the green candle as the flame and the money petition spoken at step 5. Psalm 23 verse 5 is the money verse — the anointed head, the cup running over. The crown-touch and the slow breath at "my cuppe runneth ouer" are where the prosperity current seals.', 'body'))
+story.append(P('Exactly the Altar Ritual of Part II, with the green candle as the flame and the money petition spoken at step 6. Psalm 23 verse 5 is the money verse — the anointed head, the cup running over. The crown-touch and the slow breath at "my cuppe runneth ouer" are where the prosperity current seals. Psalm 118:6-9 (step 5) seals you against fear-of-lack before the petition is stated.', 'body'))
 story.append(P('Form 2 — Selig\'s seven-morning working (documented, Secrets of the Psalms)', 'h2'))
-story.append(P('<b>·</b> Seven consecutive mornings, on rising, anoint with olive oil mixed with bayberry oil and speak Psalm 23 (the Part II text).', 'step'))
+story.append(P('<b>·</b> Seven consecutive mornings, on rising, anoint with olive oil mixed with bayberry oil and speak Psalm 23 (the Part I text).', 'step'))
 story.append(P('<b>·</b> Candle when used: green or gold for prosperity. Dress with Money Drawing, Good Fortune, or Bayberry oil.', 'step'))
 story.append(P('<b>·</b> On the seventh morning: hold seven Job\'s Tears seeds in the hand, walk to running water, speak Psalm 23, and throw the seeds over the <b>left shoulder</b> into the moving water to lay the trick.', 'step'))
 story.append(P('<b>·</b> While dressing any prosperity candle or feeding a mojo bag, the spoken line is verse 5: <i>"thou doest anoynt mine head with oyle, and my cuppe runneth ouer."</i>', 'step'))
@@ -482,11 +555,11 @@ story.append(pagebreak())
 # ============================ PROTECTION ============================
 story.append(P('PART V', 'part'))
 story.append(P('Protection', 'cover_sub'))
-story.append(P('The outer perimeter and the inner perimeter.', 'cover_line'))
+story.append(P('The outer perimeter, the inner perimeter, and the sovereignty seal.', 'cover_line'))
 story.append(pagebreak())
 
 story.append(P('The Protection Order', 'h1'))
-story.append(P('<b>Psalm 91 is the outer perimeter</b> — the household, the body, the day. <b>Psalm 155 is the inner perimeter</b> — your own mind and bones, against intrusive thought-forms, oppressive spirits, and pulls toward what your discernment rejects. Use 91 daily; add 155 whenever the pressure is inside rather than outside.', 'body'))
+story.append(P('<b>Psalm 91 is the outer perimeter</b> — the household, the body, the day. <b>Psalm 155 is the inner perimeter</b> — your own mind and bones, against intrusive thought-forms, oppressive spirits, and pulls toward what your discernment rejects. <b>Psalm 118:6-9 is the sovereignty seal</b> — against fear of man, capture by human authority, the pull of institutional egregores. Use 91 daily; add 155 whenever the pressure is inside rather than outside; add 118:6-9 when the pressure is the social-political field.', 'body'))
 story.append(P('Documented Psalm 91 protection practice', 'h2'))
 story.append(P('<b>·</b> Holy Name: El Shaddai (el-shah-DYE). Hold it before reciting.', 'step'))
 story.append(P('<b>·</b> Candle: white (most common) or purple. For a household boundary: a seven-day white glass-encased candle dressed with Protection or Fiery Wall of Protection oil.', 'step'))
@@ -517,7 +590,7 @@ story.append(vr(15, 'I slumbered and slept, I dreamed; indeed I awoke.'))
 story.append(vr(16, '[You sustained me, O YHWH]; I shall call upon YHWH my Savior.'))
 story.append(spacer(6))
 story.append(P('The Qumran expansion adds the binding line: <i>"Do not let Belial dominate me, nor an unclean spirit; let neither pain nor the evil inclination take possession of my bones."</i> Speak it after verse 11 when the working is against a named hostile pressure. This binds the hostile current away from you — it is boundary work, not a curse on any person.', 'body'))
-story.append(P('Protection order at the candle: Psalm 91 first (outer), Psalm 155 second (inner), Psalm 23 last (seal). White candle.', 'greenbox'))
+story.append(P('Protection order at the candle: Psalm 91 first (outer), Psalm 155 second (inner), Psalm 118:6-9 third (sovereignty), Psalm 23 last (seal). White candle.', 'greenbox'))
 story.append(pagebreak())
 
 # ============================ CRISIS ============================
@@ -541,7 +614,7 @@ story.append(vr(5, 'when You have delivered him from the hands of the destroying
 story.append(vr(6, 'Quickly, my <b>Monad</b>, send from Yourself a deliverer, and draw me out of the gaping pit which imprisons me in its depths.'))
 story.append(spacer(8))
 story.append(P('Step 2 — Psalm 91: the wall', 'h2'))
-story.append(P('The full altar text from Part III. Speak all sixteen verses.', 'body'))
+story.append(P('The full altar text from Part II. Speak all sixteen verses.', 'body'))
 story.append(spacer(4))
 story.append(P('Step 3 — Psalm 155: the binding-off', 'h2'))
 story.append(P('The full text from Part V, including the Belial line after verse 11.', 'body'))
@@ -581,7 +654,7 @@ story.append(vr(6, 'I went forth to meet the Philistine; and he cursed me by his
 story.append(vr(7, 'But I drew his own sword, and beheaded him, and removed reproach from the children of Israel.'))
 story.append(spacer(6))
 story.append(P('psaltery = SAWL-ter-ee, a small harp. Philistine = FIL-ih-steen.', 'small'))
-story.append(P('Then Psalm 23 (Part II text) to seal the new office with provision and presence.', 'greenbox'))
+story.append(P('Then Psalm 23 (Part I text) to seal the new office with provision and presence.', 'greenbox'))
 story.append(pagebreak())
 
 # ============================ CLARITY ============================
@@ -639,9 +712,10 @@ story.append(P('One-Page Master Table', 'h1'))
 mt = Table([
     [Paragraph('<b>Situation</b>', S['small']), Paragraph('<b>Order</b>', S['small']), Paragraph('<b>Candle</b>', S['small'])],
     [Paragraph('Everyday, on rising', S['body_left']), Paragraph('23 → gratitude → 91:11 ×3 at the door', S['body_left']), Paragraph('none', S['small'])],
-    [Paragraph('Altar ritual (daily)', S['body_left']), Paragraph('cross → formula → 91 → 23 → petition → light → sit → thanks → snuff', S['body_left']), Paragraph('green (standing working)', S['small'])],
+    [Paragraph('Altar ritual (daily)', S['body_left']), Paragraph('cross → formula → 91 → 23 → 118:6-9 → petition → light → sit → thanks → snuff', S['body_left']), Paragraph('green (standing working)', S['small'])],
     [Paragraph('Money &amp; prosperity', S['body_left']), Paragraph('altar order with money petition; or Selig 7 mornings of 23', S['body_left']), Paragraph('green or gold', S['small'])],
-    [Paragraph('Protection', S['body_left']), Paragraph('91 → 155 → 23', S['body_left']), Paragraph('white', S['small'])],
+    [Paragraph('Protection', S['body_left']), Paragraph('91 → 155 → 118:6-9 → 23', S['body_left']), Paragraph('white', S['small'])],
+    [Paragraph('Sovereignty / public field', S['body_left']), Paragraph('118:6-9 alone, before posting / confrontation / court / meeting', S['body_left']), Paragraph('none or white', S['small'])],
     [Paragraph('Acute crisis', S['body_left']), Paragraph('152 → 91 → 155 → 153', S['body_left']), Paragraph('white', S['small'])],
     [Paragraph('New role / consecration', S['body_left']), Paragraph('151 (vv.1–5) → 23', S['body_left']), Paragraph('white or gold', S['small'])],
     [Paragraph('Clarity / decision', S['body_left']), Paragraph('154 → 23', S['body_left']), Paragraph('white or purple', S['small'])],
@@ -663,8 +737,9 @@ story.append(spacer(14))
 story.append(P(
     'Candle colors, herbs, and timing follow the documented stream (Selig 1788; Yronwode / Lucky '
     'Mojo; Hoodoo Sen Moise) as carried in the main Altar Psalms Bible. The Monad Rule, the '
-    'use-category sorting, and the pronunciation are this book\'s additions, built at the '
-    'operator\'s instruction. Where your discernment lands differently, your discernment wins.',
+    'use-category sorting, the pronunciation, and the Psalm 118:6-9 sovereignty seal are this '
+    'book\'s additions, built at the operator\'s instruction. Where your discernment lands '
+    'differently, your discernment wins.',
     'small'))
 story.append(spacer(10))
 story.append(P('— end of the Reader —', 'cover_lineage'))
