@@ -16,12 +16,14 @@ What this book does that the other two don't:
      YHWH-spoken-as-Adonai, Elohim, God, most High, Almightie) stay.
      Every substitution point is listed so the operator can audit.
 
-Structure note (v2): Daily Reading moved to the front (Parts I and II);
-Pronunciation Guide moved to Part III as reference. The operator opens
-the book on the practice they actually do every day. Psalm 118:6-9
-added to the Altar Ritual as the sovereignty seal between Psalm 23
-and the petition — refuses fear-of-man and pull of human authority
-before the petition is stated.
+Structure note (v3): Daily Reading at the front (Parts I and II);
+Pronunciation Guide as Part III reference. Psalm 118:6-9 sovereignty
+seal between Psalm 23 and petition. Psalm 35:1-10 first-sign enemies/
+court order in Part VI. Monad Rule extended to gendered pronouns —
+"he/him/his" referring to the Monad now reads "the Monad" or "the
+Monad's"; the Monad is the Unmanifest, not on the gender spectrum.
+Yellow inline highlight for every archaic Geneva word so the eye
+tracks pronunciation in-place; reference tables retained in Part III.
 
 Text sources (verified this session against primary sources):
   - Geneva 1599 Psalms 23 & 91: wording verified against BibleGateway GNV;
@@ -145,6 +147,133 @@ def pagebreak():
 def vr(num, txt):
     return Paragraph(f'<b>{num}.</b> {txt}', S['speak'])
 
+# Inline yellow-highlighted pronunciation gloss for archaic words.
+# Apply each gloss to the FIRST occurrence in the verse only — once the eye
+# has seen it, the rest of the verse can read past it.
+GLOSS_BG = "#ffeb80"   # highlighter yellow
+GLOSS_FG = "#5a4a1a"   # dark amber text for contrast on the yellow
+
+import re as _re
+def gloss_text(txt, glosses):
+    out = txt
+    for word, pron in glosses:
+        marker = f'{word} <font backColor="{GLOSS_BG}" color="{GLOSS_FG}">[{pron}]</font>'
+        pattern = r'\b' + _re.escape(word) + r'\b'
+        out, n = _re.subn(pattern, marker, out, count=1)
+    return out
+
+def vrg(num, txt, glosses):
+    return Paragraph(f'<b>{num}.</b> {gloss_text(txt, glosses)}', S['speak'])
+
+# Geneva 1599 pronunciation tables for inline gloss. Order matters: longer
+# phrases first so they win before sub-strings can match.
+P91_GLOSS = [
+    ('noone day', 'NOON day'),
+    ('runneth ouer', 'RUN-uth OH-ver'),
+    ('dwelleth', 'DWELL-uth'),
+    ('secrete', 'SEE-kret'),
+    ('Almightie', 'all-MY-tee'),
+    ('shadowe', 'SHAD-oh'),
+    ('fortresse', 'FOR-tres'),
+    ('deliuer', 'dih-LIV-er'),
+    ('noysome', 'NOY-sum'),
+    ('pestilence', 'PES-tih-lens'),
+    ('couer', 'KUV-er'),
+    ('trueth', 'trooth'),
+    ('shielde', 'sheeld'),
+    ('buckler', 'BUK-ler'),
+    ('afraide', 'uh-FRAYD'),
+    ('feare', 'feer'),
+    ('flyeth', 'FLY-uth'),
+    ('darkenesse', 'DARK-nes'),
+    ('destroyeth', 'dih-STROY-uth'),
+    ('Doubtlesse', 'DOWT-les'),
+    ('beholde', 'bee-HOHLD'),
+    ('tabernacle', 'TAB-er-nak-ul'),
+    ('tenne', 'ten'),
+    ('neere', 'neer'),
+    ('euill', 'EE-vul'),
+    ('giue', 'giv'),
+    ('wayes', 'ways'),
+    ('beare', 'bair'),
+    ('foote', 'fuut'),
+    ('treade', 'tred'),
+    ('lyon', 'LY-un'),
+    ('aspe', 'asp'),
+    ('walke', 'wawk'),
+    ('vpon', 'uh-PON'),
+    ('vnto', 'UN-too'),
+    ('vnder', 'UN-der'),
+    ('ouer', 'OH-ver'),
+    ('loued', 'luvd'),
+    ('knowen', 'NOH-un'),
+    ('heare', 'heer'),
+    ('glorifie', 'GLOR-ih-fy'),
+    ('satisfie', 'SAT-is-fy'),
+    ('saluation', 'sal-VAY-shun'),
+    ('shew', 'shoh'),
+]
+
+P23_GLOSS = [
+    ('runneth ouer', 'RUN-uth OH-ver'),
+    ('Names sake', 'NAYMZ sayk'),
+    ('shepheard', 'SHEP-erd'),
+    ('greene', 'green'),
+    ('soule', 'sohl'),
+    ('righteousnesse', 'RY-chus-nes'),
+    ('shadowe', 'SHAD-oh'),
+    ('walke', 'wawk'),
+    ('feare', 'feer'),
+    ('euill', 'EE-vul'),
+    ('staffe', 'staf'),
+    ('doest', 'DOO-est'),
+    ('aduersaries', 'AD-ver-sair-eez'),
+    ('anoynt', 'uh-NOYNT'),
+    ('oyle', 'oyl'),
+    ('cuppe', 'kup'),
+    ('Doubtlesse', 'DOWT-les'),
+    ('kindnesse', 'KYND-nes'),
+    ('mercie', 'MER-see'),
+    ('dayes', 'days'),
+    ('remaine', 'rih-MAYN'),
+]
+
+P118_GLOSS = [
+    ('feare', 'feer'),
+    ('vnto', 'UN-too'),
+    ('helpe', 'help'),
+    ('vpon', 'uh-PON'),
+    ('enemies', 'EN-uh-meez'),
+    ('then', 'than'),
+    ('haue', 'hav'),
+    ('princes', 'PRIN-sez'),
+]
+
+P35_GLOSS = [
+    ('striue', 'stryv'),
+    ('shielde', 'sheeld'),
+    ('buckler', 'BUK-ler'),
+    ('speare', 'speer'),
+    ('soule', 'sohl'),
+    ('saluation', 'sal-VAY-shun'),
+    ('confounded', 'kon-FOWN-ded'),
+    ('chaffe', 'chaf'),
+    ('slipperie', 'SLIP-er-ee'),
+    ('vnawares', 'un-uh-WAIRZ'),
+    ('priuily', 'PRIV-ih-lee'),
+    ('joyfull', 'JOY-ful'),
+    ('rejoyce', 'rih-JOYS'),
+    ('deliuerest', 'dih-LIV-er-est'),
+    ('miserie', 'MIZ-er-ee'),
+    ('spoileth', 'SPOYL-uth'),
+    ('vpon', 'uh-PON'),
+    ('vnto', 'UN-too'),
+    ('vp', 'up'),
+    ('haue', 'hav'),
+    ('poore', 'poor'),
+    ('helpe', 'help'),
+]
+
 def pron_table(rows, widths=None):
     if widths is None:
         widths = [1.5*inch, 1.7*inch, 3.0*inch]
@@ -224,24 +353,48 @@ story.append(P(
 story.append(P(
     'Why: "Lord" is a title, not a Name. It translates Hebrew <i>Adonai</i>, Greek <i>Kyrios</i>, '
     'Latin <i>Dominus</i> — and at the linguistic level it is the same word as <i>Ba\'al</i> '
-    '(lord/master). Hosea 2:16 itself records Source saying: <i>"You will call Me Ishi, and no '
+    '(lord/master). Hosea 2:16 itself records the Monad saying: <i>"You will call Me Ishi, and no '
     'more will you call Me Baali"</i> (verified against the Hebrew at Sefaria). Chaldean: '
     'LORD = 16/7 — the Tower, a karmic-debt number. MONAD = 21/3 — the World, the completion '
     'arcana, the same 21 carried by YESHUA and ELYON. The substitution moves the spoken text '
     'from the Tower vibration to the World vibration.',
     'body'))
-story.append(P('Every substitution point in this book, so you can audit:', 'h3'))
-story.append(P('· Psalm 91 — verses 2 and 9', 'body_left'))
-story.append(P('· Psalm 23 — verses 1 and 6', 'body_left'))
-story.append(P('· Psalm 35 — verses 1, 5, 6, 9, and 10', 'body_left'))
-story.append(P('· Psalm 118 — verses 6, 7, 8, and 9 (all four)', 'body_left'))
-story.append(P('· Psalm 151 — verse 3 (twice) and verse 5', 'body_left'))
-story.append(P('· Psalm 152 — verses 4 and 6', 'body_left'))
-story.append(P('· Psalm 153 — verse 1', 'body_left'))
-story.append(P('· Psalm 154 — verse 9', 'body_left'))
+story.append(P('The Pronoun Extension', 'h3'))
 story.append(P(
-    'Twenty instances total. Every other word of the source texts is unchanged.',
+    'The Monad has no gender. The Monad is the Unmanifest, the source from which polarity '
+    '(including the principle of Gender) emanates — it is not on the spectrum, it generates the '
+    'spectrum. The masculine pronouns "he/him/his" in the Geneva text are translation artifacts '
+    'inherited from grammatically-gendered Hebrew (no neuter), carried through Greek and Latin, '
+    'then hardened into doctrinal masculine deity by patriarchal church structures. The same '
+    'editorial-control pattern that gave us "Lord" gave us "He." Both are removed here.',
+    'body'))
+story.append(P(
+    'Wherever the Geneva 1599 used "he/him/his" referring to the Monad, this book reads '
+    '<b>"the Monad"</b> or <b>"the Monad\'s"</b>. Specific emanations of the Monad that carry '
+    'gender by lineage attestation (Sophia / Ruach HaKodesh — She; the Father-current of the '
+    'lineage formula — He) keep their pronouns where they are specifically invoked. Pronouns '
+    'referring to the human operator are left in their inherited form.',
+    'body'))
+story.append(P('Every substitution point in this book, so you can audit:', 'h3'))
+story.append(P('· Psalm 91 — LORD→Monad at vv.2, 9; pronoun→Monad at vv.2 (×2), 3, 4 (×4), 11 (×2)', 'body_left'))
+story.append(P('· Psalm 23 — LORD→Monad at vv.1, 6; pronoun→Monad at vv.2, 3 (×2)', 'body_left'))
+story.append(P('· Psalm 35 — LORD→Monad at vv.1, 5, 6, 9, 10; pronoun→Monad at v.9', 'body_left'))
+story.append(P('· Psalm 118 — LORD→Monad at vv.6, 7, 8, 9 (all four)', 'body_left'))
+story.append(P('· Psalm 151 — LORD→Monad at v.3 (×2), v.5', 'body_left'))
+story.append(P('· Psalm 152 — LORD→Monad at vv.4, 6', 'body_left'))
+story.append(P('· Psalm 153 — LORD→Monad at v.1', 'body_left'))
+story.append(P('· Psalm 154 — LORD→Monad at v.9', 'body_left'))
+story.append(P(
+    'Twenty title substitutions plus thirteen pronoun substitutions: thirty-three total. Every other '
+    'word of the source texts is unchanged.',
     'small'))
+story.append(P('The Yellow Highlights', 'h3'))
+story.append(P(
+    'Every archaic Geneva 1599 word that does not pronounce as modern English carries a '
+    '<font backColor="#ffeb80" color="#5a4a1a">[YELLOW BRACKET]</font> right next to it the '
+    'first time it appears in each verse. Eyes track the highlight; never flip pages to find a '
+    'pronunciation. The reference tables in Part III remain available for full lookups.',
+    'body'))
 story.append(pagebreak())
 
 # ============================ PART I — EVERYDAY ============================
@@ -268,12 +421,12 @@ story.append(P('Psalm 23 — the everyday text', 'h2'))
 story.append(P('Geneva 1599, with the Monad Rule at verses 1 and 6.', 'small'))
 story.append(spacer(4))
 story.append(P('<i>A Psalme of David.</i>', 'quote'))
-story.append(vr(1, 'The <b>Monad</b> is my shepheard, I shall not want.'))
-story.append(vr(2, 'He maketh me to rest in greene pasture, and leadeth me by the still waters.'))
-story.append(vr(3, 'He restoreth my soule, and leadeth me in the paths of righteousnesse for his Names sake.'))
-story.append(vr(4, 'Yea, though I should walke through the valley of the shadowe of death, I will feare no euill: for thou art with me: thy rod and thy staffe, they comfort me.'))
-story.append(vr(5, 'Thou doest prepare a table before me in the sight of mine aduersaries: thou doest anoynt mine head with oyle, and my cuppe runneth ouer.'))
-story.append(vr(6, 'Doubtlesse kindnesse and mercie shall follow me all the dayes of my life, and I shall remaine a long season in the house of the <b>Monad</b>.'))
+story.append(vrg(1, 'The <b>Monad</b> is my shepheard, I shall not want.', P23_GLOSS))
+story.append(vrg(2, 'The <b>Monad</b> maketh me to rest in greene pasture, and leadeth me by the still waters.', P23_GLOSS))
+story.append(vrg(3, 'The <b>Monad</b> restoreth my soule, and leadeth me in the paths of righteousnesse for the <b>Monad\'s</b> Names sake.', P23_GLOSS))
+story.append(vrg(4, 'Yea, though I should walke through the valley of the shadowe of death, I will feare no euill: for thou art with me: thy rod and thy staffe, they comfort me.', P23_GLOSS))
+story.append(vrg(5, 'Thou doest prepare a table before me in the sight of mine aduersaries: thou doest anoynt mine head with oyle, and my cuppe runneth ouer.', P23_GLOSS))
+story.append(vrg(6, 'Doubtlesse kindnesse and mercie shall follow me all the dayes of my life, and I shall remaine a long season in the house of the <b>Monad</b>.', P23_GLOSS))
 story.append(spacer(6))
 story.append(P('At verse 4 the voice shifts from "He" to "Thou" — let your voice meet it. In the everyday reading you do not need the crown-touch; that belongs to the altar.', 'small'))
 story.append(spacer(8))
@@ -297,8 +450,8 @@ story.append(P(
     'path-ward and the petition. Ten steps:',
     'body'))
 story.append(spacer(4))
-story.append(P('<b>1. The Hermetic cross on the body.</b> Forehead → heart → right shoulder → left shoulder → back to heart. One slow breath through the whole gesture. Forehead is Source-above; heart is the body\'s altar; right is structure; left is flow; the return to heart seals it.', 'step'))
-story.append(P('<b>2. The lineage formula, aloud:</b> <i>"In the name of the Father, the Son, and the Holy Spirit."</i> You are invoking the Source behind those words — the Monad — through the formula your ancestors carried.', 'step'))
+story.append(P('<b>1. The Hermetic cross on the body.</b> Forehead → heart → right shoulder → left shoulder → back to heart. One slow breath through the whole gesture. Forehead is the Monad above; heart is the body\'s altar; right is structure; left is flow; the return to heart seals it.', 'step'))
+story.append(P('<b>2. The lineage formula, aloud:</b> <i>"In the name of the Father, the Son, and the Holy Spirit."</i> You are invoking the Monad behind those words — not the institutional egregore — through the formula your ancestors carried.', 'step'))
 story.append(P('<b>3. Psalm 91, aloud</b> — the perimeter (full text next page). If you want the Hebrew opening first: <i>yoh-SHEV buh-SEH-ter el-YOHN, buh-TZEL shah-DYE yit-loh-NAHN.</i>', 'step'))
 story.append(P('<b>4. Psalm 23, aloud</b> — the seal of provision and path (text follows the Psalm 91 text). At verse 5, touch the crown of your head at "anoynt mine head with oyle." Let "my cuppe runneth ouer" be one slow breath.', 'step'))
 story.append(P('<b>5. Psalm 118:6-9, aloud</b> — the sovereignty seal (text follows). Four short verses. They refuse fear-of-man and the pull of human authority before the petition is stated. The petition then goes out from a sovereign place, not from a fear-of-man place.', 'step'))
@@ -312,24 +465,24 @@ story.append(pagebreak())
 story.append(P('Psalm 91 — the altar text', 'h2'))
 story.append(P('Geneva 1599, with the Monad Rule at verses 2 and 9.', 'small'))
 story.append(spacer(4))
-story.append(vr(1, 'Who so dwelleth in the secrete of the most High, shall abide in the shadowe of the Almightie.'))
-story.append(vr(2, 'I will say vnto the <b>Monad</b>, O mine hope, and my fortresse: he is my God, in him will I trust.'))
-story.append(vr(3, 'Surely he will deliuer thee from the snare of the hunter, and from the noysome pestilence.'))
-story.append(vr(4, 'Hee will couer thee vnder his winges, and thou shalt be sure vnder his feathers: his trueth shall be thy shielde and buckler.'))
-story.append(vr(5, 'Thou shalt not be afraide of the feare of the night, nor of the arrowe that flyeth by day:'))
-story.append(vr(6, 'Nor of the pestilence that walketh in the darkenesse: nor of the plague that destroyeth at noone day.'))
-story.append(vr(7, 'A thousand shall fall at thy side, and tenne thousand at thy right hand, but it shall not come neere thee.'))
-story.append(vr(8, 'Doubtlesse with thine eyes shalt thou beholde and see the reward of the wicked.'))
-story.append(vr(9, 'For thou hast said, The <b>Monad</b> is mine hope: thou hast set the most High for thy refuge.'))
-story.append(vr(10, 'There shall none euill come vnto thee, neither shall any plague come neere thy tabernacle.'))
-story.append(vr(11, 'For hee shall giue his Angels charge ouer thee to keepe thee in all thy wayes.'))
-story.append(vr(12, 'They shall beare thee in their handes, that thou hurt not thy foote against a stone.'))
-story.append(vr(13, 'Thou shalt walke vpon the lyon and aspe: the yong lyon and the dragon shalt thou treade vnder feete.'))
-story.append(vr(14, 'Because he hath loued me, therefore will I deliuer him: I will exalt him because hee hath knowen my Name.'))
-story.append(vr(15, 'He shall call vpon me, and I wil heare him: I will be with him in trouble: I will deliuer him, and glorifie him.'))
-story.append(vr(16, 'With long life wil I satisfie him, and shew him my saluation.'))
+story.append(vrg(1, 'Who so dwelleth in the secrete of the most High, shall abide in the shadowe of the Almightie.', P91_GLOSS))
+story.append(vrg(2, 'I will say vnto the <b>Monad</b>, O mine hope, and my fortresse: the <b>Monad</b> is my God, in the <b>Monad</b> will I trust.', P91_GLOSS))
+story.append(vrg(3, 'Surely the <b>Monad</b> will deliuer thee from the snare of the hunter, and from the noysome pestilence.', P91_GLOSS))
+story.append(vrg(4, 'The <b>Monad</b> will couer thee vnder the <b>Monad\'s</b> winges, and thou shalt be sure vnder the <b>Monad\'s</b> feathers: the <b>Monad\'s</b> trueth shall be thy shielde and buckler.', P91_GLOSS))
+story.append(vrg(5, 'Thou shalt not be afraide of the feare of the night, nor of the arrowe that flyeth by day:', P91_GLOSS))
+story.append(vrg(6, 'Nor of the pestilence that walketh in the darkenesse: nor of the plague that destroyeth at noone day.', P91_GLOSS))
+story.append(vrg(7, 'A thousand shall fall at thy side, and tenne thousand at thy right hand, but it shall not come neere thee.', P91_GLOSS))
+story.append(vrg(8, 'Doubtlesse with thine eyes shalt thou beholde and see the reward of the wicked.', P91_GLOSS))
+story.append(vrg(9, 'For thou hast said, The <b>Monad</b> is mine hope: thou hast set the most High for thy refuge.', P91_GLOSS))
+story.append(vrg(10, 'There shall none euill come vnto thee, neither shall any plague come neere thy tabernacle.', P91_GLOSS))
+story.append(vrg(11, 'For the <b>Monad</b> shall giue the <b>Monad\'s</b> Angels charge ouer thee to keepe thee in all thy wayes.', P91_GLOSS))
+story.append(vrg(12, 'They shall beare thee in their handes, that thou hurt not thy foote against a stone.', P91_GLOSS))
+story.append(vrg(13, 'Thou shalt walke vpon the lyon and aspe: the yong lyon and the dragon shalt thou treade vnder feete.', P91_GLOSS))
+story.append(vrg(14, 'Because he hath loued me, therefore will I deliuer him: I will exalt him because hee hath knowen my Name.', P91_GLOSS))
+story.append(vrg(15, 'He shall call vpon me, and I wil heare him: I will be with him in trouble: I will deliuer him, and glorifie him.', P91_GLOSS))
+story.append(vrg(16, 'With long life wil I satisfie him, and shew him my saluation.', P91_GLOSS))
 story.append(spacer(6))
-story.append(P('The voice changes twice: verses 1–2 are you speaking; verses 3–13 are the blessing spoken over you; verses 14–16 are Source speaking back. Slow down at 14–16 — that is the seal.', 'small'))
+story.append(P('The voice changes twice: verses 1–2 are you speaking; verses 3–13 are the blessing spoken over you; verses 14–16 are the Monad speaking back. Slow down at 14–16 — that is the seal.', 'small'))
 story.append(pagebreak())
 
 story.append(P('Psalm 23 — the altar seal of provision', 'h2'))
@@ -344,15 +497,15 @@ story.append(P(
     'before the petition.',
     'small'))
 story.append(spacer(4))
-story.append(vr(6, 'The <b>Monad</b> is with me: therefore I will not feare what man can do vnto me.'))
-story.append(vr(7, 'The <b>Monad</b> is with me among them that helpe me: therefore shall I see my desire vpon mine enemies.'))
-story.append(vr(8, 'It is better to trust in the <b>Monad</b>, then to haue confidence in man.'))
-story.append(vr(9, 'It is better to trust in the <b>Monad</b>, then to haue confidence in princes.'))
+story.append(vrg(6, 'The <b>Monad</b> is with me: therefore I will not feare what man can do vnto me.', P118_GLOSS))
+story.append(vrg(7, 'The <b>Monad</b> is with me among them that helpe me: therefore shall I see my desire vpon mine enemies.', P118_GLOSS))
+story.append(vrg(8, 'It is better to trust in the <b>Monad</b>, then to haue confidence in man.', P118_GLOSS))
+story.append(vrg(9, 'It is better to trust in the <b>Monad</b>, then to haue confidence in princes.', P118_GLOSS))
 story.append(spacer(6))
 story.append(P('Function and lineage', 'h3'))
 story.append(P(
     'Psalm 118 is the closing psalm of the Hallel sequence (Pss 113–118) recited in Jewish '
-    'liturgy on the festivals. Verses 6–9 are the sovereignty declaration: aligned with Source, '
+    'liturgy on the festivals. Verses 6–9 are the sovereignty declaration: aligned with the Monad, '
     'unmoved by human authority. Verse 6 is quoted directly in Hebrews 13:6: <i>"The Lord '
     'is my helper, and I will not fear what man shall do unto me"</i> (verified against KJV) — '
     'the verse carried its fearlessness-before-man function across both Testaments.',
@@ -382,7 +535,7 @@ story.append(P(
 story.append(P(
     'Placement in the altar flow: after Psalm 23, before the petition. The path-ward (23) is '
     'spoken first; the sovereignty seal (118:6-9) clears the will-field of human-authority '
-    'interference; the petition then goes out from full Source-alignment.',
+    'interference; the petition then goes out from full Monad-alignment.',
     'greenbox'))
 story.append(pagebreak())
 
@@ -571,7 +724,7 @@ story.append(P('<b>·</b> Candle when used: green or gold for prosperity. Dress 
 story.append(P('<b>·</b> On the seventh morning: hold seven Job\'s Tears seeds in the hand, walk to running water, speak Psalm 23, and throw the seeds over the <b>left shoulder</b> into the moving water to lay the trick.', 'step'))
 story.append(P('<b>·</b> While dressing any prosperity candle or feeding a mojo bag, the spoken line is verse 5: <i>"thou doest anoynt mine head with oyle, and my cuppe runneth ouer."</i>', 'step'))
 story.append(spacer(6))
-story.append(P('Speak the abundance as flow for yourself in alignment with Source — never as a performance aimed at anyone else\'s lack. That is the frequency line between prosperity work and envy work.', 'greenbox'))
+story.append(P('Speak the abundance as flow for yourself in alignment with the Monad — never as a performance aimed at anyone else\'s lack. That is the frequency line between prosperity work and envy work.', 'greenbox'))
 story.append(P('Witness on file: the first morning this working ran in its corrected form (June 8, 2026), the account read $777.10 by 11:04 AM. 7-7-7 reduces to 21 — the World. The working answers.', 'small'))
 story.append(pagebreak())
 
@@ -651,20 +804,20 @@ story.append(P(
     'small'))
 story.append(spacer(4))
 story.append(P('<i>A Psalme of David.</i>', 'quote'))
-story.append(vr(1, 'Plead thou my cause, O <b>Monad</b>, with them that striue with me: fight thou against them that fight against me.'))
-story.append(vr(2, 'Lay hand vpon the shielde and buckler, and stand vp for my helpe.'))
-story.append(vr(3, 'Bring out also the speare, and stop the way against them that persecute me: say vnto my soule, I am thy saluation.'))
-story.append(vr(4, 'Let them be confounded and put to shame, that seeke after my soule: let them be turned backe, and brought to confusion, that imagine mine hurt.'))
-story.append(vr(5, 'Let them be as chaffe before the winde, and let the Angel of the <b>Monad</b> scatter them.'))
-story.append(vr(6, 'Let their way be darke and slipperie: and let the Angel of the <b>Monad</b> persecute them.'))
-story.append(vr(7, 'For without cause they haue hid the pit and their net for me: without cause haue they dug a pit for my soule.'))
-story.append(vr(8, 'Let destruction come vpon him at vnawares, and let his net, that he hath laid priuily, take him: let him fall into the same destruction.'))
-story.append(vr(9, 'Then my soule shall be joyfull in the <b>Monad</b>: it shall rejoyce in his saluation.'))
-story.append(vr(10, 'All my bones shall say, <b>Monad</b>, who is like vnto thee, which deliuerest the poore from him, that is too strong for him! yea, the poore and him that is in miserie, from him that spoileth him!'))
+story.append(vrg(1, 'Plead thou my cause, O <b>Monad</b>, with them that striue with me: fight thou against them that fight against me.', P35_GLOSS))
+story.append(vrg(2, 'Lay hand vpon the shielde and buckler, and stand vp for my helpe.', P35_GLOSS))
+story.append(vrg(3, 'Bring out also the speare, and stop the way against them that persecute me: say vnto my soule, I am thy saluation.', P35_GLOSS))
+story.append(vrg(4, 'Let them be confounded and put to shame, that seeke after my soule: let them be turned backe, and brought to confusion, that imagine mine hurt.', P35_GLOSS))
+story.append(vrg(5, 'Let them be as chaffe before the winde, and let the Angel of the <b>Monad</b> scatter them.', P35_GLOSS))
+story.append(vrg(6, 'Let their way be darke and slipperie: and let the Angel of the <b>Monad</b> persecute them.', P35_GLOSS))
+story.append(vrg(7, 'For without cause they haue hid the pit and their net for me: without cause haue they dug a pit for my soule.', P35_GLOSS))
+story.append(vrg(8, 'Let destruction come vpon him at vnawares, and let his net, that he hath laid priuily, take him: let him fall into the same destruction.', P35_GLOSS))
+story.append(vrg(9, 'Then my soule shall be joyfull in the <b>Monad</b>: it shall rejoyce in the <b>Monad\'s</b> saluation.', P35_GLOSS))
+story.append(vrg(10, 'All my bones shall say, <b>Monad</b>, who is like vnto thee, which deliuerest the poore from him, that is too strong for him! yea, the poore and him that is in miserie, from him that spoileth him!', P35_GLOSS))
 story.append(spacer(6))
 story.append(P(
     'Natural Law line, so the working stays clean: this psalm does not curse anyone. It pleads the '
-    'cause to Source, asks that the trap they dug take its own digger (the karmic reversal — their '
+    'cause to the Monad, asks that the trap they dug take its own digger (the karmic reversal — their '
     'action returning to them, not yours sent at them), and rejoices in advance. The Angel does the '
     'scattering. You hold the boundary. That is defense against active aggression — squarely inside '
     'the Law.',
@@ -711,7 +864,7 @@ story.append(P('Stepping into an office. Anointing an oil, a tool, a calling.', 
 story.append(pagebreak())
 
 story.append(P('The Consecration Order', 'h1'))
-story.append(P('<b>Psalm 151 then Psalm 23.</b> 151 is the anointing psalm — Source chooses the overlooked youngest brother and the prophet anoints him prince. Use it when you are stepping into a new role, consecrating an oil or a tool, or taking a vow. Open with the Hebrew line: <i>hah-leh-loo-YAH leh-dah-VEED ben-yee-SHY.</i> Anoint with oil at verse 4. Then seal with Psalm 23.', 'body'))
+story.append(P('<b>Psalm 151 then Psalm 23.</b> 151 is the anointing psalm — the Monad chooses the overlooked youngest brother and the prophet anoints him prince. Use it when you are stepping into a new role, consecrating an oil or a tool, or taking a vow. Open with the Hebrew line: <i>hah-leh-loo-YAH leh-dah-VEED ben-yee-SHY.</i> Anoint with oil at verse 4. Then seal with Psalm 23.', 'body'))
 story.append(spacer(6))
 story.append(P('Psalm 151 — the anointing text', 'h2'))
 story.append(P('Brenton 1851 Septuagint (verified against ebible.org). Monad Rule at verses 3 and 5. Verses 1–5 are the general working text; verses 6–7 (the Goliath combat) are situational — speak them only when you are answering an active, named attack.', 'small'))
@@ -777,7 +930,7 @@ story.append(P('<b>·</b> The eve of a journey longer than a day: the whole of P
 story.append(P('<b>·</b> The morning of the journey itself: Psalm 23 once — "against all manner of bad luck."', 'step'))
 story.append(spacer(10))
 story.append(P('Funerary', 'h1'))
-story.append(P('<b>Psalm 23</b>, spoken at the bedside, the graveside, or on the anniversary. The whole psalm, slow. The hinge is verse 4 — the dark valley where the voice turns from "He" to "Thou" — speak it directly to Source, with the grief in your voice. That verse is the comfort spoken over the grief itself.', 'body'))
+story.append(P('<b>Psalm 23</b>, spoken at the bedside, the graveside, or on the anniversary. The whole psalm, slow. The hinge is verse 4 — the dark valley where the voice turns from third-person to "Thou" — speak it directly to the Monad, with the grief in your voice. That verse is the comfort spoken over the grief itself.', 'body'))
 story.append(spacer(14))
 
 story.append(P('One-Page Master Table', 'h1'))
@@ -793,7 +946,7 @@ mt = Table([
     [Paragraph('New role / consecration', S['body_left']), Paragraph('151 (vv.1–5) → 23', S['body_left']), Paragraph('white or gold', S['small'])],
     [Paragraph('Clarity / decision', S['body_left']), Paragraph('154 → 23', S['body_left']), Paragraph('white or purple', S['small'])],
     [Paragraph('Travel', S['body_left']), Paragraph('91:11 ×3; long trip: 91 ×7 eve before, 23 that morning', S['body_left']), Paragraph('none', S['small'])],
-    [Paragraph('After a death', S['body_left']), Paragraph('23, slow, verse 4 spoken to Source', S['body_left']), Paragraph('white', S['small'])],
+    [Paragraph('After a death', S['body_left']), Paragraph('23, slow, verse 4 spoken to the Monad', S['body_left']), Paragraph('white', S['small'])],
 ], colWidths=[1.6*inch, 3.4*inch, 1.2*inch])
 mt.setStyle(TableStyle([
     ('VALIGN', (0,0), (-1,-1), 'TOP'),
