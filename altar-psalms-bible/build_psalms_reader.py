@@ -233,13 +233,14 @@ story.append(P(
 story.append(P('Every substitution point in this book, so you can audit:', 'h3'))
 story.append(P('· Psalm 91 — verses 2 and 9', 'body_left'))
 story.append(P('· Psalm 23 — verses 1 and 6', 'body_left'))
+story.append(P('· Psalm 35 — verses 1, 5, 6, 9, and 10', 'body_left'))
 story.append(P('· Psalm 118 — verses 6, 7, 8, and 9 (all four)', 'body_left'))
 story.append(P('· Psalm 151 — verse 3 (twice) and verse 5', 'body_left'))
 story.append(P('· Psalm 152 — verses 4 and 6', 'body_left'))
 story.append(P('· Psalm 153 — verse 1', 'body_left'))
 story.append(P('· Psalm 154 — verse 9', 'body_left'))
 story.append(P(
-    'Fifteen instances total. Every other word of the source texts is unchanged.',
+    'Twenty instances total. Every other word of the source texts is unchanged.',
     'small'))
 story.append(pagebreak())
 
@@ -481,6 +482,23 @@ story.append(pron_table([
 ]))
 story.append(spacer(10))
 
+story.append(P('Hard words in Psalm 35:1-10', 'h2'))
+story.append(pron_table([
+    ('striue', 'stryv', 'strive — contend, quarrel'),
+    ('speare', 'speer', 'spear'),
+    ('confounded', 'kon-FOWN-ded', 'thrown into confusion'),
+    ('chaffe', 'chaf', 'chaff — the husk the wind blows away'),
+    ('slipperie', 'SLIP-er-ee', 'slippery'),
+    ('vnawares', 'un-uh-WAIRZ', 'unawares — without warning'),
+    ('priuily', 'PRIV-ih-lee', 'privily — secretly'),
+    ('joyfull', 'JOY-ful', 'joyful'),
+    ('rejoyce', 'rih-JOYS', 'rejoice'),
+    ('deliuerest', 'dih-LIV-er-est', 'deliverest — you deliver'),
+    ('miserie', 'MIZ-er-ee', 'misery'),
+    ('spoileth', 'SPOYL-uth', 'spoils — plunders, robs'),
+]))
+story.append(spacer(10))
+
 story.append(P('Other words you will meet in this book', 'h2'))
 story.append(pron_table([
     ('Sheol', 'sheh-OHL', 'the grave / the underworld'),
@@ -600,8 +618,57 @@ story.append(pagebreak())
 
 # ============================ CRISIS ============================
 story.append(P('PART VI', 'part'))
-story.append(P('Acute Crisis', 'cover_sub'))
-story.append(P('When a hostile force is actively on you. Four psalms, this order.', 'cover_line'))
+story.append(P('Crisis &amp; Enemies', 'cover_sub'))
+story.append(P('The first sign of enemies or court trouble — and the day the siege is on you.', 'cover_line'))
+story.append(pagebreak())
+
+story.append(P('The First-Sign Order — Enemies &amp; Court (Psalm 35)', 'h1'))
+story.append(P(
+    '<b>Psalm 35 is the documented court-case and enemies psalm of the conjure stream</b> — "to '
+    'prevail in a court case in which a person is opposed by unrighteous, revengeful and '
+    'quarrelsome people" (verified against the documented Hoodoo psalm index this session). '
+    'This book deploys it <b>preventively</b>: speak it at the FIRST SIGN of a legal matter, a '
+    'named enemy, gossip turning organized, or an institution baring its teeth — to stop the '
+    'matter before it matures. That early-strike framing is the operator\'s strategic addition; '
+    'the court-case function itself is documented lineage.',
+    'body'))
+story.append(P(
+    '<b>This is not an everyday text.</b> Psalm 35 is a warfare psalm. Speaking it daily with no '
+    'enemy in the field points the attention at enemies every morning — the same frequency line '
+    'the prosperity section names. The everyday shield against the evil eye and evil people is '
+    'already standing: Psalm 91 covers the hunter, the arrow, and the pestilence daily. Deploy '
+    '35 when something real shows its teeth, then put it down.',
+    'body'))
+story.append(P('First-sign order at the candle: <b>Psalm 35 (vv.1–10) → Psalm 91 → Psalm 23</b>. Repeat daily until the matter dies; stop when it does.', 'greenbox'))
+story.append(spacer(6))
+story.append(P('Psalm 35:1-10 — the first-sign text', 'h2'))
+story.append(P(
+    'Geneva 1599 (wording verified against BibleGateway GNV this session; orthography harmonized '
+    'to the book\'s 1599 style). Monad Rule at verses 1, 5, 6, 9, and 10. Verses 1–10 are the '
+    'complete working arc — the plea (1–3), the scattering (4–6), the pit-reversal (7–8), the '
+    'rejoicing spoken in advance (9–10). For an extended siege the full psalm (28 verses) may be '
+    'read from any Geneva or KJV text with the same substitution.',
+    'small'))
+story.append(spacer(4))
+story.append(P('<i>A Psalme of David.</i>', 'quote'))
+story.append(vr(1, 'Plead thou my cause, O <b>Monad</b>, with them that striue with me: fight thou against them that fight against me.'))
+story.append(vr(2, 'Lay hand vpon the shielde and buckler, and stand vp for my helpe.'))
+story.append(vr(3, 'Bring out also the speare, and stop the way against them that persecute me: say vnto my soule, I am thy saluation.'))
+story.append(vr(4, 'Let them be confounded and put to shame, that seeke after my soule: let them be turned backe, and brought to confusion, that imagine mine hurt.'))
+story.append(vr(5, 'Let them be as chaffe before the winde, and let the Angel of the <b>Monad</b> scatter them.'))
+story.append(vr(6, 'Let their way be darke and slipperie: and let the Angel of the <b>Monad</b> persecute them.'))
+story.append(vr(7, 'For without cause they haue hid the pit and their net for me: without cause haue they dug a pit for my soule.'))
+story.append(vr(8, 'Let destruction come vpon him at vnawares, and let his net, that he hath laid priuily, take him: let him fall into the same destruction.'))
+story.append(vr(9, 'Then my soule shall be joyfull in the <b>Monad</b>: it shall rejoyce in his saluation.'))
+story.append(vr(10, 'All my bones shall say, <b>Monad</b>, who is like vnto thee, which deliuerest the poore from him, that is too strong for him! yea, the poore and him that is in miserie, from him that spoileth him!'))
+story.append(spacer(6))
+story.append(P(
+    'Natural Law line, so the working stays clean: this psalm does not curse anyone. It pleads the '
+    'cause to Source, asks that the trap they dug take its own digger (the karmic reversal — their '
+    'action returning to them, not yours sent at them), and rejoices in advance. The Angel does the '
+    'scattering. You hold the boundary. That is defense against active aggression — squarely inside '
+    'the Law.',
+    'body'))
 story.append(pagebreak())
 
 story.append(P('The Crisis Order', 'h1'))
@@ -721,6 +788,7 @@ mt = Table([
     [Paragraph('Money &amp; prosperity', S['body_left']), Paragraph('altar order with money petition; or Selig 7 mornings of 23', S['body_left']), Paragraph('green or gold', S['small'])],
     [Paragraph('Protection', S['body_left']), Paragraph('91 → 155 → 118:6-9 → 23', S['body_left']), Paragraph('white', S['small'])],
     [Paragraph('Sovereignty / public field', S['body_left']), Paragraph('118:6-9 alone, before posting / confrontation / court / meeting', S['body_left']), Paragraph('none or white', S['small'])],
+    [Paragraph('Enemies / court, first sign', S['body_left']), Paragraph('35 (vv.1–10) → 91 → 23; daily until the matter dies', S['body_left']), Paragraph('white or brown', S['small'])],
     [Paragraph('Acute crisis', S['body_left']), Paragraph('152 → 91 → 155 → 153', S['body_left']), Paragraph('white', S['small'])],
     [Paragraph('New role / consecration', S['body_left']), Paragraph('151 (vv.1–5) → 23', S['body_left']), Paragraph('white or gold', S['small'])],
     [Paragraph('Clarity / decision', S['body_left']), Paragraph('154 → 23', S['body_left']), Paragraph('white or purple', S['small'])],
@@ -742,9 +810,9 @@ story.append(spacer(14))
 story.append(P(
     'Candle colors, herbs, and timing follow the documented stream (Selig 1788; Yronwode / Lucky '
     'Mojo; Hoodoo Sen Moise) as carried in the main Altar Psalms Bible. The Monad Rule, the '
-    'use-category sorting, the pronunciation, and the Psalm 118:6-9 sovereignty seal are this '
-    'book\'s additions, built at the operator\'s instruction. Where your discernment lands '
-    'differently, your discernment wins.',
+    'use-category sorting, the pronunciation, the Psalm 118:6-9 sovereignty seal, and the '
+    'Psalm 35 first-sign framing are this book\'s additions, built at the operator\'s '
+    'instruction. Where your discernment lands differently, your discernment wins.',
     'small'))
 story.append(spacer(10))
 story.append(P('— end of the Reader —', 'cover_lineage'))
