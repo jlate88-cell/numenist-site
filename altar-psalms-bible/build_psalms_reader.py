@@ -352,11 +352,16 @@ story.append(P('Function and lineage', 'h3'))
 story.append(P(
     'Psalm 118 is the closing psalm of the Hallel sequence (Pss 113–118) recited in Jewish '
     'liturgy on the festivals. Verses 6–9 are the sovereignty declaration: aligned with Source, '
-    'unmoved by human authority. In Hoodoo lineage 118:6 is the documented court-case verse — '
-    'used for facing institutions, intimidation, gossip, and any field where fear of human '
-    'opinion would dilute the working. Verse 6 is quoted directly in Hebrews 13:6: <i>"The Lord '
-    'is my helper, and I will not fear what man shall do unto me."</i>',
+    'unmoved by human authority. Verse 6 is quoted directly in Hebrews 13:6: <i>"The Lord '
+    'is my helper, and I will not fear what man shall do unto me"</i> (verified against KJV) — '
+    'the verse carried its fearlessness-before-man function across both Testaments.',
     'body'))
+story.append(P(
+    'Provenance note, so the record is straight: the documented Hoodoo court-case psalm is '
+    '<b>Psalm 35</b>, not 118. The sovereignty-seal use of 118:6-9 is <b>this book\'s addition</b>, '
+    'built at the operator\'s instruction on the verse\'s plain function and its Hallel weight — '
+    'it is not a documented Hoodoo formula. Named so the operator works it knowingly.',
+    'small'))
 story.append(P(
     'Where the seven psalms in this book ward the unseen-vector attacks (predators, hexes, '
     'attached entities, isolation, loss of path), 118:6-9 wards the seen-vector pull — fear of '
