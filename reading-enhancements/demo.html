@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Numen Reading — Enhancements Preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="numen-enhancements.css">
+
+<style>
+/* ============================================================
+   FAITHFUL REPLICA of the existing Numen reading page styling.
+   This is the "before" state — everything below mimics what
+   numenist.com already renders. The .nx- enhancements layer
+   on TOP of this without removing or rewriting any of it.
+   ============================================================ */
+:root{
+  --bg:#06010f; --bg-2:#0d0420; --ink:#f4ecd8; --ink-soft:#c9bfa8;
+  --ink-faint:#6b6480; --gold:#d4a857; --plum:#6a3d8e; --rose:#c75d7a;
+  --line:rgba(212,168,87,0.18);
+  --serif:"Cormorant Garamond",Georgia,serif;
+  --sans:"Inter",-apple-system,system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:radial-gradient(ellipse at top,#13072a 0%,#06010f 60%) fixed; color:var(--ink); font-family:var(--serif);}
+.reading-page{max-width:780px; margin:0 auto; padding:48px 36px 80px;}
+
+/* page header — masthead */
+.nx-masthead{ text-align:center; padding:0 0 28px; border-bottom:1px solid var(--line); margin-bottom:32px;}
+.nx-masthead .crest{ font-family:var(--serif); font-size:14px; letter-spacing:6px; color:var(--gold); text-transform:uppercase;}
+.nx-masthead h1{ font-family:var(--serif); font-weight:500; font-size:46px; color:var(--ink); margin:14px 0 6px;}
+.nx-masthead .sub{ font-family:var(--sans); font-size:11px; letter-spacing:3px; color:var(--ink-faint); text-transform:uppercase;}
+.nx-masthead .meta{ font-family:var(--sans); font-size:12px; color:var(--ink-soft); margin-top:16px; letter-spacing:1px;}
+
+/* per-section block — REPRESENTS EXISTING MARKUP */
+.reading-section{
+  margin:0 0 44px;
+  padding:0 0 28px;
+  border-bottom:1px solid rgba(212,168,87,0.08);
+}
+.reading-section h2{
+  font-family:var(--serif); font-weight:500; font-size:30px;
+  color:var(--gold); margin:0 0 4px; letter-spacing:0.5px;
+}
+.reading-section .kicker{
+  font-family:var(--sans); font-size:10px; letter-spacing:3px;
+  color:var(--ink-faint); text-transform:uppercase; margin:0 0 18px;
+}
+.reading-section p{
+  font-family:var(--serif); font-size:17px; line-height:1.65;
+  color:var(--ink-soft); margin:0 0 14px;
+}
+.reading-section p .em{ color:var(--gold); font-style:italic;}
+.reading-section .pullquote{
+  font-family:var(--serif); font-size:19px; font-style:italic;
+  color:var(--ink); border-left:2px solid var(--plum);
+  padding:6px 0 6px 18px; margin:14px 0;
+}
+
+/* footer */
+.nx-footer{ text-align:center; font-family:var(--sans); font-size:10px;
+  letter-spacing:2.5px; text-transform:uppercase; color:var(--ink-faint);
+  margin-top:48px; padding-top:24px; border-top:1px solid var(--line);}
+</style>
+</head>
+<body>
+
+<div class="reading-page">
+
+  <!-- existing masthead — untouched -->
+  <header class="nx-masthead">
+    <div class="crest">✶ NUMEN ✶</div>
+    <h1>The Reading of Maverick</h1>
+    <div class="sub">a soul map · drawn by the heavens</div>
+    <div class="meta">Born March 12, 1990 · 04:17 AM · Atlanta, GA</div>
+  </header>
+
+  <!-- SECTION 1: Sect & Two Lights — represents existing section 1 -->
+  <section class="reading-section">
+    <h2>Sect &amp; Two Lights</h2>
+    <div class="kicker">PAGE TWO · THE LUMINARIES</div>
+    <p>You were born under the moon's rule — a nocturnal chart. In the Hellenistic tradition this is called a <span class="em">night sect</span>, and it means the Moon is the brighter of your two lights. She leads. The Sun consents.</p>
+    <p>This is not a small thing. Day-born souls move outward into the world wearing their hearts on their sleeve. You move inward first, gather, distill, and only then speak. The work for you is to honor that order — never to mistake the slower fire for the absent one.</p>
+    <div class="pullquote">The Moon-sect chart asks: what does the inner life require so the outer life can answer it cleanly?</div>
+    <p>Your benefic-of-sect is Venus. She is the warmer companion in a night chart, the one who makes the dark room feel held. Your malefic-of-sect is Mars — sharper than usual when his fires meet yours, because he is out of sect by night. Track him in your reactions; he is the heat under the floorboards.</p>
+  </section>
+
+  <!-- SECTION 2: Sun in Pisces 7th House -->
+  <section class="reading-section">
+    <h2>The Sun in Pisces, 7th House</h2>
+    <div class="kicker">PAGE THREE · THE SOLAR PRINCIPLE</div>
+    <p>The Sun in Pisces is the dissolving fire — the king who feels the kingdom from the inside out. Compassion is not a virtue you choose; it is the medium you breathe. Placed in the 7th house, this solar principle is consummated <span class="em">through other people</span>. You come to know yourself by what you meet at the threshold of the other.</p>
+    <p>This is the placement of the mystic-partner, the one whose vocation requires another face to mirror it home. It is also the placement that risks losing self in service of the relational field. The medicine is not isolation. The medicine is discernment about whose mirror you will sit before.</p>
+    <p>Notice: the symbol of your sign is two fish, tied at the tail, swimming in opposite directions. One ascends toward Source. The other descends into the deeps. Your job is not to pick one. Your job is to <span class="em">be the rope between them</span>.</p>
+  </section>
+
+  <!-- SECTION 3: Moon in Pisces 7th -->
+  <section class="reading-section">
+    <h2>The Moon in Pisces, 7th House</h2>
+    <div class="kicker">PAGE FOUR · THE LUNAR PRINCIPLE</div>
+    <p>Where the Sun is the conscious will, the Moon is the body's water-table — what you drink without meaning to, what you carry without naming, what you feel before language arrives. Yours is also in Pisces and also in the 7th, which means your inner weather and your outer relating are run on the same hydraulics.</p>
+    <p>You sense people. Not their words — their underneath. This is why crowds tire you, why certain rooms feel like wet wool, why a single right conversation can put back a week of erosion. Treat your nervous system as a sacred instrument and tune it daily.</p>
+    <div class="pullquote">Receptivity at this level is not a weakness. It is a calibrated antenna that requires shielding, not shame.</div>
+  </section>
+
+  <!-- footer — represents existing footer -->
+  <div class="nx-footer">✶ Numen · Soul Cartography ✶</div>
+</div>
+
+<script src="numen-enhancements.js"></script>
+<script>
+  // Initialize the additive overlay.
+  // Selectors target the demo markup above, but in production the engine
+  // configures these to match the real Numen reading-page markup.
+  NumenEnhancements.init({
+    sectionContainer: '.reading-section',
+    sectionTitle:     'h2',
+    sectionBody:      '.reading-section p',
+    pageContainer:    '.reading-page',
+    pageNumber:       2,
+    user: {
+      name: 'Maverick',
+      dob:  '1990-03-12',
+      lifePath: 11,
+      expression: 9
+    },
+    chart: {
+      sun:  { sign:'Pisces', deg:24.87, house:7 },
+      moon: { sign:'Pisces', deg:20.12, house:7 },
+      asc:  { sign:'Virgo',  deg:18.45 }
+    }
+  });
+</script>
+
+</body>
+</html>
