@@ -3,9 +3,7 @@
 <head>
 <meta charset="utf-8">
 <title>Numen Reading — Enhancements Preview</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="fonts/fonts.css">
 <link rel="stylesheet" href="numen-enhancements.css">
 
 <style>
@@ -118,18 +116,46 @@ html,body{margin:0;padding:0;background:radial-gradient(ellipse at top,#13072a 0
     sectionTitle:     'h2',
     sectionBody:      '.reading-section p',
     pageContainer:    '.reading-page',
+    mountTopAfter:    '.nx-masthead',  // chrome lands after the masthead, not above it
     pageNumber:       2,
-    user: {
-      name: 'Maverick',
-      dob:  '1990-03-12',
-      lifePath: 11,
-      expression: 9
-    },
+    user:  { name:'Maverick', dob:'1990-03-12', lifePath:11, expression:9 },
     chart: {
       sun:  { sign:'Pisces', deg:24.87, house:7 },
       moon: { sign:'Pisces', deg:20.12, house:7 },
       asc:  { sign:'Virgo',  deg:18.45 }
-    }
+    },
+    // Per-section copy — the engine plugs the real per-section material here.
+    // This is how production turns the scaffold into a real reading without
+    // touching any module code.
+    sections: [
+      {
+        hermetic: { glyph:'☾︎', name:'Polarity' },
+        light:  'The night chart trains receptivity, patience, the gathering before the speaking. You wear the moon’s authority well — quiet, watchful, more accurate than fast.',
+        shadow: 'Without the discipline to act on what the inner sees, the night chart turns into hesitation and rumination. The moon-sect operator who never gives voice to what they receive eats their own gift.',
+        working: {
+          text:   'At sundown on a Monday (the moon’s day), light a single white candle near a west-facing window. Speak aloud one thing you have been receiving but not saying. The receipt is the working.',
+          glyphs: '☾︎ ✶ 🕯︎ ☉︎'
+        }
+      },
+      {
+        hermetic: { glyph:'☉︎', name:'Cause & Effect' },
+        light:  'You see the soul of the other before you see the face. People reveal what they didn’t plan to in your presence because you don’t perform — you receive. That receptivity is a vocation, not a side-effect.',
+        shadow: 'The same antenna picks up everyone, so without discernment about whose field you enter, you carry weight that wasn’t yours and call it your own. The work is curation, not isolation.',
+        working: {
+          text:   'Choose ONE relationship to consecrate this week. Pour a glass of water, speak the person’s name over it, hold the intention “I receive what they truly are, not what I project,” then drink half and pour the other half on the earth.',
+          glyphs: '☉︎ ♓︎ ✶ 🕯︎'
+        }
+      },
+      {
+        hermetic: { glyph:'♓︎', name:'Vibration' },
+        light:  'Your nervous system is a calibrated instrument. The “something feels off” reading is not paranoia; it is data. Track the felt-sense as primary intelligence, not as noise to override.',
+        shadow: 'Untrained, the same instrument absorbs every room’s static and calls it your weather. Without daily shielding and clearing, the gift becomes a leak.',
+        working: {
+          text:   'Each morning, before phone, before food, before words: seven breaths held in cupped hands, exhaled through a small flame. The flame is the boundary. The breath is the calibration.',
+          glyphs: '☾︎ ♓︎ ✶ 🕯︎'
+        }
+      }
+    ]
   });
 </script>
 
