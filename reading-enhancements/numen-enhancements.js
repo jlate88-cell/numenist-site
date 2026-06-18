@@ -313,17 +313,21 @@
     const page = document.querySelector(cfg.pageContainer) || document.body;
 
     // 2. inject page-level chrome at the top: PD banner, audio bar, duo
-    const top = el('div','nx-host nx-top');
-    top.appendChild(buildPersonalDayBanner(cfg));
-    top.appendChild(buildAudioBar());
-    top.appendChild(buildDuo(cfg));
-    page.insertBefore(top, page.firstChild);
+    //    guard so a re-run of init() never double-injects the top chrome
+    let top = page.querySelector(':scope > .nx-top');
+    if (!top) {
+      top = el('div','nx-host nx-top');
+      top.appendChild(buildPersonalDayBanner(cfg));
+      top.appendChild(buildAudioBar());
+      top.appendChild(buildDuo(cfg));
+      page.insertBefore(top, page.firstChild);
 
-    // 3. animate canvases inside duo
-    const constel = top.querySelector('.nx-constellation');
-    if (constel) drawConstellation(constel, cfg);
-    const wheel = top.querySelector('.nx-wheel');
-    if (wheel) drawWheel(wheel, cfg);
+      // 3. animate canvases inside duo
+      const constel = top.querySelector('.nx-constellation');
+      if (constel) drawConstellation(constel, cfg);
+      const wheel = top.querySelector('.nx-wheel');
+      if (wheel) drawWheel(wheel, cfg);
+    }
 
     // 4. find each section and inject features ADDITIVELY
     //    nothing existing is removed or rewritten
