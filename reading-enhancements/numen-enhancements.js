@@ -1,6 +1,6 @@
 /* ============================================================
    NUMEN READING ENHANCEMENTS — additive-only injection
-   v0.3 · drop-in script
+   v0.4 · drop-in script
    Adds 10 features to an existing astrology reading page
    WITHOUT modifying any existing text, headings, or markup.
 
@@ -124,23 +124,37 @@
     sections: []
   };
 
-  function sectionData(idx, cfg){
-    const s = cfg.sections[idx] || {};
+  function sectionData(idx, sec, cfg){
+    // cfg.sections can be EITHER:
+    //   (a) an array — sections[idx] applies to the (idx+1)th section
+    //   (b) an object keyed by section id — sections[sec.id] applies
+    //       (matches the production Numen reading schema: each rendered
+    //        section element should carry a data-section-id attribute or
+    //        an id derived from the engine's section.id field)
+    let s = {};
+    if (Array.isArray(cfg.sections)) {
+      s = cfg.sections[idx] || {};
+    } else if (cfg.sections && typeof cfg.sections === 'object') {
+      const id = sec && (sec.dataset && sec.dataset.sectionId || sec.id) || null;
+      s = (id && cfg.sections[id]) || cfg.sections[idx + 1] || cfg.sections['section-' + (idx + 1)] || {};
+    }
     return {
       hermetic: s.hermetic || HERMETIC_BY_SECTION[idx + 1] || {glyph:'✶', name:'Polarity'},
       light:    s.light    || POLARITY_DEFAULT.light,
       shadow:   s.shadow   || POLARITY_DEFAULT.shadow,
       working:  s.working  || WORKING_DEFAULT,
-      chips:    s.chips // optional override; undefined means auto-generate
+      chips:    s.chips
     };
   }
 
   // ------- BaZi (Four Pillars) calculator -------
   // Year pillar from 1984 epoch (甲子). Month pillar from 五虎遁 rule keyed
   // by year stem + solar month (jieqi cutoffs ~ Feb 4 / Mar 6 / Apr 5 etc.).
-  // Day pillar from 1970-01-01 epoch (庚午) via Julian Day Number counting.
+  // Day pillar from 1970-01-01 epoch (辛巳) via Julian Day Number counting.
   // Hour pillar from 五鼠遁 rule keyed by day stem + 2-hour window.
-  // Verified: 2024-01-01 → 癸丑 day.
+  // Reference verified against the production Numen reading engine:
+  //   1991-03-15 → 甲申 day  (Jordan Ross Atkins, Day Master 甲 Yang Wood).
+  //   2024-01-01 → 甲子 day.
 
   const TIANGAN  = ['甲','乙','丙','丁','戊','己','庚','辛','壬','癸'];
   const DIZHI    = ['子','丑','寅','卯','辰','巳','午','未','申','酉','戌','亥'];
@@ -191,10 +205,12 @@
     const mStem   = (tigerStartByYearStem[yStem] + monthIdx) % 10;
     const mBranch = (2 + monthIdx) % 12; // Tiger=2
 
-    // Day pillar — count days from 1970-01-01 (庚午 day, stem=6 branch=6)
+    // Day pillar — count days from 1970-01-01 (辛巳 day, stem=7 branch=5)
+    // Reference verified against the production Numen engine's reading for
+    // 1991-03-15 = 甲申. Earlier 庚午 reference was off by two cycle steps.
     const days   = julianDay(Y, M, D) - 2440588; // JDN of 1970-01-01
-    const dStem  = ((6 + days) % 10 + 10) % 10;
-    const dBranch = ((6 + days) % 12 + 12) % 12;
+    const dStem  = ((7 + days) % 10 + 10) % 10;
+    const dBranch = ((5 + days) % 12 + 12) % 12;
 
     // Hour pillar — only if hour provided. 子 hour = 23:00-01:00 (branch 0).
     let hStem = null, hBranch = null;
@@ -696,7 +712,7 @@
     //    nothing existing is removed or rewritten
     const sections = document.querySelectorAll(cfg.sectionContainer);
     sections.forEach((sec, idx) => {
-      const data = sectionData(idx, cfg);
+      const data = sectionData(idx, sec, cfg);
       const title = sec.querySelector(cfg.sectionTitle);
 
       // 4a. Hermetic badge — place next to title without disturbing it
@@ -770,7 +786,7 @@
   global.NumenEnhancements = {
     init,
     destroy,
-    version: '0.3',
+    version: '0.4',
     // expose builders for manual injection or testing
     builders: {
       personalDayBanner: buildPersonalDayBanner,
