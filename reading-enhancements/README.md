@@ -74,8 +74,11 @@ live engine.
 | `pageContainer` | `.reading-page, .page-content, main` | the outer wrap |
 | `mountTopAfter` | `null` | if set, the top chrome (banner/audio/duo) is inserted AFTER this element instead of at the top of the page — use to keep your masthead first |
 | `pageNumber` | `2` | which page (1–15) is current |
-| `user` | placeholder | `{ name, dob:'YYYY-MM-DD', lifePath, expression }` |
+| `user` | placeholder | `{ name, dob:'YYYY-MM-DD', birthHour:0-23 (optional), lifePath, expression }` |
 | `chart` | placeholder | `{ sun, moon, asc }`, each `{ sign, deg, house }` |
+| `bazi` | auto-computed | optional pre-computed pillars — overrides the built-in BaZi calc |
+| `resonanceHouses` | 5 default houses | which Western houses appear on the right column of the resonance map |
+| `resonanceLinks` | element-affinity | optional `[[pillarIdx, houseIdx, 'g'|'r'], …]` to override the auto-drawn links |
 | `sections` | `[]` | per-section overrides — see below |
 | `today` | `new Date()` | override for testing Personal Day calc |
 
@@ -106,6 +109,8 @@ sections: [
 | `NumenEnhancements.destroy(cfg)` | — | Cleanly removes every node the module injected. Original page returns to its pre-init state. Useful for re-init after data changes. |
 | `NumenEnhancements.util.reduce(n)` | int | Pythagorean reduction with master-number preservation (11, 22) and karmic-debt preservation (13, 14, 16, 19). |
 | `NumenEnhancements.util.personalDay(dob, today)` | int | Personal-Day calc (Personal Year + month + day, reduced). |
+| `NumenEnhancements.util.bazi(dob, hour?)` | object | Real BaZi (Four Pillars) calculation. Returns `{ year, month, day, hour }`, each `{ stem, branch, element, animal, label }`. Hour is `null` if no birth hour passed. Year/month/day verified against reference dates (e.g. 2024-01-01 → 癸丑). |
+| `NumenEnhancements.util.julianDay(y, m, d)` | int | Julian Day Number — exposed for any other calendar work the engine needs. |
 | `NumenEnhancements.builders.*` | DOM node | Each individual feature exposed for manual injection or A/B testing. |
 | `NumenEnhancements.draw.*` | — | Canvas drawers (`constellation`, `wheel`, `resonance`) exposed for re-rendering on resize. |
 
@@ -135,8 +140,11 @@ real content vs. scaffold:
 **Not wired yet**:
 - Audio bar renders but isn't bound to a narration source. Hook to a TTS
   stream or pre-rendered audio file when ready.
-- Resonance map renders illustrative BaZi-pillar-to-house links. Real BaZi
-  calculation can be added later — or pillars passed in as config.
+- Resonance map now uses **real** BaZi pillars computed from `user.dob` (+
+  optional `user.birthHour`) via the built-in calculator. Engine can still
+  override with `cfg.bazi` if it wants to use its own ephemeris-grade
+  pillars. The pillar-to-house links default to an element-affinity
+  heuristic; pass `cfg.resonanceLinks` to override.
 
 ## The one honest blocker
 

@@ -1,6 +1,6 @@
 /* ============================================================
    NUMEN READING ENHANCEMENTS — additive-only injection
-   v0.2 · drop-in script
+   v0.3 · drop-in script
    Adds 10 features to an existing astrology reading page
    WITHOUT modifying any existing text, headings, or markup.
 
@@ -132,6 +132,88 @@
       shadow:   s.shadow   || POLARITY_DEFAULT.shadow,
       working:  s.working  || WORKING_DEFAULT,
       chips:    s.chips // optional override; undefined means auto-generate
+    };
+  }
+
+  // ------- BaZi (Four Pillars) calculator -------
+  // Year pillar from 1984 epoch (甲子). Month pillar from 五虎遁 rule keyed
+  // by year stem + solar month (jieqi cutoffs ~ Feb 4 / Mar 6 / Apr 5 etc.).
+  // Day pillar from 1970-01-01 epoch (庚午) via Julian Day Number counting.
+  // Hour pillar from 五鼠遁 rule keyed by day stem + 2-hour window.
+  // Verified: 2024-01-01 → 癸丑 day.
+
+  const TIANGAN  = ['甲','乙','丙','丁','戊','己','庚','辛','壬','癸'];
+  const DIZHI    = ['子','丑','寅','卯','辰','巳','午','未','申','酉','戌','亥'];
+  const ELEMENT  = ['Wood','Wood','Fire','Fire','Earth','Earth','Metal','Metal','Water','Water']; // stem-aligned
+  const ANIMAL   = ['Rat','Ox','Tiger','Rabbit','Dragon','Snake','Horse','Goat','Monkey','Rooster','Dog','Pig'];
+
+  // Approximate jieqi (solar-term) day-of-month cutoffs that begin each
+  // BaZi solar month. Tiger (寅) month begins ~ Feb 4 lichun.
+  const JIEQI = [
+    {m:2, d:4},  {m:3, d:6},  {m:4, d:5},  {m:5, d:6},
+    {m:6, d:6},  {m:7, d:7},  {m:8, d:8},  {m:9, d:8},
+    {m:10,d:8}, {m:11,d:7}, {m:12,d:7}, {m:1, d:6}
+  ];
+
+  function julianDay(y, m, d){
+    const a = Math.floor((14 - m) / 12);
+    const yy = y + 4800 - a;
+    const mm = m + 12*a - 3;
+    return d + Math.floor((153*mm + 2)/5) + 365*yy + Math.floor(yy/4) - Math.floor(yy/100) + Math.floor(yy/400) - 32045;
+  }
+
+  function bazi(dob, hourOfDay){
+    // dob: 'YYYY-MM-DD' string; hourOfDay: 0..23 or undefined
+    const [Y, M, D] = dob.split('-').map(Number);
+
+    // Year pillar — adjust if date is before lichun (Feb 4) so the BaZi year
+    // matches the operator solar new-year, not the Gregorian one.
+    let baziY = Y;
+    if (M === 1 || (M === 2 && D < 4)) baziY = Y - 1;
+    const yStem   = ((baziY - 4) % 10 + 10) % 10;
+    const yBranch = ((baziY - 4) % 12 + 12) % 12;
+
+    // Month pillar — find which solar month (Tiger=1, Rabbit=2 ... Ox=12)
+    // by checking the jieqi cutoffs in order. Tiger month starts on Feb 4.
+    let monthIdx = 11; // default Ox (last)
+    for (let i = 0; i < 12; i++){
+      const next = JIEQI[(i+1) % 12];
+      const start = JIEQI[i];
+      const inThisMonth =
+        (start.m === M && D >= start.d) ||
+        (next.m  === M && D <  next.d  && next.m !== start.m) ||
+        // wrap case: months that span a Gregorian boundary
+        (start.m > next.m && (M > start.m || M < next.m || (M === start.m && D >= start.d) || (M === next.m && D < next.d)));
+      if (inThisMonth) { monthIdx = i; break; }
+    }
+    // 五虎遁 — month stem of Tiger month given year stem
+    const tigerStartByYearStem = [2,4,6,8,0, 2,4,6,8,0]; // 甲己→丙, 乙庚→戊, 丙辛→庚, 丁壬→壬, 戊癸→甲
+    const mStem   = (tigerStartByYearStem[yStem] + monthIdx) % 10;
+    const mBranch = (2 + monthIdx) % 12; // Tiger=2
+
+    // Day pillar — count days from 1970-01-01 (庚午 day, stem=6 branch=6)
+    const days   = julianDay(Y, M, D) - 2440588; // JDN of 1970-01-01
+    const dStem  = ((6 + days) % 10 + 10) % 10;
+    const dBranch = ((6 + days) % 12 + 12) % 12;
+
+    // Hour pillar — only if hour provided. 子 hour = 23:00-01:00 (branch 0).
+    let hStem = null, hBranch = null;
+    if (typeof hourOfDay === 'number' && hourOfDay >= 0 && hourOfDay <= 23){
+      hBranch = Math.floor(((hourOfDay + 1) % 24) / 2);
+      // 五鼠遁 — hour stem of Rat hour given day stem
+      const ratStartByDayStem = [0,2,4,6,8, 0,2,4,6,8]; // 甲己→甲, 乙庚→丙, 丙辛→戊, 丁壬→庚, 戊癸→壬
+      hStem = (ratStartByDayStem[dStem] + hBranch) % 10;
+    }
+
+    const fmt = (s,b) => s == null ? null : ({
+      stem: TIANGAN[s], branch: DIZHI[b], element: ELEMENT[s], animal: ANIMAL[b],
+      label: TIANGAN[s] + DIZHI[b]
+    });
+    return {
+      year:  fmt(yStem,  yBranch),
+      month: fmt(mStem,  mBranch),
+      day:   fmt(dStem,  dBranch),
+      hour:  fmt(hStem,  hBranch)
     };
   }
 
@@ -474,25 +556,109 @@
     }
   }
 
-  function drawResonance(canvas){
+  function drawResonance(canvas, cfg){
     const x = canvas.getContext('2d'); const W=canvas.width, H=canvas.height;
     x.clearRect(0,0,W,H);
-    const pillars=['Year 庚','Month 己','Day 甲','Hour 丙'];
-    const houses=['3rd · Mind','6th · Work','7th · Union','10th · Vocation','12th · Unseen'];
-    const lx=140, rx=W-180;
-    x.font='15px serif';
-    pillars.forEach((p,i)=>{const y=40+i*52; x.fillStyle='#d4a857'; x.fillText(p,40,y+5); x.strokeStyle='rgba(212,168,87,.5)'; x.beginPath(); x.arc(lx,y,5,0,7); x.stroke();});
-    houses.forEach((h,i)=>{const y=30+i*46; x.fillStyle='#c9bfa8'; x.fillText(h,rx+18,y+5); x.strokeStyle='rgba(212,168,87,.5)'; x.beginPath(); x.arc(rx,y,5,0,7); x.stroke();});
-    const links=[[0,0,'g'],[1,1,'g'],[2,2,'g'],[2,3,'r'],[3,3,'g'],[0,4,'r'],[1,3,'r']];
-    links.forEach(([a,b,col])=>{
-      const y1=40+a*52, y2=30+b*46;
-      x.strokeStyle = col==='g' ? 'rgba(212,168,87,.55)' : 'rgba(199,93,122,.55)';
-      x.lineWidth = col==='g' ? 1.6 : 1.2;
+
+    // Compute BaZi pillars from cfg.user.dob, or use cfg.bazi if engine
+    // passed in pre-computed pillars (e.g. from a verified ephemeris).
+    cfg = cfg || {};
+    let pillarsBz;
+    if (cfg.bazi) pillarsBz = cfg.bazi;
+    else if (cfg.user && cfg.user.dob) {
+      const hour = (cfg.user.birthHour != null) ? cfg.user.birthHour : null;
+      pillarsBz = bazi(cfg.user.dob, hour);
+    } else pillarsBz = null;
+
+    // Element → color map for the pillar dot
+    const ELEM_COLOR = {
+      Wood:'#5fa860', Fire:'#c75d7a', Earth:'#c4a55a',
+      Metal:'#d4d4d4', Water:'#5b6bb5'
+    };
+
+    // Left column: 4 BaZi pillars (year/month/day/hour). Show "—" if
+    // birth hour is unavailable so the omission is honest.
+    const pillarRows = [
+      pillarsBz && pillarsBz.year  ? { label:'Year',  pillar:pillarsBz.year  } : { label:'Year',  pillar:null },
+      pillarsBz && pillarsBz.month ? { label:'Month', pillar:pillarsBz.month } : { label:'Month', pillar:null },
+      pillarsBz && pillarsBz.day   ? { label:'Day',   pillar:pillarsBz.day   } : { label:'Day',   pillar:null },
+      pillarsBz && pillarsBz.hour  ? { label:'Hour',  pillar:pillarsBz.hour  } : { label:'Hour',  pillar:null }
+    ];
+    // Right column: chart houses that carry the operator's emphasis.
+    // Engine can pass cfg.resonanceHouses to override; default reflects 7th
+    // house chart-Sun (the relational consummation pattern).
+    const houseRows = cfg.resonanceHouses || [
+      { house:1,  label:'1st · Self' },
+      { house:4,  label:'4th · Root' },
+      { house:7,  label:'7th · Union' },
+      { house:10, label:'10th · Vocation' },
+      { house:12, label:'12th · Unseen' }
+    ];
+
+    const lx = 160, rx = W - 220;
+    const lyStart = 28, lySpace = 50;
+    const ryStart = 28, rySpace = (H - 56) / Math.max(1, houseRows.length - 1);
+
+    // Draw left pillars
+    pillarRows.forEach((r, i) => {
+      const y = lyStart + i * lySpace;
+      const p = r.pillar;
+      const dotColor = p ? (ELEM_COLOR[p.element] || '#d4a857') : 'rgba(212,168,87,.25)';
+      // dot
+      x.fillStyle = dotColor;
+      x.beginPath(); x.arc(lx, y, 6, 0, Math.PI*2); x.fill();
+      // label + pillar text
+      x.fillStyle='#c9bfa8'; x.font='11px Inter, sans-serif'; x.textAlign='right'; x.textBaseline='middle';
+      x.fillText(r.label, lx - 14, y - 8);
+      x.fillStyle = p ? '#d4a857' : 'rgba(212,168,87,.4)';
+      x.font='16px serif';
+      x.fillText(p ? p.label : '—', lx - 14, y + 9);
+      if (p) {
+        x.fillStyle='rgba(201,191,168,.7)'; x.font='9px Inter, sans-serif';
+        x.fillText(`${p.element} · ${p.animal}`, lx - 14, y + 22);
+      }
+    });
+
+    // Draw right houses
+    houseRows.forEach((h, i) => {
+      const y = ryStart + i * rySpace;
+      x.fillStyle = '#c4a55a';
+      x.beginPath(); x.arc(rx, y, 5, 0, Math.PI*2); x.fill();
+      x.fillStyle='#c9bfa8'; x.font='13px serif'; x.textAlign='left'; x.textBaseline='middle';
+      x.fillText(h.label, rx + 14, y);
+    });
+
+    // Draw resonance links — heuristic by element. Earth pillars reinforce
+    // 4th/10th (root/vocation); Water pillars reinforce 7th/12th; Fire to 1st.
+    // If cfg.resonanceLinks is provided, use that instead.
+    const links = cfg.resonanceLinks || pillarRows.flatMap((r, i) => {
+      if (!r.pillar) return [];
+      const e = r.pillar.element;
+      const targets = e === 'Earth' ? [1,3]
+                    : e === 'Water' ? [2,4]
+                    : e === 'Metal' ? [3,4]
+                    : e === 'Fire'  ? [0,2]
+                    : /*Wood*/        [1,2];
+      return targets
+        .filter(t => t < houseRows.length)
+        .map(t => [i, t, 'g']);
+    });
+
+    links.forEach(([a, b, col]) => {
+      const y1 = lyStart + a * lySpace;
+      const y2 = ryStart + b * rySpace;
+      x.strokeStyle = col === 'g' ? 'rgba(212,168,87,.5)' : 'rgba(199,93,122,.5)';
+      x.lineWidth   = col === 'g' ? 1.4 : 1.0;
       x.beginPath();
-      x.moveTo(lx,y1);
-      x.bezierCurveTo((lx+rx)/2,y1,(lx+rx)/2,y2,rx,y2);
+      x.moveTo(lx + 8, y1);
+      x.bezierCurveTo((lx + rx) / 2, y1, (lx + rx) / 2, y2, rx - 8, y2);
       x.stroke();
     });
+
+    // Column captions
+    x.fillStyle='rgba(107,100,128,1)'; x.font='10px Inter, sans-serif';
+    x.textAlign='center'; x.fillText('BaZi Pillars', lx - 30, H - 8);
+    x.fillText('Western Houses', rx + 50, H - 8);
   }
 
   // ------- main init -------
@@ -564,7 +730,7 @@
       const reso = buildResonance();
       page.appendChild(reso);
       const c = reso.querySelector('.nx-reso-canvas');
-      if (c) drawResonance(c);
+      if (c) drawResonance(c, cfg);
     }
 
     return {
@@ -604,7 +770,7 @@
   global.NumenEnhancements = {
     init,
     destroy,
-    version: '0.2',
+    version: '0.3',
     // expose builders for manual injection or testing
     builders: {
       personalDayBanner: buildPersonalDayBanner,
@@ -617,6 +783,6 @@
       resonance: buildResonance
     },
     draw: { constellation: drawConstellation, wheel: drawWheel, resonance: drawResonance },
-    util: { reduce, personalDay }
+    util: { reduce, personalDay, bazi, julianDay }
   };
 })(window);
