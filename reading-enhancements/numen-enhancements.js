@@ -1,6 +1,6 @@
 /* ============================================================
    NUMEN READING ENHANCEMENTS — additive-only injection
-   v0.4 · drop-in script
+   v0.5 · drop-in (TTS voice-reading wired) script
    Adds 10 features to an existing astrology reading page
    WITHOUT modifying any existing text, headings, or markup.
 
@@ -273,14 +273,183 @@
     return banner;
   }
 
-  function buildAudioBar(){
+  function buildAudioBar(cfg){
     const a = el('div','nx-audio');
     a.innerHTML = `
       <button class="nx-play" aria-label="Play reading">▶</button>
       <div class="nx-wave">${Array.from({length:18}).map((_,i)=>`<span style="height:${30+Math.abs(Math.sin(i))*65}%"></span>`).join('')}</div>
-      <span class="nx-lbl">Listen</span><span class="nx-time">7:42</span>`;
+      <span class="nx-lbl">Listen</span><span class="nx-time">--:--</span>`;
+    // Wire browser-native TTS to the play button. Reads every heading +
+    // paragraph in the reading in DOM order, one Utterance per element so
+    // the user can pause/resume and so a long reading does not exceed
+    // any browser's per-utterance length cap.
+    wireSpeech(a, cfg);
     return a;
   }
+
+  // ------- Text-to-speech voice-reading ----------------------------------
+  // Uses window.speechSynthesis (W3C Web Speech API). Free, works offline
+  // on every modern browser. Voice quality depends on OS-installed voices.
+  // The engine picks the highest-quality English voice available; the
+  // operator (or the engine) can override by setting cfg.ttsVoiceName.
+  function pickTtsVoice(cfg){
+    const synth = window.speechSynthesis;
+    if (!synth) return null;
+    const voices = synth.getVoices();
+    if (!voices || !voices.length) return null;
+    const wanted = (cfg && cfg.ttsVoiceName) || '';
+    if (wanted) {
+      const exact = voices.find(v => v.name === wanted);
+      if (exact) return exact;
+    }
+    // Prefer high-quality, non-network, English voices. The names below
+    // are common across macOS, Windows, Android, iOS, and major Linux
+    // distros. Order matters — first match wins.
+    const preferred = [
+      /Google US English/i, /Microsoft Aria/i, /Microsoft Jenny/i,
+      /Microsoft Guy/i, /Samantha/i, /Daniel/i, /Karen/i, /Moira/i,
+      /Alex/i, /Victoria/i, /Allison/i, /Ava/i
+    ];
+    for (const re of preferred) {
+      const m = voices.find(v => re.test(v.name) && /^en/i.test(v.lang));
+      if (m) return m;
+    }
+    // Fall back to the first English voice the system offers.
+    return voices.find(v => /^en/i.test(v.lang)) || voices[0];
+  }
+
+  function collectReadingText(cfg){
+    // Order matters: read each section in DOM order, heading first then
+    // each paragraph. Skip the .nx- overlay text by default; the engine's
+    // prose is the reading, the overlay is editorial framing.
+    const sections = document.querySelectorAll(cfg.sectionContainer);
+    const segments = [];
+    sections.forEach(sec => {
+      const h = sec.querySelector(cfg.sectionTitle);
+      if (h && h.textContent.trim()) segments.push({type:'heading', text: h.textContent.trim()});
+      sec.querySelectorAll(cfg.sectionBody || 'p').forEach(p => {
+        // Skip paragraphs inside the .nx- overlay (Light/Shadow, Working, etc.)
+        if (p.closest('.nx-polarity, .nx-working, .nx-chips, .nx-section-row')) return;
+        const t = p.textContent.trim();
+        if (t) segments.push({type:'paragraph', text: t});
+      });
+    });
+    return segments;
+  }
+
+  function wireSpeech(audioEl, cfg){
+    const synth = window.speechSynthesis;
+    const btn   = audioEl.querySelector('.nx-play');
+    const time  = audioEl.querySelector('.nx-time');
+    if (!synth || !btn) return;
+
+    // Some browsers populate voices asynchronously. Trigger a load.
+    let voicesReady = synth.getVoices().length > 0;
+    if (!voicesReady) {
+      synth.onvoiceschanged = () => { voicesReady = true; };
+    }
+
+    let segments = [];
+    let idx = 0;
+    let speaking = false;
+    let paused = false;
+    let totalChars = 0;
+    let spokenChars = 0;
+    let startedAt = 0;
+
+    function fmtTime(s){
+      s = Math.max(0, Math.round(s));
+      const m = Math.floor(s/60);
+      const ss = s%60;
+      return m + ':' + (ss<10?'0':'') + ss;
+    }
+    function updateTimeDisplay(){
+      if (!totalChars) { time.textContent = '--:--'; return; }
+      // Rough estimate: ~13 chars per second at default rate 1.0 with the
+      // average English voice. Engine-tunable via cfg.ttsCharsPerSecond.
+      const cps = (cfg && cfg.ttsCharsPerSecond) || 13;
+      const remainingChars = Math.max(0, totalChars - spokenChars);
+      const remainingSec   = remainingChars / cps;
+      time.textContent = '-' + fmtTime(remainingSec);
+    }
+    function setIcon(s){
+      btn.textContent = s === 'pause' ? '❚❚' : (s === 'stop' ? '■' : '▶');
+      btn.setAttribute('aria-label', s === 'pause' ? 'Pause reading' :
+        (s === 'stop' ? 'Stop reading' : 'Play reading'));
+    }
+
+    function speakNext(){
+      if (idx >= segments.length) {
+        speaking = false; paused = false;
+        setIcon('play');
+        time.textContent = 'done';
+        setTimeout(() => updateTimeDisplay(), 1200);
+        return;
+      }
+      const seg = segments[idx++];
+      const u = new SpeechSynthesisUtterance(seg.text);
+      const v = pickTtsVoice(cfg);
+      if (v) u.voice = v;
+      u.rate  = (cfg && cfg.ttsRate)  || 1.0;
+      u.pitch = (cfg && cfg.ttsPitch) || 1.0;
+      // Slightly slower + lower pitch for headings, more authoritative.
+      if (seg.type === 'heading') {
+        u.rate = Math.max(0.7, u.rate * 0.92);
+        u.pitch = Math.max(0.5, u.pitch * 0.95);
+      }
+      u.onend = () => {
+        spokenChars += seg.text.length;
+        updateTimeDisplay();
+        // tiny pause between segments
+        setTimeout(speakNext, seg.type === 'heading' ? 350 : 120);
+      };
+      u.onerror = () => {
+        spokenChars += seg.text.length;
+        speakNext();
+      };
+      synth.speak(u);
+      updateTimeDisplay();
+    }
+
+    btn.addEventListener('click', () => {
+      // First press → start reading from the top.
+      if (!speaking) {
+        segments = collectReadingText(cfg);
+        if (!segments.length) {
+          time.textContent = 'no text';
+          return;
+        }
+        idx = 0;
+        spokenChars = 0;
+        totalChars = segments.reduce((n,s) => n + s.text.length, 0);
+        startedAt = Date.now();
+        speaking = true;
+        paused = false;
+        synth.cancel();   // clear any previous queue from a re-render
+        setIcon('pause');
+        updateTimeDisplay();
+        speakNext();
+        return;
+      }
+      // Already speaking → toggle pause/resume.
+      if (paused) {
+        synth.resume(); paused = false;
+        setIcon('pause');
+      } else {
+        synth.pause();  paused = true;
+        setIcon('play');
+      }
+    });
+
+    // If the operator navigates away or the page hides, pause so the
+    // voice doesn't continue past a closed tab in some browsers.
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden && speaking && !paused) {
+        synth.pause(); paused = true; setIcon('play');
+      }
+    });
+  }
+
 
   function buildDuo(cfg){
     const duo = el('div','nx-duo');
@@ -692,7 +861,7 @@
     if (!top) {
       top = el('div','nx-host nx-top');
       top.appendChild(buildPersonalDayBanner(cfg));
-      top.appendChild(buildAudioBar());
+      top.appendChild(buildAudioBar(cfg));
       top.appendChild(buildDuo(cfg));
       // mountTopAfter (if provided) inserts AFTER the selected element so the
       // existing masthead/header remains at the top of the reading
@@ -786,7 +955,7 @@
   global.NumenEnhancements = {
     init,
     destroy,
-    version: '0.4',
+    version: '0.5',
     // expose builders for manual injection or testing
     builders: {
       personalDayBanner: buildPersonalDayBanner,
