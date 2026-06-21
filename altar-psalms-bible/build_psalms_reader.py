@@ -1062,3 +1062,16 @@ if __name__ == '__main__':
               author='Numen / Jordan Ross Atkins')
     doc.build(story)
     print('Built: altar-psalms-reader.pdf')
+
+    # AI SLOP CODE: the build is not trusted until validate.py passes.
+    # If validation fails, the build script exits non-zero so the
+    # operator sees that the output is NOT ritual-grade. Discipline
+    # installed 2026-06-21 after Jordan caught the duplicate-gloss bug.
+    import subprocess, sys, os
+    here = os.path.dirname(os.path.abspath(__file__))
+    print()
+    print('=== Running AI SLOP CODE validation ===')
+    rc = subprocess.call([sys.executable, os.path.join(here, 'validate.py')])
+    if rc != 0:
+        print('!!! BUILD FAILED VALIDATION — output is NOT ritual-grade !!!')
+        sys.exit(rc)
