@@ -98,6 +98,13 @@ S = {
     'gloss':         s('gloss', fontSize=10, leading=13, alignment=TA_CENTER, textColor=SUB, spaceAfter=8),
     'step':          s('step', fontSize=11.5, leading=16, leftIndent=10, spaceAfter=6),
     'greenbox':      s('greenbox', fontSize=10, leading=13.5, textColor=GREEN, leftIndent=10, spaceAfter=4),
+    # Inline ritual instruction — appears AT the moment the operator should
+    # perform the gesture, so the reader never has to flip back to the
+    # 10-step overview. Distinctive color + bold "NOW —" prefix makes it
+    # immediately recognizable as a do-this-right-now interrupt.
+    'now_cue':       s('now_cue', fontName='SerifBold', fontSize=12, leading=17,
+                       textColor=HexColor('#a02540'),
+                       leftIndent=16, rightIndent=16, spaceBefore=8, spaceAfter=8),
 }
 
 PAGE_W, PAGE_H = letter
@@ -165,6 +172,12 @@ def gloss_text(txt, glosses):
 def vrg(num, txt, glosses):
     return Paragraph(f'<b>{num}.</b> {gloss_text(txt, glosses)}', S['speak'])
 
+def now(txt):
+    """Inline ritual cue. Prefixes 'NOW —' and styles distinctively so the
+    operator sees the gesture-to-perform at the moment it is needed, without
+    flipping back to the 10-step overview."""
+    return Paragraph(f'<b>NOW &mdash;</b> {txt}', S['now_cue'])
+
 # Geneva 1599 pronunciation tables for inline gloss. Order matters: longer
 # phrases first so they win before sub-strings can match.
 P91_GLOSS = [
@@ -212,6 +225,23 @@ P91_GLOSS = [
     ('satisfie', 'SAT-is-fy'),
     ('saluation', 'sal-VAY-shun'),
     ('shew', 'shoh'),
+    # additions for gloss audit — every archaic word gets sounded out
+    ('winges', 'wings'),
+    ('feathers', 'FETH-erz'),
+    ('walketh', 'WAWK-uth'),
+    ('handes', 'handz'),
+    ('yong', 'yung'),
+    ('feete', 'feet'),
+    ('hee', 'hee'),
+    ('hath', 'hath'),
+    ('wil', 'wil'),
+    ('thine', 'thyn'),
+    ('thy', 'thy'),
+    ('thou', 'thow'),
+    ('thee', 'thee'),
+    ('vnder', 'UN-der'),
+    ('vnto', 'UN-too'),
+    ('ouer', 'OH-ver'),
 ]
 
 P23_GLOSS = [
@@ -466,6 +496,13 @@ story.append(pagebreak())
 story.append(P('Psalm 91 — the altar text', 'h2'))
 story.append(P('Geneva 1599, with the Monad Rule at verses 2 and 9.', 'small'))
 story.append(spacer(4))
+
+# Inline ritual cues — first the cross, then the lineage formula, then the psalm.
+# The reader does NOT have to flip back to the 10-step overview.
+story.append(now('Cross. Forehead &mdash; heart &mdash; right shoulder &mdash; left shoulder &mdash; back to heart. One slow breath through the whole gesture.'))
+story.append(now('Speak the lineage formula aloud: <i>&#8220;In the name of the Father, the Son, and the Holy Spirit.&#8221;</i>'))
+story.append(now('Now speak Psalm 91 aloud, verse by verse.'))
+
 story.append(vrg(1, 'Who so dwelleth in the secrete of the most High, shall abide in the shadowe of the Almightie.', P91_GLOSS))
 story.append(vrg(2, 'I will say vnto the <b>Monad</b>, O mine hope, and my fortresse: the <b>Monad</b> is my God, in the <b>Monad</b> will I trust.', P91_GLOSS))
 story.append(vrg(3, 'Surely the <b>Monad</b> will deliuer thee from the snare of the hunter, and from the noysome pestilence.', P91_GLOSS))
@@ -486,23 +523,64 @@ story.append(spacer(6))
 story.append(P('The voice changes twice: verses 1–2 are you speaking; verses 3–13 are the blessing spoken over you; verses 14–16 are the Monad speaking back. Slow down at 14–16 — that is the seal.', 'small'))
 story.append(pagebreak())
 
-story.append(P('Psalm 23 — the altar seal of provision', 'h2'))
-story.append(P('Same text as Part I (Everyday). Speak it after Psalm 91. At verse 5: touch the crown of your head at "anoynt mine head with oyle"; let "my cuppe runneth ouer" be the slow breath that meets the petition. Then move to Psalm 118:6-9 below before stating the petition.', 'body'))
-story.append(spacer(10))
+# ---- Transition out of Psalm 91 into Psalm 23 ----
+story.append(now('Now move to Psalm 23 &mdash; the seal of provision.'))
+story.append(spacer(4))
 
-# ---- NEW: Psalm 118:6-9 — the sovereignty seal ----
+story.append(P('Psalm 23 — the altar seal of provision', 'h2'))
+story.append(P('Geneva 1599. The Monad Rule applies at verses 1, 2, 3 and 6. Full text inline so you stay in the working without flipping back.', 'small'))
+story.append(spacer(4))
+story.append(now('Speak Psalm 23 aloud, verse by verse.'))
+
+story.append(vrg(1, 'The <b>Monad</b> is my shepheard, I shall not want.', P23_GLOSS))
+story.append(vrg(2, 'The <b>Monad</b> maketh me to rest in greene pasture, and leadeth me by the still waters.', P23_GLOSS))
+story.append(vrg(3, 'The <b>Monad</b> restoreth my soule, and leadeth me in the paths of righteousnesse for the <b>Monad\'s</b> Names sake.', P23_GLOSS))
+story.append(vrg(4, 'Yea, though I should walke through the valley of the shadowe of death, I will feare no euill: for thou art with me: thy rod and thy staffe, they comfort me.', P23_GLOSS))
+
+# Verse 5 carries the crown-touch and the breath. Cues land RIGHT BEFORE
+# the verse the operator is about to speak, so the body knows what to do
+# as the words leave the mouth.
+story.append(now('At <i>&#8220;anoynt mine head with oyle&#8221;</i> &mdash; touch the crown of your head. At <i>&#8220;my cuppe runneth ouer&#8221;</i> &mdash; one slow breath.'))
+story.append(vrg(5, 'Thou doest prepare a table before me in the sight of mine aduersaries: thou doest anoynt mine head with oyle, and my cuppe runneth ouer.', P23_GLOSS))
+story.append(vrg(6, 'Doubtlesse kindnesse and mercie shall follow me all the dayes of my life, and I shall remaine a long season in the house of the <b>Monad</b>.', P23_GLOSS))
+story.append(spacer(6))
+
+# ---- Transition into Psalm 118:6-9 ----
+story.append(now('Now move to Psalm 118 verses 6 through 9 &mdash; the sovereignty seal. Four short verses. They clear the will-field of fear-of-man before the petition goes out.'))
+story.append(spacer(4))
+
 story.append(P('Psalm 118:6-9 — the sovereignty seal', 'h2'))
 story.append(P(
-    'Geneva 1599 (verified against BibleGateway GNV this session; orthography harmonized to '
-    'the book\'s 1599 style). The Monad Rule applies at all four verses. Speak after Psalm 23, '
-    'before the petition.',
+    'Geneva 1599 (verified against BibleGateway GNV; orthography harmonized to '
+    'the book\'s 1599 style). The Monad Rule applies at all four verses.',
     'small'))
 story.append(spacer(4))
+story.append(now('Speak the four verses aloud.'))
 story.append(vrg(6, 'The <b>Monad</b> is with me: therefore I will not feare what man can do vnto me.', P118_GLOSS))
 story.append(vrg(7, 'The <b>Monad</b> is with me among them that helpe me: therefore shall I see my desire vpon mine enemies.', P118_GLOSS))
 story.append(vrg(8, 'It is better to trust in the <b>Monad</b>, then to haue confidence in man.', P118_GLOSS))
 story.append(vrg(9, 'It is better to trust in the <b>Monad</b>, then to haue confidence in princes.', P118_GLOSS))
-story.append(spacer(6))
+story.append(spacer(10))
+
+# ---- The closing sequence: petition through snuff, INLINE so the operator
+# never has to flip back to the 10-step overview ----
+story.append(P('The closing sequence — petition through snuff', 'h2'))
+story.append(P('Steps 6 through 10 of the altar ritual. Inline so you stay in the working all the way to the snuff.', 'small'))
+story.append(spacer(4))
+
+story.append(now('Speak your petition aloud. First person, present tense, brief. What you are drawing in. <i>&#8220;I receive&hellip;&#8221; / &#8220;I am walking into&hellip;&#8221; / &#8220;The Monad is providing&hellip;&#8221;</i>'))
+story.append(now('Light the candle (or continue the standing burn).'))
+story.append(now('Sit with it. One slow breath minimum &mdash; seven if you have the time.'))
+story.append(now('Speak the gratitude aloud: <i>&#8220;Thank you for this day. Thank you for this provision. Thank you for this protection. Thank you that the work is already moving.&#8221;</i>'))
+story.append(now('When you put it out &mdash; <b>snuff, never blow.</b> Pinch the wick or use a snuffer. As you snuff, speak: <i>&#8220;The working continues. Thank you.&#8221;</i>'))
+story.append(spacer(8))
+story.append(P('The breath that spoke the petition must not be the breath that scatters the flame. That is the whole reason for the snuff rule. The petition rides the flame; the flame is sealed by closing it without your breath.', 'small'))
+
+story.append(pagebreak())
+
+# ---- Commentary on Psalm 118:6-9 — at the back so it does not break the
+# ritual flow above ----
+story.append(P('Psalm 118:6-9 — function, lineage, numerology (reference)', 'h2'))
 story.append(P('Function and lineage', 'h3'))
 story.append(P(
     'Psalm 118 is the closing psalm of the Hallel sequence (Pss 113–118) recited in Jewish '
