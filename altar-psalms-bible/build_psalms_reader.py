@@ -54,6 +54,7 @@ from reportlab.platypus import (
     BaseDocTemplate, Paragraph, Spacer, PageBreak, Table, TableStyle,
     PageTemplate, Frame
 )
+from reportlab.graphics.shapes import Drawing, Line, Circle, String, Polygon
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.pdfbase.pdfmetrics import registerFontFamily
@@ -89,6 +90,7 @@ S = {
     'body':          s('body', alignment=TA_JUSTIFY, spaceAfter=6),
     'body_left':     s('body_left', spaceAfter=6),
     'small':         s('small', fontSize=9, leading=12, textColor=SUB, spaceAfter=4),
+    'small_center':  s('small_center', fontSize=9, leading=12, textColor=SUB, alignment=TA_CENTER, spaceAfter=4),
     'italic':        s('italic', fontName='SerifItalic', spaceAfter=6),
     'quote':         s('quote', leftIndent=20, rightIndent=10, fontName='SerifItalic', spaceAfter=6),
     'verse':         s('verse', leftIndent=14, fontSize=11.5, leading=16.5, spaceAfter=4),
@@ -186,6 +188,91 @@ def now(txt):
     operator sees the gesture-to-perform at the moment it is needed, without
     flipping back to the 10-step overview."""
     return Paragraph(f'<b>NOW &mdash;</b> {txt}', S['now_cue'])
+
+def cross_diagram():
+    """Vector diagram of the Hermetic cross on the body. Five stations:
+    1 Forehead → 2 Heart → 3 Right shoulder → 4 Left shoulder → 5 Heart
+    (return / seal). Right index finger touches each station; one continuous
+    breath through the whole gesture."""
+    import math
+    rose = HexColor('#a02540')
+    sub  = HexColor('#5a5a5a')
+    ink  = HexColor('#1a1a1a')
+
+    W, H = 360, 200
+    d = Drawing(W, H)
+    cx, cy = W/2, H/2 - 6
+    arm = 55
+    r   = 11
+
+    # Cross arms
+    d.add(Line(cx, cy + arm - r, cx, cy + r,
+               strokeColor=rose, strokeWidth=1.4))
+    d.add(Line(cx + r, cy, cx + arm - r, cy,
+               strokeColor=rose, strokeWidth=1.4))
+    d.add(Line(cx + arm - r, cy, cx - arm + r, cy,
+               strokeColor=rose, strokeWidth=1.4))
+
+    def arrow(x, y, dx, dy):
+        # Solid arrowhead with its tip at (x, y), pointing in (dx, dy).
+        ang = math.atan2(dy, dx)
+        sz  = 5
+        x1  = x - sz * math.cos(ang - 0.45)
+        y1  = y - sz * math.sin(ang - 0.45)
+        x2  = x - sz * math.cos(ang + 0.45)
+        y2  = y - sz * math.sin(ang + 0.45)
+        d.add(Polygon(points=[x, y, x1, y1, x2, y2],
+                      fillColor=rose, strokeColor=rose))
+
+    # 1. forehead → heart  (down stroke)
+    arrow(cx, cy + r + 3, 0, -1)
+    # 2. heart → right     (rightward)
+    arrow(cx + arm - r - 3, cy, 1, 0)
+    # 3. right → left      (leftward — long stroke across the body)
+    arrow(cx - arm + r + 3, cy, -1, 0)
+    # 4. (left → heart, return for the seal — implicit; station 5 is the heart again)
+
+    def station(x, y, n_text):
+        d.add(Circle(x, y, r, fillColor=rose, strokeColor=rose))
+        d.add(String(x, y - 3.5, n_text,
+                     fontName='SerifBold', fontSize=10.5,
+                     textAnchor='middle', fillColor=HexColor('#ffffff')))
+
+    station(cx, cy + arm, '1')
+    station(cx + arm, cy, '3')
+    station(cx - arm, cy, '4')
+    station(cx, cy, '2·5')   # 2·5 — start and seal
+
+    # Labels
+    d.add(String(cx, cy + arm + r + 11, 'Forehead',
+                 fontName='SerifBold', fontSize=10,
+                 textAnchor='middle', fillColor=ink))
+    d.add(String(cx, cy + arm + r + 23, '(Monad above)',
+                 fontName='SerifItalic', fontSize=9,
+                 textAnchor='middle', fillColor=sub))
+
+    d.add(String(cx + arm + r + 6, cy + 3, 'Right shoulder',
+                 fontName='SerifBold', fontSize=10,
+                 textAnchor='start', fillColor=ink))
+    d.add(String(cx + arm + r + 6, cy - 8, '(structure)',
+                 fontName='SerifItalic', fontSize=9,
+                 textAnchor='start', fillColor=sub))
+
+    d.add(String(cx - arm - r - 6, cy + 3, 'Left shoulder',
+                 fontName='SerifBold', fontSize=10,
+                 textAnchor='end', fillColor=ink))
+    d.add(String(cx - arm - r - 6, cy - 8, '(flow)',
+                 fontName='SerifItalic', fontSize=9,
+                 textAnchor='end', fillColor=sub))
+
+    d.add(String(cx, cy - r - 11, 'Heart',
+                 fontName='SerifBold', fontSize=10,
+                 textAnchor='middle', fillColor=ink))
+    d.add(String(cx, cy - r - 23, '(body altar — start & seal)',
+                 fontName='SerifItalic', fontSize=9,
+                 textAnchor='middle', fillColor=sub))
+
+    return d
 
 # Geneva 1599 pronunciation tables for inline gloss. Order matters: longer
 # phrases first so they win before sub-strings can match.
@@ -455,6 +542,7 @@ story.append(spacer(8))
 story.append(P('Psalm 23 — the everyday text', 'h2'))
 story.append(P('Geneva 1599, with the Monad Rule at verses 1 and 6.', 'small'))
 story.append(spacer(4))
+story.append(now('Sit up in bed (or stand if you are already up). One slow breath in, one slow breath out. Then speak Psalm 23 aloud, verse by verse.'))
 story.append(P('<i>A Psalme of David.</i>', 'quote'))
 story.append(vrg(1, 'The <b>Monad</b> is my shepheard, I shall not want.', P23_GLOSS))
 story.append(vrg(2, 'The <b>Monad</b> maketh me to rest in greene pasture, and leadeth me by the still waters.', P23_GLOSS))
@@ -465,10 +553,13 @@ story.append(vrg(6, 'Doubtlesse kindnesse and mercie shall follow me all the day
 story.append(spacer(6))
 story.append(P('At verse 4 the voice shifts from third-person to "Thou" — let your voice meet it. In the everyday reading you do not need the crown-touch; that belongs to the altar.', 'small'))
 story.append(spacer(8))
+story.append(now('Speak one line of gratitude in your own words. <i>&#8220;Thank you for this day.&#8221;</i> &mdash; or whatever rises. One line is enough.'))
+story.append(spacer(4))
 
 story.append(P('The door verse — Psalm 91:11, three times', 'h2'))
 story.append(vrg(11, 'For the <b>Monad</b> shall giue the <b>Monad\'s</b> Angels charge ouer thee to keepe thee in all thy wayes.', P91_GLOSS))
-story.append(P('Say it three times, step out, go live the day.', 'small'))
+story.append(spacer(4))
+story.append(now('At the door, hand on the latch, before you step out: speak verse 11 three times. Then step through and go live the day.'))
 story.append(pagebreak())
 
 # ============================ PART II — ALTAR RITUAL ============================
@@ -501,10 +592,16 @@ story.append(P('Psalm 91 — the altar text', 'h2'))
 story.append(P('Geneva 1599, with the Monad Rule at verses 2 and 9.', 'small'))
 story.append(spacer(4))
 
-# Inline ritual cues — first the cross, then the lineage formula, then the psalm.
-# The reader does NOT have to flip back to the 10-step overview.
-story.append(now('Cross. Forehead &mdash; heart &mdash; right shoulder &mdash; left shoulder &mdash; back to heart. One slow breath through the whole gesture.'))
+# Inline ritual cues — purification, cross (with diagram), lineage formula,
+# Hebrew opener, then the psalm. The reader does NOT have to flip back to the
+# 10-step overview at any point.
+story.append(now('At the altar threshold &mdash; pause. Wash your hands at the basin, or press your palms together at the altar edge. One slow breath. The body crosses into ritual time.'))
+story.append(now('Cross. Right index finger touches each station; one continuous breath through the whole gesture.'))
+story.append(cross_diagram())
+story.append(P('Stations 1 &rarr; 2 &rarr; 3 &rarr; 4 &rarr; 5 (return). Forehead = the Monad above; heart = the body&rsquo;s altar; right = structure; left = flow; the return to heart seals.', 'small_center'))
+story.append(spacer(4))
 story.append(now('Speak the lineage formula aloud: <i>&#8220;In the name of the Father, the Son, and the Holy Spirit.&#8221;</i>'))
+story.append(now('Optional Hebrew opening of Psalm 91 (spoken slowly, on one breath): <br/><i>&#8220;yoh-SHEV buh-SEH-ter el-YOHN, buh-TZEL shah-DYE yit-loh-NAHN.&#8221;</i>'))
 story.append(now('Now speak Psalm 91 aloud, verse by verse.'))
 
 story.append(vrg(1, 'Who so dwelleth in the secrete of the most High, shall abide in the shadowe of the Almightie.', P91_GLOSS))
@@ -544,7 +641,7 @@ story.append(vrg(4, 'Yea, though I should walke through the valley of the shadow
 # Verse 5 carries the crown-touch and the breath. Cues land RIGHT BEFORE
 # the verse the operator is about to speak, so the body knows what to do
 # as the words leave the mouth.
-story.append(now('At <i>&#8220;anoynt mine head with oyle&#8221;</i> &mdash; touch the crown of your head. At <i>&#8220;my cuppe runneth ouer&#8221;</i> &mdash; one slow breath.'))
+story.append(now('At <i>&#8220;anoynt mine head with oyle&#8221;</i> &mdash; touch the crown of your head. At <i>&#8220;my cuppe runneth ouer&#8221;</i> &mdash; one slow breath, eyes closed.'))
 story.append(vrg(5, 'Thou doest prepare a table before me in the sight of mine aduersaries: thou doest anoynt mine head with oyle, and my cuppe runneth ouer.', P23_GLOSS))
 story.append(vrg(6, 'Doubtlesse kindnesse and mercie shall follow me all the dayes of my life, and I shall remaine a long season in the house of the <b>Monad</b>.', P23_GLOSS))
 story.append(spacer(6))
@@ -572,13 +669,30 @@ story.append(P('The closing sequence — petition through snuff', 'h2'))
 story.append(P('Steps 6 through 10 of the altar ritual. Inline so you stay in the working all the way to the snuff.', 'small'))
 story.append(spacer(4))
 
-story.append(now('Speak your petition aloud. First person, present tense, brief. What you are drawing in. <i>&#8220;I receive&hellip;&#8221; / &#8220;I am walking into&hellip;&#8221; / &#8220;The Monad is providing&hellip;&#8221;</i>'))
+story.append(now('If a written petition paper sits under the candle base (sealed there from a prior working &mdash; the Beltane working, a fresh consecration) <b>do not disturb it.</b> Your spoken petition rides over it. The paper holds the form; the spoken word renews the current.'))
+story.append(now('Speak your petition aloud, eyes on the candle. First person, present tense, brief. What you are drawing in. <i>&#8220;I receive&hellip;&#8221; / &#8220;I am walking into&hellip;&#8221; / &#8220;The Monad is providing&hellip;&#8221;</i>'))
 story.append(now('Light the candle (or continue the standing burn).'))
-story.append(now('Sit with it. One slow breath minimum &mdash; seven if you have the time.'))
-story.append(now('Speak the gratitude aloud: <i>&#8220;Thank you for this day. Thank you for this provision. Thank you for this protection. Thank you that the work is already moving.&#8221;</i>'))
-story.append(now('When you put it out &mdash; <b>snuff, never blow.</b> Pinch the wick or use a snuffer. As you snuff, speak: <i>&#8220;The working continues. Thank you.&#8221;</i>'))
+story.append(now('Sit with it. Eyes closed. One slow breath minimum &mdash; seven if you have the time.'))
+story.append(now('Speak the gratitude aloud, eyes open on the flame: <i>&#8220;Thank you for this day. Thank you for this provision. Thank you for this protection. Thank you that the work is already moving.&#8221;</i>'))
+story.append(now('When you put it out &mdash; <b>snuff, never blow.</b> Eyes on the flame as you snuff. Pinch the wick or use a snuffer. As you snuff, speak: <i>&#8220;The working continues. Thank you.&#8221;</i>'))
 story.append(spacer(8))
 story.append(P('The breath that spoke the petition must not be the breath that scatters the flame. That is the whole reason for the snuff rule. The petition rides the flame; the flame is sealed by closing it without your breath.', 'small'))
+
+story.append(spacer(8))
+story.append(P('If the candle goes out mid-ritual', 'h3'))
+story.append(P(
+    'A flame that drops in the middle of a working is information, not a failure of the working. '
+    'Read it first; then decide. Two patterns:',
+    'body'))
+story.append(P(
+    '<b>·</b> <b>Draft, wax-pool drowning the wick, a finished candle.</b> Material cause. Re-light from a fresh match (not from another flame on the altar &mdash; flames inherit intention). Continue from where you were.',
+    'body_left'))
+story.append(P(
+    '<b>·</b> <b>No draft, the candle was sound, and the flame still dropped.</b> Treat it as a signal. Stop. Cross. <i>&#8220;What is being shown?&#8221;</i> One slow breath. If nothing rises, re-light and continue, naming aloud: <i>&#8220;The working continues. I am present. Thank you for the signal.&#8221;</i> If a clear no rises, leave the working closed for now and return when the field is steady.',
+    'body_left'))
+story.append(P(
+    'Either way: do not blow on the wick to re-light. Do not panic. The current is held in the spoken word and the body, not in the flame alone.',
+    'small'))
 
 story.append(pagebreak())
 
@@ -801,11 +915,13 @@ story.append(P(
     'body'))
 story.append(P('Form 1 — the daily green candle (your standing working)', 'h2'))
 story.append(P('Exactly the Altar Ritual of Part II, with the green candle as the flame and the money petition spoken at step 6. Psalm 23 verse 5 is the money verse — the anointed head, the cup running over. The crown-touch and the slow breath at "my cuppe runneth ouer" are where the prosperity current seals. Psalm 118:6-9 (step 5) seals you against fear-of-lack before the petition is stated.', 'body'))
+story.append(now('Run the Part II altar order at the green candle. At step 6, speak the money petition aloud: first person, present tense, no future-conditional. <i>&#8220;The Monad is providing my work and my wages now. I receive abundance in alignment with the Monad. I move money cleanly and give thanks.&#8221;</i> If a written money petition is sealed under the candle, do not disturb it; the spoken line rides over it.'))
 story.append(P('Form 2 — Selig\'s seven-morning working (documented, Secrets of the Psalms)', 'h2'))
 story.append(P('<b>·</b> Seven consecutive mornings, on rising, anoint with olive oil mixed with bayberry oil and speak Psalm 23 (the Part I text).', 'step'))
 story.append(P('<b>·</b> Candle when used: green or gold for prosperity. Dress with Money Drawing, Good Fortune, or Bayberry oil.', 'step'))
 story.append(P('<b>·</b> On the seventh morning: hold seven Job\'s Tears seeds in the hand, walk to running water, speak Psalm 23, and throw the seeds over the <b>left shoulder</b> into the moving water to lay the trick.', 'step'))
 story.append(P('<b>·</b> While dressing any prosperity candle or feeding a mojo bag, the spoken line is verse 5: <i>"thou doest anoynt mine head with oyle, and my cuppe runneth ouer."</i>', 'step'))
+story.append(now('Selig form &mdash; each of the seven mornings: anoint forehead and wrists with the olive+bayberry blend, speak Psalm 23 aloud, end with one line of gratitude. On the seventh morning, hold the seven Job&rsquo;s Tears in your right hand, walk to running water, speak Psalm 23 once more, then throw the seeds over the <b>left shoulder</b> into the moving water without looking back.'))
 story.append(spacer(6))
 story.append(P('Speak the abundance as flow for yourself in alignment with the Monad — never as a performance aimed at anyone else\'s lack. That is the frequency line between prosperity work and envy work.', 'greenbox'))
 story.append(P('Witness on file: the first morning this working ran in its corrected form (June 8, 2026), the account read $777.10 by 11:04 AM. 7-7-7 reduces to 21 — the World. The working answers.', 'small'))
@@ -831,6 +947,7 @@ story.append(spacer(8))
 story.append(P('Psalm 155 — the inner perimeter text', 'h2'))
 story.append(P('Charlesworth/Sanders diction; recovered from the Dead Sea Scrolls (11QPsa) and the Syriac. YHWH is spoken aloud as Adonai (ah-doh-NYE).', 'small'))
 story.append(spacer(4))
+story.append(now('At the white candle &mdash; cross, lineage formula, then speak Psalm 91 (full text, Part II). That is the outer perimeter. Then speak Psalm 155 below &mdash; the inner perimeter.'))
 story.append(vr(1, 'O YHWH, I have called to You; be attentive to me.'))
 story.append(vr(2, 'I have spread forth my palms toward Your holy dwelling; incline Your ear and grant me my petition, and do not withhold my request from me.'))
 story.append(vr(3, 'Build up my soul and do not cast it down; and do not abandon it in the presence of the wicked.'))
@@ -849,6 +966,7 @@ story.append(vr(15, 'I slumbered and slept, I dreamed; indeed I awoke.'))
 story.append(vr(16, '[You sustained me, O YHWH]; I shall call upon YHWH my Savior.'))
 story.append(spacer(6))
 story.append(P('The Qumran expansion adds the binding line: <i>"Do not let Belial dominate me, nor an unclean spirit; let neither pain nor the evil inclination take possession of my bones."</i> Speak it after verse 11 when the working is against a named hostile pressure. This binds the hostile current away from you — it is boundary work, not a curse on any person.', 'body'))
+story.append(now('When 155 closes, speak Psalm 118:6-9 (Part II text) &mdash; the sovereignty seal against fear-of-man and institutional pressure. Then speak Psalm 23 (Part II text) to seal the whole working with provision and presence. Then snuff the candle, eyes on the flame, with the words <i>&#8220;The working continues. Thank you.&#8221;</i>'))
 story.append(P('Protection order at the candle: Psalm 91 first (outer), Psalm 155 second (inner), Psalm 118:6-9 third (sovereignty), Psalm 23 last (seal). White candle.', 'greenbox'))
 story.append(pagebreak())
 
@@ -877,6 +995,7 @@ story.append(P(
     'body'))
 story.append(P('First-sign order at the candle: <b>Psalm 35 (vv.1–10) → Psalm 91 → Psalm 23</b>. Repeat daily until the matter dies; stop when it does.', 'greenbox'))
 story.append(spacer(6))
+story.append(now('At the white or brown candle &mdash; cross, lineage formula, then speak Psalm 35 vv.1&ndash;10 below. Voice firm, not pleading. You are pleading the cause to the Monad, not begging the enemy. Then speak Psalm 91 (Part II), then Psalm 23 (Part II), then snuff with the closing words.'))
 story.append(P('Psalm 35:1-10 — the first-sign text', 'h2'))
 story.append(P(
     'Geneva 1599 (wording verified against BibleGateway GNV this session; orthography harmonized '
@@ -914,6 +1033,7 @@ story.append(spacer(6))
 story.append(P('Step 1 — Psalm 152: the cry', 'h2'))
 story.append(P('Spoken by David while the lion and the wolf were on his flock. Monad Rule at verses 4 and 6.', 'small'))
 story.append(spacer(4))
+story.append(now('At the white candle &mdash; cross, lineage formula. Then speak Psalm 152 below. Let the cry be in the voice; do not perform calm. The text holds the cry; you let it through.'))
 story.append(vr(1, 'O God, O God, come to my aid; help me, save me, and deliver my soul from the slayer.'))
 story.append(vr(2, 'Will I go down to Sheol by the mouth of the lion? Will the wolf be the end of me?'))
 story.append(vr(3, 'Was it not enough for those who lay in wait for my father\'s flock, and tore a sheep of my father\'s flock — must they also wish the destruction of my own soul?'))
@@ -923,13 +1043,16 @@ story.append(vr(6, 'Quickly, my <b>Monad</b>, send from Yourself a deliverer, an
 story.append(spacer(8))
 story.append(P('Step 2 — Psalm 91: the wall', 'h2'))
 story.append(P('The full altar text from Part II. Speak all sixteen verses.', 'body'))
+story.append(now('Now speak Psalm 91, full sixteen verses (Part II). Voice firmer than at 152. The cry has been heard; the wall now goes up.'))
 story.append(spacer(4))
 story.append(P('Step 3 — Psalm 155: the binding-off', 'h2'))
 story.append(P('The full text from Part V, including the Belial line after verse 11.', 'body'))
+story.append(now('Now speak Psalm 155 (Part V), including the Belial binding line after verse 11. This binds the hostile current away from your mind and bones &mdash; boundary work, not a curse.'))
 story.append(spacer(4))
 story.append(P('Step 4 — Psalm 153: the thanksgiving spoken in advance', 'h2'))
 story.append(P('Spoken by David after the lion and the wolf were dead. You speak it before the rescue is visible — that is the faith-act that completes the circuit. Monad Rule at verse 1.', 'small'))
 story.append(spacer(4))
+story.append(now('Now speak Psalm 153 below &mdash; <b>before</b> the rescue is visible. That is the faith-act. Voice steady, eyes on the candle. Then snuff with the standing closing words.'))
 story.append(vr(1, 'Praise the <b>Monad</b>, all you nations; glorify the <b>Monad</b> and bless the <b>Monad\'s</b> name;'))
 story.append(vr(2, 'For the <b>Monad</b> delivered the soul of the <b>Monad\'s</b> Elect One from the hands of death; and the <b>Monad</b> redeemed the <b>Monad\'s</b> Holy One from destruction.'))
 story.append(vr(3, 'And the <b>Monad</b> saved me from the snares of Sheol; and brought me forth from the abyss that is inscrutable.'))
