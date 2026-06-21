@@ -195,6 +195,89 @@ def check_psalms_printed_inline(pdf_text: str):
             )
 
 # ============================================================
+# Rule 6: Lineage manifest signatures must appear in the build script.
+# ============================================================
+#
+# Every documented-lineage claim the Reader makes lives in lineage.py
+# with a `signature` field — a short verbatim substring that should
+# appear in build_psalms_reader.py. If the build script no longer
+# contains the verbatim signature, an ordering / holy name / herb /
+# timing claim has been EDITED without updating the manifest. The
+# validator fails, forcing the operator to re-verify the source and
+# refresh the manifest entry — that IS the discipline-forcing function.
+# This catches the class of bug Jordan caught manually on 2026-06-21
+# (candle was lit at step 7 instead of step 3) BEFORE the build ships.
+
+from datetime import date, datetime
+
+def check_lineage_manifest():
+    """Rule 6: Every signature in lineage.MANIFEST must appear verbatim
+    in build_psalms_reader.py. Also warn if any documented_* entry's
+    verified_on is older than STALE_DAYS."""
+    try:
+        import lineage  # noqa: F401
+    except ImportError as e:
+        fail(
+            f"LINEAGE MANIFEST MISSING: cannot import lineage.py — {e}. "
+            f"Install the manifest at altar-psalms-bible/lineage.py before shipping."
+        )
+        return
+
+    stale_days = getattr(lineage, 'STALE_DAYS', 365)
+    today = date.today()
+
+    missing = []
+    stale = []
+    bad_schema = []
+    for entry in lineage.MANIFEST:
+        # Schema check: required fields
+        for fld in ('id', 'claim', 'category', 'signature', 'sources', 'verified_on'):
+            if fld not in entry:
+                bad_schema.append(f"entry {entry.get('id', '?')} missing field '{fld}'")
+                continue
+
+        sig = entry['signature']
+        # Empty signature is allowed for operator_construction entries,
+        # but if present, must appear verbatim in the build script.
+        if sig and sig not in source:
+            missing.append((entry['id'], sig))
+
+        # Staleness check
+        try:
+            d = datetime.strptime(entry['verified_on'], '%Y-%m-%d').date()
+            age = (today - d).days
+            if age > stale_days:
+                stale.append((entry['id'], age))
+        except (ValueError, KeyError):
+            bad_schema.append(f"entry {entry['id']} has bad verified_on: {entry.get('verified_on')!r}")
+
+    if bad_schema:
+        for problem in bad_schema:
+            fail(f"LINEAGE MANIFEST SCHEMA: {problem}")
+
+    if missing:
+        for entry_id, sig in missing:
+            fail(
+                f"LINEAGE SIGNATURE MISSING for '{entry_id}': "
+                f"the verbatim signature {sig!r} is not in build_psalms_reader.py. "
+                f"Either the build script has been edited without updating the "
+                f"manifest entry, or the manifest signature is wrong. "
+                f"Re-verify the source citation in lineage.py and refresh "
+                f"both the signature and verified_on date."
+            )
+
+    if stale:
+        for entry_id, age in stale:
+            warn(
+                f"LINEAGE STALE: entry '{entry_id}' is {age} days old "
+                f"(stale threshold {stale_days}). Re-fetch the cited source "
+                f"and refresh verified_on if the quote still stands."
+            )
+
+    print(f"Lineage manifest: {len(lineage.MANIFEST)} entries, "
+          f"{len(missing)} missing signatures, {len(stale)} stale.")
+
+# ============================================================
 # Run
 # ============================================================
 
@@ -210,6 +293,7 @@ def main():
     check_no_duplicate_gloss_entries(tables)
     check_no_tautological_glosses(tables)
     check_now_cues_present_in_source()
+    check_lineage_manifest()
 
     pdf_text = pdftext()
     check_no_double_rendered_glosses(pdf_text)
