@@ -52,7 +52,7 @@ from reportlab.lib.colors import HexColor
 from reportlab.lib.enums import TA_CENTER, TA_LEFT, TA_JUSTIFY, TA_RIGHT
 from reportlab.platypus import (
     BaseDocTemplate, Paragraph, Spacer, PageBreak, Table, TableStyle,
-    PageTemplate, Frame
+    PageTemplate, Frame, KeepTogether
 )
 from reportlab.graphics.shapes import Drawing, Line, Circle, String, Polygon
 from reportlab.pdfbase import pdfmetrics
@@ -535,11 +535,6 @@ story.append(P(
     'visions; the on-rising daily form is the Hoodoo working layer over Selig. The Psalm 91:11 '
     'doorway recitation is folk Hoodoo, not Selig\'s text.</i>',
     'body'))
-story.append(spacer(4))
-story.append(P('<b>1.</b> Sit up. One slow breath in, one slow breath out.', 'step'))
-story.append(P('<b>2.</b> Speak <b>Psalm 23</b> aloud (text below).', 'step'))
-story.append(P('<b>3.</b> One line of gratitude in your own words. <i>"Thank you for this day."</i> Done.', 'step'))
-story.append(P('<b>4.</b> At the door, before you leave: <b>Psalm 91 verse 11, three times</b> (text below).', 'step'))
 story.append(spacer(8))
 
 story.append(P('Psalm 23 — the everyday text', 'h2'))
@@ -599,9 +594,12 @@ story.append(spacer(4))
 # Hebrew opener, then the psalm. The reader does NOT have to flip back to the
 # 10-step overview at any point.
 story.append(now('At the altar threshold &mdash; pause. Wash your hands at the basin, or press your palms together at the altar edge. One slow breath. The body crosses into ritual time.'))
-story.append(now('Cross. Right index finger touches each station; one continuous breath through the whole gesture.'))
-story.append(cross_diagram())
-story.append(P('Stations 1 &rarr; 2 &rarr; 3 &rarr; 4 &rarr; 5 (return). Forehead = the Monad above; heart = the body&rsquo;s altar; right = structure; left = flow; the return to heart seals.', 'small_center'))
+story.append(P('The Hermetic cross on the body', 'h3'))
+story.append(now('Right index finger touches each station; one continuous breath through the whole gesture.'))
+story.append(KeepTogether([
+    cross_diagram(),
+    P('Stations 1 &rarr; 2 &rarr; 3 &rarr; 4 &rarr; 5 (return). Forehead = the Monad above; heart = the body&rsquo;s altar; right = structure; left = flow; the return to heart seals.', 'small_center'),
+]))
 story.append(spacer(4))
 story.append(now('Speak the lineage formula aloud: <i>&#8220;In the name of the Father, the Son, and the Holy Spirit.&#8221;</i>'))
 story.append(now('<b>Light the candle</b> (or continue the standing burn). The working psalm rides the flame &mdash; documented Hoodoo order (Yronwode, Lucky Mojo). Every spoken word from here to the snuff is spoken into a lit flame.'))
@@ -670,7 +668,7 @@ story.append(spacer(10))
 # ---- The closing sequence: petition through snuff, INLINE so the operator
 # never has to flip back to the 10-step overview ----
 story.append(P('The closing sequence — petition through snuff', 'h2'))
-story.append(P('Steps 6 through 10 of the altar ritual. Inline so you stay in the working all the way to the snuff.', 'small'))
+story.append(P('Steps 7 through 10 of the altar ritual. Inline so you stay in the working all the way to the snuff.', 'small'))
 story.append(spacer(4))
 
 story.append(now('If a written petition paper sits beneath the candle (sealed there from a prior working &mdash; the Beltane working, a fresh consecration) <b>do not disturb it.</b> Your spoken petition rides over the paper and into the lit flame. The paper holds the form; the spoken word renews the current.'))
@@ -698,12 +696,14 @@ story.append(P(
     'small'))
 
 story.append(spacer(10))
-story.append(P('Petition paper construction (for a new working)', 'h3'))
-story.append(P(
-    'For a fresh working &mdash; a new prosperity petition, a new protection petition, a new '
-    'consecration &mdash; documented Hoodoo (Yronwode, <i>Paper in My Shoe</i>) gives a precise '
-    'form. Build it correctly the first time and the standing burn rides cleanly:',
-    'body'))
+story.append(KeepTogether([
+    P('Petition paper construction (for a new working)', 'h3'),
+    P(
+        'For a fresh working &mdash; a new prosperity petition, a new protection petition, a new '
+        'consecration &mdash; documented Hoodoo (Yronwode, <i>Paper in My Shoe</i>) gives a precise '
+        'form. Build it correctly the first time and the standing burn rides cleanly:',
+        'body'),
+]))
 story.append(P(
     '<b>·</b> <b>Pen and paper.</b> Brown paper or parchment for general workings; the colour of the '
     'working for color-specific intents (green for money, white for protection). Write in '
@@ -995,7 +995,7 @@ story.append(spacer(8))
 story.append(P('Psalm 155 — the inner perimeter text', 'h2'))
 story.append(P('Charlesworth/Sanders diction; recovered from the Dead Sea Scrolls (11QPsa) and the Syriac. YHWH is spoken aloud as Adonai (ah-doh-NYE).', 'small'))
 story.append(spacer(4))
-story.append(now('At the white candle &mdash; cross, lineage formula, then speak Psalm 91 (full text, Part II). That is the outer perimeter. Then speak Psalm 155 below &mdash; the inner perimeter.'))
+story.append(now('At the white candle &mdash; cross, lineage formula, <b>light the candle</b>, then speak Psalm 91 (full text, Part II). The working psalm rides the lit flame. That is the outer perimeter. Then speak Psalm 155 below &mdash; the inner perimeter.'))
 story.append(vr(1, 'O YHWH, I have called to You; be attentive to me.'))
 story.append(vr(2, 'I have spread forth my palms toward Your holy dwelling; incline Your ear and grant me my petition, and do not withhold my request from me.'))
 story.append(vr(3, 'Build up my soul and do not cast it down; and do not abandon it in the presence of the wicked.'))
@@ -1052,7 +1052,7 @@ story.append(P(
     'body'))
 story.append(P('First-sign order at the candle (operator form): <b>Psalm 35 vv.1-10 → Psalm 91 → Psalm 23</b>, daily until the matter dies. Selig 3-morning form: <b>whole Psalm 35 with holy name Jah, three mornings in a row.</b>', 'greenbox'))
 story.append(spacer(6))
-story.append(now('At the white or brown candle &mdash; cross, lineage formula, then speak Psalm 35 vv.1&ndash;10 below. Voice firm, not pleading. You are pleading the cause to the Monad, not begging the enemy. Then speak Psalm 91 (Part II), then Psalm 23 (Part II), then snuff with the closing words.'))
+story.append(now('At the white or brown candle &mdash; cross, lineage formula, <b>light the candle</b>, then speak Psalm 35 vv.1&ndash;10 below into the lit flame. Voice firm, not pleading. You are pleading the cause to the Monad, not begging the enemy. Then speak Psalm 91 (Part II), then Psalm 23 (Part II), then snuff with the closing words.'))
 story.append(P('Psalm 35:1-10 — the first-sign text', 'h2'))
 story.append(P(
     'Geneva 1599 (wording verified against BibleGateway GNV this session; orthography harmonized '
@@ -1091,7 +1091,7 @@ story.append(spacer(6))
 story.append(P('Step 1 — Psalm 152: the cry', 'h2'))
 story.append(P('Spoken by David while the lion and the wolf were on his flock. Monad Rule at verses 4 and 6.', 'small'))
 story.append(spacer(4))
-story.append(now('At the white candle &mdash; cross, lineage formula. Then speak Psalm 152 below. Let the cry be in the voice; do not perform calm. The text holds the cry; you let it through.'))
+story.append(now('At the white candle &mdash; cross, lineage formula, <b>light the candle</b>. Then speak Psalm 152 below into the lit flame. Let the cry be in the voice; do not perform calm. The text holds the cry; you let it through.'))
 story.append(vr(1, 'O God, O God, come to my aid; help me, save me, and deliver my soul from the slayer.'))
 story.append(vr(2, 'Will I go down to Sheol by the mouth of the lion? Will the wolf be the end of me?'))
 story.append(vr(3, 'Was it not enough for those who lay in wait for my father\'s flock, and tore a sheep of my father\'s flock — must they also wish the destruction of my own soul?'))
@@ -1133,9 +1133,11 @@ story.append(spacer(6))
 story.append(P('Psalm 151 — the anointing text', 'h2'))
 story.append(P('Brenton 1851 Septuagint (verified against ebible.org). Monad Rule at verses 3 and 5. Verses 1–5 are the general working text; verses 6–7 (the Goliath combat) are situational — speak them only when you are answering an active, named attack.', 'small'))
 story.append(spacer(4))
+story.append(now('At the white or gold candle &mdash; cross, lineage formula, <b>light the candle</b>. Open with the Hebrew: <i>hah-leh-loo-YAH leh-dah-VEED ben-yee-SHY.</i> Then speak Psalm 151 below into the lit flame.'))
 story.append(vr(1, 'I was small among my brethren, and youngest in my father\'s house: I tended my father\'s sheep.'))
 story.append(vr(2, 'My hands formed a musical instrument, and my fingers tuned a psaltery.'))
 story.append(vr(3, 'And who shall tell my <b>Monad</b>? the <b>Monad</b> alone, the <b>Monad</b> alone hears.'))
+story.append(now('At verse 4, anoint with the consecration oil &mdash; forehead, then the tool or vow-object being consecrated.'))
 story.append(vr(4, 'The <b>Monad</b> sent forth the <b>Monad\'s</b> angel, and took me from my father\'s sheep, and the <b>Monad</b> anointed me with the oil of the <b>Monad\'s</b> anointing.'))
 story.append(vr(5, 'My brothers were handsome and tall; but the <b>Monad</b> did not take pleasure in them.'))
 story.append(P('— the situational half —', 'small'))
@@ -1143,6 +1145,7 @@ story.append(vr(6, 'I went forth to meet the Philistine; and he cursed me by his
 story.append(vr(7, 'But I drew his own sword, and beheaded him, and removed reproach from the children of Israel.'))
 story.append(spacer(6))
 story.append(P('psaltery = SAWL-ter-ee, a small harp. Philistine = FIL-ih-steen.', 'small'))
+story.append(now('Now speak Psalm 23 (Part I text) to seal the new office with provision and presence. Then snuff the candle, eyes on the flame, with the standing closing words.'))
 story.append(P('Then Psalm 23 (Part I text) to seal the new office with provision and presence.', 'greenbox'))
 story.append(pagebreak())
 
@@ -1159,6 +1162,7 @@ story.append(spacer(6))
 story.append(P('Psalm 154 — the Wisdom text', 'h2'))
 story.append(P('Charlesworth/Sanders diction; Hebrew preserved in 11QPsa. Monad Rule at verse 9. YHWH spoken as Adonai. Hokhmah = khokh-MAH. Wisdom is "she" throughout — that is the text, not a change.', 'small'))
 story.append(spacer(4))
+story.append(now('At the white or purple candle &mdash; cross, lineage formula, <b>light the candle</b>. Open with the Hebrew: <i>buh-KOHL gah-DOHL pah-ah-ROO eh-loh-HEEM.</i> Then speak Psalm 154 below into the lit flame. After 154, speak Psalm 23 (Part II text) to seal, then snuff with the closing words.'))
 story.append(vr(1, 'With a loud voice glorify God; proclaim the <b>Monad\'s</b> splendor in the congregation of the many.'))
 story.append(vr(2, 'Glorify the <b>Monad\'s</b> name in the multitude of the righteous, and celebrate the <b>Monad\'s</b> majesty with the faithful.'))
 story.append(vr(3, 'Bind your souls to the good and to the perfect, to glorify the Most High.'))
@@ -1209,7 +1213,7 @@ mt = Table([
     [Paragraph('Enemies / court, first sign', S['body_left']), Paragraph('35 (vv.1–10) → 91 → 23; daily until the matter dies', S['body_left']), Paragraph('white or brown', S['small'])],
     [Paragraph('Acute crisis', S['body_left']), Paragraph('152 → 91 → 155 → 153', S['body_left']), Paragraph('white', S['small'])],
     [Paragraph('New role / consecration', S['body_left']), Paragraph('151 (vv.1–5) → 23', S['body_left']), Paragraph('white or gold', S['small'])],
-    [Paragraph('Clarity / decision', S['body_left']), Paragraph('154 → 23', S['body_left']), Paragraph('white or purple', S['small'])],
+    [Paragraph('Clarity / decision', S['body_left']), Paragraph('154 → 23 (Sophia current); or documented Hoodoo: 43 → 23', S['body_left']), Paragraph('white or purple', S['small'])],
     [Paragraph('Travel', S['body_left']), Paragraph('91:11 ×3; long trip: 91 ×7 eve before, 23 that morning', S['body_left']), Paragraph('none', S['small'])],
     [Paragraph('After a death', S['body_left']), Paragraph('23, slow, verse 4 spoken to the Monad', S['body_left']), Paragraph('white', S['small'])],
 ], colWidths=[1.6*inch, 3.4*inch, 1.2*inch])
@@ -1225,15 +1229,17 @@ mt.setStyle(TableStyle([
 ]))
 story.append(mt)
 story.append(spacer(14))
-story.append(P(
-    'Candle colors, herbs, and timing follow the documented stream (Selig 1788; Yronwode / Lucky '
-    'Mojo; Hoodoo Sen Moise) as carried in the main Altar Psalms Bible. The Monad Rule, the '
-    'use-category sorting, the pronunciation, the Psalm 118:6-9 sovereignty seal, and the '
-    'Psalm 35 first-sign framing are this book\'s additions, built at the operator\'s '
-    'instruction. Where your discernment lands differently, your discernment wins.',
-    'small'))
-story.append(spacer(10))
-story.append(P('— end of the Reader —', 'cover_lineage'))
+story.append(KeepTogether([
+    P(
+        'Candle colors, herbs, and timing follow the documented stream (Selig 1788; Yronwode / Lucky '
+        'Mojo; Hoodoo Sen Moise) as carried in the main Altar Psalms Bible. The Monad Rule, the '
+        'use-category sorting, the pronunciation, the Psalm 118:6-9 sovereignty seal, and the '
+        'Psalm 35 first-sign framing are this book\'s additions, built at the operator\'s '
+        'instruction. Where your discernment lands differently, your discernment wins.',
+        'small'),
+    spacer(10),
+    P('— end of the Reader —', 'cover_lineage'),
+]))
 
 if __name__ == '__main__':
     doc = Doc('/home/user/numenist-site/altar-psalms-bible/altar-psalms-reader.pdf',

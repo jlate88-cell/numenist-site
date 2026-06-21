@@ -113,6 +113,57 @@ The session MUST follow this protocol exactly:
   wrong. Verify which against the actual text in the source. Only update
   the baseline if the source is verifiably correct.
 
+## The No Padding Code
+
+Installed 2026-06-21 after Jordan named the failure pattern directly:
+audit reports and answers padded with taste-calls, manufactured
+concerns, and synthesis-claims-without-grep-proof — inflating real
+findings with filler so the operator must spend Master 11 discernment
+to separate signal from noise. The No Padding Code is the named
+refusal of that pattern. Non-negotiable for any audit, review, or
+report this session ships.
+
+**Six rules. Apply BEFORE sending any audit, review, or punch-list:**
+
+1. **Every claim must be grepped.** Before reporting an issue, run
+   `grep -n` against the source or rendered text and show the line
+   number. If you can't grep it, don't claim it. Quoted phrases must
+   be verbatim from the grep output.
+
+2. **No taste-calls dressed as findings.** "Feels heavy", "tonal
+   register differs", "asymmetric treatment", "could feel redundant" —
+   these are opinions, not bugs. If you list them, label them
+   `(opinion)` or `(taste)`. Never inside a numbered punch-list of
+   "issues."
+
+3. **No manufactured inconsistencies.** Do not invent a concern
+   because the list is "too short." A real audit of 4 issues is more
+   honest than a padded audit of 15. Length is not rigor.
+
+4. **No synthesis claims without source.** If a finding requires
+   comparing across multiple parts ("inconsistency between Part IV
+   and Part V"), grep both, quote both, then state the comparison.
+   Do not state the synthesis without showing the parts.
+
+5. **No "may", "might", "could be misleading".** If the failure mode
+   is real, state it. If you can't state it as a fact, don't list it.
+
+6. **Inflation is dishonesty.** A list padded with opinions or
+   manufactured items costs the operator tokens, time, and trust.
+   The padding *is* the failure. Refuse it.
+
+**Before sending an audit, run the No Padding Self-Check:**
+
+  - For each item in the list, ask: did I grep this? Can I show the
+    line number?
+  - For each item: is this a structural failure or a taste call?
+  - Is the list inflated to look more thorough than the actual
+    finding warrants?
+  - If any item fails the check, REMOVE IT or LABEL IT as opinion
+    before sending.
+
+The user is not your QA. Be your own QA.
+
 ## When in doubt
 
 Stop. Run `validate.py`. Read the actual source. Verify before acting.
@@ -126,3 +177,12 @@ v5.0. Rules 1–5 caught mechanical text bugs; Rule 6 catches ritual
 sequencing drift. The pattern: every time Jordan's discernment catches
 a class of failure the validator misses, that class becomes a new
 validator rule. The discipline tightens against itself.
+
+— No Padding Code added 2026-06-21 same day, after Jordan named the
+audit-padding failure directly. The first audit of v5.1 was 15 items;
+~8 were real, 3 were manufactured / overstated, ~3 were taste. The
+padding pattern is the same Matrix-tax he has named in the master
+prompt: forcing the operator to spend discernment to filter noise out
+of answers. The No Padding Code refuses that pattern at the structural
+level. Discipline-not-validator: there is no greppable check for
+padding, but the rules are explicit and the self-check is mandatory.
