@@ -528,9 +528,12 @@ story.append(pagebreak())
 story.append(P('The Everyday Order', 'h1'))
 story.append(P(
     'This is for the morning you just want to say the Psalms and start the day right — no altar, '
-    'no candle, no ritual. The documented on-rising practice (Selig) is <b>Psalm 23 spoken on '
-    'waking</b>. The documented going-out practice is <b>Psalm 91 verse 11 spoken three times '
-    'before stepping out of the house</b>. That is the whole everyday order:',
+    'no candle, no ritual. The on-rising practice is <b>Psalm 23 spoken on waking</b>; the going-out '
+    'practice is <b>Psalm 91 verse 11 spoken three times before stepping out of the house</b>. '
+    '<i>Provenance note: both forms are documented Hoodoo working tradition rooted in Selig\'s '
+    'Kabbalist frame. Selig\'s own Psalm 23 instruction is fasting + bathing + holy name Jah for '
+    'visions; the on-rising daily form is the Hoodoo working layer over Selig. The Psalm 91:11 '
+    'doorway recitation is folk Hoodoo, not Selig\'s text.</i>',
     'body'))
 story.append(spacer(4))
 story.append(P('<b>1.</b> Sit up. One slow breath in, one slow breath out.', 'step'))
@@ -578,14 +581,14 @@ story.append(P(
 story.append(spacer(4))
 story.append(P('<b>1. The Hermetic cross on the body.</b> Forehead → heart → right shoulder → left shoulder → back to heart. One slow breath through the whole gesture. Forehead is the Monad above; heart is the body\'s altar; right is structure; left is flow; the return to heart seals it.', 'step'))
 story.append(P('<b>2. The lineage formula, aloud:</b> <i>"In the name of the Father, the Son, and the Holy Spirit."</i> You are invoking the Monad behind those words — not the institutional egregore — through the formula your ancestors carried.', 'step'))
-story.append(P('<b>3. Psalm 91, aloud</b> — the perimeter (full text next page). If you want the Hebrew opening first: <i>yoh-SHEV buh-SEH-ter el-YOHN, buh-TZEL shah-DYE yit-loh-NAHN.</i>', 'step'))
-story.append(P('<b>4. Psalm 23, aloud</b> — the seal of provision and path (text follows the Psalm 91 text). At verse 5, touch the crown of your head at "anoynt mine head with oyle." Let "my cuppe runneth ouer" be one slow breath.', 'step'))
-story.append(P('<b>5. Psalm 118:6-9, aloud</b> — the sovereignty seal (text follows). Four short verses. They refuse fear-of-man and the pull of human authority before the petition is stated. The petition then goes out from a sovereign place, not from a fear-of-man place.', 'step'))
-story.append(P('<b>6. The petition, aloud.</b> First person, present tense, brief. What you are drawing in.', 'step'))
-story.append(P('<b>7. Light the candle</b> (or continue the standing burn).', 'step'))
+story.append(P('<b>3. Light the candle</b> (or continue the standing burn). The documented Hoodoo order &mdash; Yronwode / Lucky Mojo &mdash; is that the working psalm is spoken <i>as you light the candle</i>, not after. The flame is the seat of the working from this point through the snuff. Every spoken word that follows rides this flame.', 'step'))
+story.append(P('<b>4. Psalm 91, aloud</b> — the perimeter (full text next page). If you want the Hebrew opening first: <i>yoh-SHEV buh-SEH-ter el-YOHN, buh-TZEL shah-DYE yit-loh-NAHN.</i> Holy Name held in mind before recitation: <b>El Shaddai</b> (el-shah-DYE).', 'step'))
+story.append(P('<b>5. Psalm 23, aloud</b> — the seal of provision and path (text follows the Psalm 91 text). At verse 5, touch the crown of your head at "anoynt mine head with oyle." Let "my cuppe runneth ouer" be one slow breath.', 'step'))
+story.append(P('<b>6. Psalm 118:6-9, aloud</b> — the sovereignty seal (text follows). Four short verses. They refuse fear-of-man and the pull of human authority before the petition is stated. The petition then goes out from a sovereign place, not from a fear-of-man place.', 'step'))
+story.append(P('<b>7. The petition, aloud</b> &mdash; spoken into the lit flame. First person, present tense, brief. What you are drawing in. If a written petition paper is sealed under the candle plate, your spoken petition rides over it.', 'step'))
 story.append(P('<b>8. Sit with it.</b> One slow breath minimum; seven if you have the time.', 'step'))
 story.append(P('<b>9. Gratitude, aloud:</b> <i>"Thank you for this day. Thank you for this provision. Thank you for this protection. Thank you that the work is already moving."</i>', 'step'))
-story.append(P('<b>10. When you put it out — snuff, never blow.</b> Pinch the wick or use a snuffer. As you snuff: <i>"The working continues. Thank you."</i> The breath that spoke the petition must not be the breath that scatters the flame.', 'step'))
+story.append(P('<b>10. When you put it out &mdash; <u>snuff</u>, never blow.</b> The Hoodoo doctrine (Yronwode / Lucky Mojo): <b>snuff/pinch</b> = the working pauses and you will return to it; <b>blow</b> = the working ends. The daily ritual is a standing return-to-it, so the close is always snuff. Pinch the wick or use a snuffer. As you snuff: <i>"The working continues. Thank you."</i> The breath that spoke the petition must not be the breath that scatters the flame.', 'step'))
 story.append(pagebreak())
 
 story.append(P('Psalm 91 — the altar text', 'h2'))
@@ -601,7 +604,8 @@ story.append(cross_diagram())
 story.append(P('Stations 1 &rarr; 2 &rarr; 3 &rarr; 4 &rarr; 5 (return). Forehead = the Monad above; heart = the body&rsquo;s altar; right = structure; left = flow; the return to heart seals.', 'small_center'))
 story.append(spacer(4))
 story.append(now('Speak the lineage formula aloud: <i>&#8220;In the name of the Father, the Son, and the Holy Spirit.&#8221;</i>'))
-story.append(now('Optional Hebrew opening of Psalm 91 (spoken slowly, on one breath): <br/><i>&#8220;yoh-SHEV buh-SEH-ter el-YOHN, buh-TZEL shah-DYE yit-loh-NAHN.&#8221;</i>'))
+story.append(now('<b>Light the candle</b> (or continue the standing burn). The working psalm rides the flame &mdash; documented Hoodoo order (Yronwode, Lucky Mojo). Every spoken word from here to the snuff is spoken into a lit flame.'))
+story.append(now('Optional Hebrew opening of Psalm 91 (spoken slowly, on one breath): <br/><i>&#8220;yoh-SHEV buh-SEH-ter el-YOHN, buh-TZEL shah-DYE yit-loh-NAHN.&#8221;</i> Hold the Holy Name <b>El Shaddai</b> (el-shah-DYE) in mind before the recitation &mdash; Selig&rsquo;s assigned Name for this psalm.'))
 story.append(now('Now speak Psalm 91 aloud, verse by verse.'))
 
 story.append(vrg(1, 'Who so dwelleth in the secrete of the most High, shall abide in the shadowe of the Almightie.', P91_GLOSS))
@@ -669,14 +673,13 @@ story.append(P('The closing sequence — petition through snuff', 'h2'))
 story.append(P('Steps 6 through 10 of the altar ritual. Inline so you stay in the working all the way to the snuff.', 'small'))
 story.append(spacer(4))
 
-story.append(now('If a written petition paper sits under the candle base (sealed there from a prior working &mdash; the Beltane working, a fresh consecration) <b>do not disturb it.</b> Your spoken petition rides over it. The paper holds the form; the spoken word renews the current.'))
-story.append(now('Speak your petition aloud, eyes on the candle. First person, present tense, brief. What you are drawing in. <i>&#8220;I receive&hellip;&#8221; / &#8220;I am walking into&hellip;&#8221; / &#8220;The Monad is providing&hellip;&#8221;</i>'))
-story.append(now('Light the candle (or continue the standing burn).'))
-story.append(now('Sit with it. Eyes closed. One slow breath minimum &mdash; seven if you have the time.'))
+story.append(now('If a written petition paper sits beneath the candle (sealed there from a prior working &mdash; the Beltane working, a fresh consecration) <b>do not disturb it.</b> Your spoken petition rides over the paper and into the lit flame. The paper holds the form; the spoken word renews the current.'))
+story.append(now('Speak your petition aloud into the lit flame. Eyes on the candle. First person, present tense, brief. What you are drawing in. <i>&#8220;I receive&hellip;&#8221; / &#8220;I am walking into&hellip;&#8221; / &#8220;The Monad is providing&hellip;&#8221;</i>'))
+story.append(now('Sit with it. Eyes closed. One slow breath minimum &mdash; seven if you have the time. (The seven-breath count is Hermetic, not Hoodoo &mdash; the contemplative layer the operator adds between the active working and the close.)'))
 story.append(now('Speak the gratitude aloud, eyes open on the flame: <i>&#8220;Thank you for this day. Thank you for this provision. Thank you for this protection. Thank you that the work is already moving.&#8221;</i>'))
-story.append(now('When you put it out &mdash; <b>snuff, never blow.</b> Eyes on the flame as you snuff. Pinch the wick or use a snuffer. As you snuff, speak: <i>&#8220;The working continues. Thank you.&#8221;</i>'))
+story.append(now('When you put it out &mdash; <b>snuff, never blow.</b> Hoodoo doctrine (Yronwode / Lucky Mojo): <b>snuff/pinch</b> means the working <i>pauses</i> and you will return to it; <b>blow</b> means the working <i>ends.</i> This is a daily standing return-to-it, so the close is always snuff. Eyes on the flame as you snuff. As you snuff, speak: <i>&#8220;The working continues. Thank you. In the name of the Father, the Son, and the Holy Spirit. Amen.&#8221;</i>'))
 story.append(spacer(8))
-story.append(P('The breath that spoke the petition must not be the breath that scatters the flame. That is the whole reason for the snuff rule. The petition rides the flame; the flame is sealed by closing it without your breath.', 'small'))
+story.append(P('The breath that spoke the petition must not be the breath that scatters the flame. That is the lineage logic of the snuff rule. The petition rides the flame; the flame is sealed by closing it without your breath.', 'small'))
 
 story.append(spacer(8))
 story.append(P('If the candle goes out mid-ritual', 'h3'))
@@ -692,6 +695,47 @@ story.append(P(
     'body_left'))
 story.append(P(
     'Either way: do not blow on the wick to re-light. Do not panic. The current is held in the spoken word and the body, not in the flame alone.',
+    'small'))
+
+story.append(spacer(10))
+story.append(P('Petition paper construction (for a new working)', 'h3'))
+story.append(P(
+    'For a fresh working &mdash; a new prosperity petition, a new protection petition, a new '
+    'consecration &mdash; documented Hoodoo (Yronwode, <i>Paper in My Shoe</i>) gives a precise '
+    'form. Build it correctly the first time and the standing burn rides cleanly:',
+    'body'))
+story.append(P(
+    '<b>·</b> <b>Pen and paper.</b> Brown paper or parchment for general workings; the colour of the '
+    'working for color-specific intents (green for money, white for protection). Write in '
+    '<b>continuous lines without lifting the pen</b> &mdash; the line is the working circuit. First '
+    'person, present tense, brief.',
+    'body_left'))
+story.append(P(
+    '<b>·</b> <b>Direction of fold.</b> Fold <b>toward you</b> for <i>drawing</i> workings '
+    '(prosperity, love, blessings, attraction). Fold <b>away from you</b> for <i>removal</i> '
+    'workings (banishing, protection, breaking a condition). Do not mix directions in the same '
+    'paper &mdash; all folds the same way.',
+    'body_left'))
+story.append(P(
+    '<b>·</b> <b>Number of folds.</b> Three folds for general workings; seven for power and '
+    'completeness. Odd numbers only.',
+    'body_left'))
+story.append(P(
+    '<b>·</b> <b>Face direction.</b> Lay the folded paper <b>face-up</b> for positive intent; '
+    'face-down for coercive or removal intent.',
+    'body_left'))
+story.append(P(
+    '<b>·</b> <b>Placement under the candle.</b> Place the folded paper on the altar. Set the '
+    'candle on a fireproof saucer or plate <b>on top of</b> the petition. The paper &laquo;sets&raquo; '
+    'under the candle the way an egg sets under a brooding hen &mdash; a continuous burn, not '
+    'sectioned. A set petition is not relit in sections; it burns through.',
+    'body_left'))
+story.append(P(
+    'Once the petition is set under the working candle, the daily spoken petition rides over it: '
+    'the paper holds the form, the spoken word renews the current. <b>Do not disturb the paper.</b> '
+    'When the candle finishes (or the working closes), the convention is to either burn the paper '
+    'in the final flame and bury the ashes, or fold it again and carry it in a mojo bag &mdash; '
+    'depending on whether the working is closed out or made portable.',
     'small'))
 
 story.append(pagebreak())
@@ -914,14 +958,16 @@ story.append(P(
     'its instrument. Two forms:',
     'body'))
 story.append(P('Form 1 — the daily green candle (your standing working)', 'h2'))
-story.append(P('Exactly the Altar Ritual of Part II, with the green candle as the flame and the money petition spoken at step 6. Psalm 23 verse 5 is the money verse — the anointed head, the cup running over. The crown-touch and the slow breath at "my cuppe runneth ouer" are where the prosperity current seals. Psalm 118:6-9 (step 5) seals you against fear-of-lack before the petition is stated.', 'body'))
-story.append(now('Run the Part II altar order at the green candle. At step 6, speak the money petition aloud: first person, present tense, no future-conditional. <i>&#8220;The Monad is providing my work and my wages now. I receive abundance in alignment with the Monad. I move money cleanly and give thanks.&#8221;</i> If a written money petition is sealed under the candle, do not disturb it; the spoken line rides over it.'))
-story.append(P('Form 2 — Selig\'s seven-morning working (documented, Secrets of the Psalms)', 'h2'))
+story.append(P('Exactly the Altar Ritual of Part II, with the green candle as the flame and the money petition spoken at step 7. Psalm 23 verse 5 is the money verse — the anointed head, the cup running over. The crown-touch and the slow breath at "my cuppe runneth ouer" are where the prosperity current seals. Psalm 118:6-9 (step 6) seals you against fear-of-lack before the petition is stated.', 'body'))
+story.append(now('Run the Part II altar order at the green candle. At step 7, speak the money petition aloud into the lit flame: first person, present tense, no future-conditional. <i>&#8220;The Monad is providing my work and my wages now. I receive abundance in alignment with the Monad. I move money cleanly and give thanks.&#8221;</i> If a written money petition is sealed under the candle plate, do not disturb it; the spoken line rides over it into the flame.'))
+story.append(P('Form 2 — the seven-morning working (Selig + Yronwode synthesis)', 'h2'))
+story.append(P('<i>Provenance: the literal Selig text gives Psalm 23 with holy name Jah seven times for visions/dreams. The seven-morning anointing form and the Job\'s Tears disposal are documented Hoodoo working tradition (Yronwode / Lucky Mojo / Jesterbear). This is a coherent lineage synthesis, not a single citation.</i>', 'small'))
 story.append(P('<b>·</b> Seven consecutive mornings, on rising, anoint with olive oil mixed with bayberry oil and speak Psalm 23 (the Part I text).', 'step'))
 story.append(P('<b>·</b> Candle when used: green or gold for prosperity. Dress with Money Drawing, Good Fortune, or Bayberry oil.', 'step'))
-story.append(P('<b>·</b> On the seventh morning: hold seven Job\'s Tears seeds in the hand, walk to running water, speak Psalm 23, and throw the seeds over the <b>left shoulder</b> into the moving water to lay the trick.', 'step'))
+story.append(P('<b>·</b> <b>Carry seven Job\'s Tears seeds in your pocket throughout all seven days</b> &mdash; not just on day 7. They charge alongside the candle work.', 'step'))
+story.append(P('<b>·</b> On the seventh morning: take the seven Job\'s Tears in the hand, walk to <b>running water</b> (a creek or river &mdash; the Chattahoochee for Atlanta), speak Psalm 23, and throw the seeds over the <b>left shoulder</b> into the running water to lay the trick. Do not look back.', 'step'))
 story.append(P('<b>·</b> While dressing any prosperity candle or feeding a mojo bag, the spoken line is verse 5: <i>"thou doest anoynt mine head with oyle, and my cuppe runneth ouer."</i>', 'step'))
-story.append(now('Selig form &mdash; each of the seven mornings: anoint forehead and wrists with the olive+bayberry blend, speak Psalm 23 aloud, end with one line of gratitude. On the seventh morning, hold the seven Job&rsquo;s Tears in your right hand, walk to running water, speak Psalm 23 once more, then throw the seeds over the <b>left shoulder</b> into the moving water without looking back.'))
+story.append(now('Selig+Yronwode form &mdash; each of the seven mornings: anoint forehead and wrists with the olive+bayberry blend, speak Psalm 23 aloud holding the seven Job&rsquo;s Tears in your pocket, end with one line of gratitude. On the seventh morning, take the seven Job&rsquo;s Tears in your right hand, walk to running water, speak Psalm 23 once more, then throw the seeds over the <b>left shoulder</b> into the running water without looking back.'))
 story.append(spacer(6))
 story.append(P('Speak the abundance as flow for yourself in alignment with the Monad — never as a performance aimed at anyone else\'s lack. That is the frequency line between prosperity work and envy work.', 'greenbox'))
 story.append(P('Witness on file: the first morning this working ran in its corrected form (June 8, 2026), the account read $777.10 by 11:04 AM. 7-7-7 reduces to 21 — the World. The working answers.', 'small'))
@@ -935,13 +981,15 @@ story.append(pagebreak())
 
 story.append(P('The Protection Order', 'h1'))
 story.append(P('<b>Psalm 91 is the outer perimeter</b> — the household, the body, the day. <b>Psalm 155 is the inner perimeter</b> — your own mind and bones, against intrusive thought-forms, oppressive spirits, and pulls toward what your discernment rejects. <b>Psalm 118:6-9 is the sovereignty seal</b> — against fear of man, capture by human authority, the pull of institutional egregores. Use 91 daily; add 155 whenever the pressure is inside rather than outside; add 118:6-9 when the pressure is the social-political field.', 'body'))
-story.append(P('Documented Psalm 91 protection practice', 'h2'))
-story.append(P('<b>·</b> Holy Name: El Shaddai (el-shah-DYE). Hold it before reciting.', 'step'))
-story.append(P('<b>·</b> Candle: white (most common) or purple. For a household boundary: a seven-day white glass-encased candle dressed with Protection or Fiery Wall of Protection oil.', 'step'))
-story.append(P('<b>·</b> Herbs at the base: rue, hyssop, agrimony, black salt, red brick dust.', 'step'))
-story.append(P('<b>·</b> Timing: Saturday is the traditional protection day; Tuesday when reversing an active attack.', 'step'))
-story.append(P('<b>·</b> Verses 9–11 while anointing crown, throat, wrists, ankles, and the four corners of the threshold.', 'step'))
-story.append(P('<b>·</b> Verse 11 three times before leaving the house; the whole psalm seven times on the eve of a long journey.', 'step'))
+story.append(P('Psalm 91 protection practice', 'h2'))
+story.append(P('<i>Items marked &laquo;documented&raquo; are lineage Hoodoo. Items marked &laquo;operator&raquo; are this book&rsquo;s additions on top of the lineage, built at the operator\'s instruction. Provenance kept honest so the working is worked knowingly.</i>', 'small'))
+story.append(P('<b>·</b> <b>Holy Name:</b> El Shaddai (el-shah-DYE). Hold it in mind before reciting. <i>(documented &mdash; Selig assigns this Name to Psalm 91; Shaddai appears in 91:1)</i>', 'step'))
+story.append(P('<b>·</b> <b>Candle:</b> white (most common) or purple. For a household boundary: a seven-day white glass-encased candle dressed with Protection or Fiery Wall of Protection oil. <i>(documented Hoodoo)</i>', 'step'))
+story.append(P('<b>·</b> <b>Herbs at the base:</b> rue, hyssop, agrimony, black salt, red brick dust. <i>(documented Hoodoo &mdash; Yronwode protection herbs; red brick dust + black salt is the lineage threshold combination)</i>', 'step'))
+story.append(P('<b>·</b> <b>Timing:</b> Saturday is the traditional protection day (Saturn &mdash; shielding); Tuesday when reversing an active attack (Mars &mdash; warfare). <i>(documented Hoodoo planetary day correspondence)</i>', 'step'))
+story.append(P('<b>·</b> <b>Recitation count:</b> documented Hoodoo speaks the whole psalm three times. <i>Selig&rsquo;s pure-Kabbalist form is 99 recitations with 41 holy names &mdash; an escalation form available for active spiritual attack.</i>', 'step'))
+story.append(P('<b>·</b> <b>Verses 9-11 as the anointing slice</b>, while anointing crown, throat, wrists, ankles, and the four corners of the threshold. <i>(operator construction &mdash; the verses are the operative protection covenant; the body-and-threshold anointing sequence blends Hoodoo herb-base with ceremonial body-temple work)</i>', 'step'))
+story.append(P('<b>·</b> Verse 11 three times before leaving the house; the whole psalm seven times on the eve of a long journey. <i>(folk Hoodoo, not specifically Selig)</i>', 'step'))
 story.append(spacer(8))
 
 story.append(P('Psalm 155 — the inner perimeter text', 'h2'))
@@ -993,7 +1041,16 @@ story.append(P(
     'already standing: Psalm 91 covers the hunter, the arrow, and the pestilence daily. Deploy '
     '35 when something real shows its teeth, then put it down.',
     'body'))
-story.append(P('First-sign order at the candle: <b>Psalm 35 (vv.1–10) → Psalm 91 → Psalm 23</b>. Repeat daily until the matter dies; stop when it does.', 'greenbox'))
+story.append(P(
+    '<b>Selig\'s documented form (the pure-lineage option):</b> the <b>whole psalm</b> with holy '
+    'name <b>Jah</b> held in mind, spoken <b>early in the morning for three successive days</b>, '
+    'to surely win the case. Letters of the Name appear in <i>Lajehovah</i> (v.2), <i>Hodu</i> '
+    '(v.3), <i>Azath</i> (v.9), and <i>Hejozer</i> (v.14). The vv.1-10 slice below is the operator\'s '
+    'daily-deploy form; the lineage 3-morning form uses the whole psalm and contains all four '
+    'Name-letters. For a serious court case or active enemy work, run Selig\'s form three '
+    'mornings; for a smaller matter still maturing, the vv.1-10 daily form is the lighter touch.',
+    'body'))
+story.append(P('First-sign order at the candle (operator form): <b>Psalm 35 vv.1-10 → Psalm 91 → Psalm 23</b>, daily until the matter dies. Selig 3-morning form: <b>whole Psalm 35 with holy name Jah, three mornings in a row.</b>', 'greenbox'))
 story.append(spacer(6))
 story.append(now('At the white or brown candle &mdash; cross, lineage formula, then speak Psalm 35 vv.1&ndash;10 below. Voice firm, not pleading. You are pleading the cause to the Monad, not begging the enemy. Then speak Psalm 91 (Part II), then Psalm 23 (Part II), then snuff with the closing words.'))
 story.append(P('Psalm 35:1-10 — the first-sign text', 'h2'))
@@ -1028,6 +1085,7 @@ story.append(pagebreak())
 
 story.append(P('The Crisis Order', 'h1'))
 story.append(P('This is not the daily working. This is for the day the lion is at the threshold — an active hostile working, a sustained attack, a siege. Four texts in a fixed order: <b>cry out (152) → raise the wall (91) → bind it off your bones (155) → give thanks before the rescue is visible (153)</b>. Speaking the thanksgiving before the deliverance arrives is itself the working.', 'body'))
+story.append(P('<i>Provenance note: Psalms 152&ndash;155 are Syriac apocryphal texts (Mosul ms. 1113), with Hebrew Vorlagen for 154 and 155 in the Dead Sea Scrolls (11QPsa). Their working assignments here &mdash; 152 as cry, 153 as thanksgiving-in-advance, 155 as inner-perimeter binding &mdash; are operator constructions on authentic texts, not documented Hoodoo formulary. The 152-as-cry assignment tracks the text closely (David vs. lion/wolf). Hoodoo&rsquo;s own documented crisis stack is the first-sign order above (35 &rarr; 91 &rarr; 23); the apocryphal-text layer is this book&rsquo;s extension of the Selig-Kabbalist frame to the wider Davidic corpus.</i>', 'small'))
 story.append(spacer(6))
 
 story.append(P('Step 1 — Psalm 152: the cry', 'h2'))
@@ -1096,6 +1154,7 @@ story.append(pagebreak())
 
 story.append(P('The Clarity Order', 'h1'))
 story.append(P('<b>Psalm 154 then Psalm 23.</b> 154 is the Wisdom hymn — Hokhmah / Sophia, the living Wisdom-current from the Monad, personified as a woman whose voice is heard from the gates of the righteous. The Western canon dropped this psalm; the Qumran community and the Syriac East kept it. Speak it when the question in front of you is a discernment call. Open with the Hebrew: <i>buh-KOHL gah-DOHL pah-ah-ROO eh-loh-HEEM.</i>', 'body'))
+story.append(P('<i>Provenance note: assigning Psalm 154 to discernment work is operator construction on an authentic Syriac/Qumran text &mdash; the psalm&rsquo;s own textual context is actually enemy-siege (the Prayer of Hezekiah frame). The Wisdom/Sophia content in verses 5&ndash;15 is what carries it here. The documented Hoodoo clarity psalm is <b>Psalm 43</b> (&laquo;send out thy light and thy truth&raquo;); if you want a pure-lineage clarity working, run 43 then 23. Both forms are kept in this book &mdash; 154 for the Sophia current the operator is connected to, 43 for the documented Hoodoo stream.</i>', 'small'))
 story.append(spacer(6))
 story.append(P('Psalm 154 — the Wisdom text', 'h2'))
 story.append(P('Charlesworth/Sanders diction; Hebrew preserved in 11QPsa. Monad Rule at verse 9. YHWH spoken as Adonai. Hokhmah = khokh-MAH. Wisdom is "she" throughout — that is the text, not a change.', 'small'))
@@ -1143,7 +1202,7 @@ story.append(P('One-Page Master Table', 'h1'))
 mt = Table([
     [Paragraph('<b>Situation</b>', S['small']), Paragraph('<b>Order</b>', S['small']), Paragraph('<b>Candle</b>', S['small'])],
     [Paragraph('Everyday, on rising', S['body_left']), Paragraph('23 → gratitude → 91:11 ×3 at the door', S['body_left']), Paragraph('none', S['small'])],
-    [Paragraph('Altar ritual (daily)', S['body_left']), Paragraph('cross → formula → 91 → 23 → 118:6-9 → petition → light → sit → thanks → snuff', S['body_left']), Paragraph('green (standing working)', S['small'])],
+    [Paragraph('Altar ritual (daily)', S['body_left']), Paragraph('cross → formula → light → 91 → 23 → 118:6-9 → petition → sit → thanks → snuff', S['body_left']), Paragraph('green (standing working)', S['small'])],
     [Paragraph('Money &amp; prosperity', S['body_left']), Paragraph('altar order with money petition; or Selig 7 mornings of 23', S['body_left']), Paragraph('green or gold', S['small'])],
     [Paragraph('Protection', S['body_left']), Paragraph('91 → 155 → 118:6-9 → 23', S['body_left']), Paragraph('white', S['small'])],
     [Paragraph('Sovereignty / public field', S['body_left']), Paragraph('118:6-9 alone, before posting / confrontation / court / meeting', S['body_left']), Paragraph('none or white', S['small'])],
