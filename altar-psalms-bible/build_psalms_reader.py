@@ -163,7 +163,16 @@ GLOSS_FG = "#5a4a1a"   # dark amber text for contrast on the yellow
 import re as _re
 def gloss_text(txt, glosses):
     out = txt
+    seen = set()
     for word, pron in glosses:
+        # Defensive deduplication: if the same (word, pron) appears twice
+        # in the table, only apply it once. Previously a duplicate entry
+        # caused the word to be glossed twice in the rendered verse
+        # (e.g. "vnto [UN-too] [UN-too]"). Discovered by Jordan p8 v2.
+        key = (word, pron)
+        if key in seen:
+            continue
+        seen.add(key)
         marker = f'{word} <font backColor="{GLOSS_BG}" color="{GLOSS_FG}">[{pron}]</font>'
         pattern = r'\b' + _re.escape(word) + r'\b'
         out, n = _re.subn(pattern, marker, out, count=1)
@@ -225,23 +234,18 @@ P91_GLOSS = [
     ('satisfie', 'SAT-is-fy'),
     ('saluation', 'sal-VAY-shun'),
     ('shew', 'shoh'),
-    # additions for gloss audit — every archaic word gets sounded out
+    # Audit additions — words that genuinely change pronunciation from
+    # the eye's expectation. Same-as-word glosses are NOT added because
+    # they help nothing and clutter the page. Duplicates of entries
+    # already above are NOT added (vpon/vnto/vnder/ouer already present).
     ('winges', 'wings'),
     ('feathers', 'FETH-erz'),
     ('walketh', 'WAWK-uth'),
     ('handes', 'handz'),
     ('yong', 'yung'),
     ('feete', 'feet'),
-    ('hee', 'hee'),
-    ('hath', 'hath'),
-    ('wil', 'wil'),
     ('thine', 'thyn'),
-    ('thy', 'thy'),
     ('thou', 'thow'),
-    ('thee', 'thee'),
-    ('vnder', 'UN-der'),
-    ('vnto', 'UN-too'),
-    ('ouer', 'OH-ver'),
 ]
 
 P23_GLOSS = [
