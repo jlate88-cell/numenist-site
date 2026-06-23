@@ -181,7 +181,14 @@ def gloss_text(txt, glosses):
     return out
 
 def vrg(num, txt, glosses):
-    return Paragraph(f'<b>{num}.</b> {gloss_text(txt, glosses)}', S['speak'])
+    # v7: inline pronunciation brackets removed from verse text for fluent
+    # ritual delivery (Jordan's instruction, 2026-06-23). The glosses
+    # parameter is retained at call sites for back-compat and is consumed
+    # silently; the gloss tables themselves are kept so Part III's
+    # Pronunciation Guide reference tables stay intact and the AI Slop
+    # Code rules 1-2 (no duplicate / tautological gloss entries) still
+    # have data to validate.
+    return Paragraph(f'<b>{num}.</b> {txt}', S['speak'])
 
 def now(txt):
     """Inline ritual cue. Prefixes 'NOW —' and styles distinctively so the
@@ -491,12 +498,14 @@ story.append(P(
     'Twenty title substitutions plus fifty-two pronoun substitutions: seventy-two total. Every other '
     'word of the source texts is unchanged.',
     'small'))
-story.append(P('The Yellow Highlights', 'h3'))
+story.append(P('Pronunciation', 'h3'))
 story.append(P(
-    'Every archaic Geneva 1599 word that does not pronounce as modern English carries a '
-    '<font backColor="#ffeb80" color="#5a4a1a">[YELLOW BRACKET]</font> right next to it the '
-    'first time it appears in each verse. Eyes track the highlight; never flip pages to find a '
-    'pronunciation. The reference tables in Part III remain available for full lookups.',
+    'Verse text is set clean &mdash; no inline brackets, no marks interrupting the flow. The Geneva '
+    '1599 word choice stays (thee, thou doest, mine head, anoynt, oyle, the -eth verbs, the silent '
+    'terminal e, the &minus;esse endings); the v/u swap is modernized; spoken pronunciation matches '
+    'the modern word. When a word is unfamiliar, the <b>Pronunciation Guide in Part III</b> holds the '
+    'Hard Words tables for each psalm, the divine Names, and the Hebrew altar lines sounded out. '
+    'Use Part III to learn the words once; return to the clean verse text for ritual delivery.',
     'body'))
 story.append(pagebreak())
 
