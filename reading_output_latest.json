@@ -1,33 +1,33 @@
 {
-  "date": "2026-06-26",
-  "weekday": "Friday",
+  "date": "2026-06-27",
+  "weekday": "Saturday",
   "numerology": {
     "personal_day": {
       "personal_year": 1,
       "personal_month_raw": 7,
       "personal_month": 7,
-      "personal_day_raw": 15,
-      "personal_day_compound": 15,
-      "personal_day_reduced": 6,
+      "personal_day_raw": 16,
+      "personal_day_compound": 16,
+      "personal_day_reduced": 7,
       "personal_day_chain": [
-        15,
-        6
+        16,
+        7
       ]
     },
     "universal_day": {
-      "raw": 24,
-      "compound": 24,
-      "reduced": 6,
+      "raw": 25,
+      "compound": 25,
+      "reduced": 7,
       "chain": [
-        24,
-        6
+        25,
+        7
       ]
     },
     "tarot": [
       {
-        "number": 15,
-        "card": "Devil",
-        "karmic_debt": false
+        "number": 16,
+        "card": "Tower",
+        "karmic_debt": true
       }
     ],
     "static_chart": {
