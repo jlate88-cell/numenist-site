@@ -181,6 +181,7 @@ def check_psalms_printed_inline(pdf_text: str):
         '23':  'my shepheard',
         '35':  'plead thou my cause',
         '118': 'will not feare what man',
+        '72':  'judge thy people in righteousness',
         '151': 'small among my brethren',
         '152': 'come to my aid',
         '153': 'praise',

@@ -489,14 +489,15 @@ story.append(P('· Psalm 91 — LORD→Monad at vv.2, 9; pronoun→Monad at vv.2
 story.append(P('· Psalm 23 — LORD→Monad at vv.1, 6; pronoun→Monad at vv.2, 3 (×2)', 'body_left'))
 story.append(P('· Psalm 35 — LORD→Monad at vv.1, 5, 6, 9, 10; pronoun→Monad at v.9', 'body_left'))
 story.append(P('· Psalm 118 — LORD→Monad at vv.6, 7, 8, 9 (all four)', 'body_left'))
+story.append(P('· Psalm 72 — LORD→Monad at v.18; pronouns kept (they refer to the anointed King, not the Monad)', 'body_left'))
 story.append(P('· Psalm 151 — LORD→Monad at v.3 (×2), v.5; pronoun→Monad at vv.3, 4 (×4)', 'body_left'))
 story.append(P('· Psalm 152 — LORD→Monad at vv.4, 6', 'body_left'))
 story.append(P('· Psalm 153 — LORD→Monad at v.1; pronoun→Monad throughout vv.1–6 (×14)', 'body_left'))
 story.append(P('· Psalm 154 — LORD→Monad at v.9; pronoun→Monad at vv.1, 2 (×2), 4 (×3), 6, 7 (×2), 9 (×2), 10, 14, 17 (×3), 20 (×2)', 'body_left'))
 story.append(P('· Psalm 155 — pronoun→Monad at v.14 (×2)', 'body_left'))
 story.append(P(
-    'Twenty title substitutions plus fifty-two pronoun substitutions: seventy-two total. Every other '
-    'word of the source texts is unchanged.',
+    'Twenty-one title substitutions plus fifty-two pronoun substitutions: seventy-three total (Psalm 72 '
+    'added one title substitution at v.18). Every other word of the source texts is unchanged.',
     'small'))
 story.append(P('Pronunciation', 'h3'))
 story.append(P(
@@ -935,7 +936,8 @@ story.append(P('The Money &amp; Prosperity Order', 'h1'))
 story.append(P(
     'You asked whether money and prosperity are separate — they are not. The documented stream '
     'treats them as one working centered on <b>Psalm 23</b>, and the green candle you burn is '
-    'its instrument. Two forms:',
+    'its instrument. Psalm 72 is added as a third form — the documented Selig wealth-amulet, a '
+    'written working rather than a spoken one. Three forms:',
     'body'))
 story.append(P('Form 1 — the daily green candle (your standing working)', 'h2'))
 story.append(P('Exactly the Altar Ritual of Part II, with the green candle as the flame and the money petition spoken at step 7. Psalm 23 verse 5 is the money verse — the anointed head, the cup running over. The crown-touch and the slow breath at "my cuppe runneth over" are where the prosperity current seals. Psalm 118:6-9 (step 6) seals you against fear-of-lack before the petition is stated.', 'body'))
@@ -951,6 +953,65 @@ story.append(now('Selig+Yronwode form &mdash; each of the seven mornings: anoint
 story.append(spacer(6))
 story.append(P('Speak the abundance as flow for yourself in alignment with the Monad — never as a performance aimed at anyone else\'s lack. That is the frequency line between prosperity work and envy work.', 'greenbox'))
 story.append(P('Witness on file: the first morning this working ran in its corrected form (June 8, 2026), the account read $777.10 by 11:04 AM. 7-7-7 reduces to 21 — the World. The working answers.', 'small'))
+story.append(pagebreak())
+
+# ---- Form 3 — the Psalm 72 wealth amulet (documented Selig) ----
+story.append(P('Form 3 — the Psalm 72 wealth amulet (documented Selig)', 'h2'))
+story.append(P(
+    'This is the documented Selig prosperity working for Psalm 72 &mdash; and it is a <b>written '
+    'amulet</b>, not a recitation or a candle. Selig, <i>Secrets of the Psalms</i> (verified against '
+    'the archive.org full text this session): <i>&#8220;Write this Psalm with the name Aha, in the '
+    'usual manner, upon pure parchment, and suspend it around your neck, and you will become a '
+    'universal favorite, and find favor and grace from all men; you may then live unconcerned, for '
+    'you can never come to poverty.&#8221;</i> The holy name <b>Aha</b> is drawn from the words '
+    '<i>Elohim</i> (verse 1) and <i>Jeasshruhu</i> (verse 17).',
+    'body'))
+story.append(P(
+    'Where Forms 1 and 2 draw money through the spoken / anointed / candle current of Psalm 23, '
+    'Form 3 fixes prosperity as a worn object &mdash; a standing ward against poverty carried on the '
+    'body. The two forms stack: speak 23 at the candle, wear 72 at the neck.',
+    'small'))
+story.append(now('Write the whole of Psalm 72 (text below) plus the holy name <b>Aha</b> on clean parchment in one continuous hand. Fold it toward you (drawing). Carry it at the neck, or sealed in a mojo bag worn against the body. The written word is the working; you do not need to recite it daily once it is set.'))
+story.append(P('Psalm 72 — the wealth-amulet text', 'h3'))
+story.append(P(
+    'Wording verified against BibleGateway 1599 Geneva (GNV) this session. Set in the post-v6 '
+    'convention: u/v and i/j modern, the &minus;eth verb endings kept. Monad Rule: <b>&#8220;Lord&#8221; '
+    '&rarr; Monad at verse 18</b> (the one substitute-title in the psalm). &#8220;God&#8221; / Elohim '
+    'at verses 1 and 18 is a true Name and is kept. The pronouns he/him/his refer to <b>the anointed '
+    'King</b>, not the Monad, so the Pronoun Extension does not convert them &mdash; named here so the '
+    'operator can audit. (Heavier 1599 spellings were not retrofitted, because I will not fabricate '
+    'orthography I cannot verify against a facsimile.)',
+    'small'))
+story.append(spacer(4))
+story.append(P('<i>A Psalme of Solomon.</i>', 'quote'))
+story.append(vr(1,  'Give thy judgments to the King, O God, and thy righteousness to the King\'s son.'))
+story.append(vr(2,  'Then shall he judge thy people in righteousness, and thy poor with equity.'))
+story.append(vr(3,  'The mountains and the hills shall bring peace to the people by justice.'))
+story.append(vr(4,  'He shall judge the poor of the people: he shall save the children of the needy, and shall subdue the oppressor.'))
+story.append(vr(5,  'They shall fear thee as long as the sun and moon endureth, from generation to generation.'))
+story.append(vr(6,  'He shall come down like the rain upon the mown grass, and as the showers that water the earth.'))
+story.append(vr(7,  'In his days shall the righteous flourish, and abundance of peace shall be so long as the moon endureth.'))
+story.append(vr(8,  'His dominion shall be also from sea to sea, and from the river unto the ends of the land.'))
+story.append(vr(9,  'They that dwell in the wilderness shall kneel before him, and his enemies shall lick the dust.'))
+story.append(vr(10, 'The kings of Tarshish and of the isles shall bring presents: the kings of Sheba and Seba shall bring gifts.'))
+story.append(vr(11, 'Yea, all kings shall worship him: all nations shall serve him.'))
+story.append(vr(12, 'For he shall deliver the poor when he crieth: the needy also, and him that hath no helper.'))
+story.append(vr(13, 'He shall be merciful to the poor and needy, and shall preserve the souls of the poor.'))
+story.append(vr(14, 'He shall redeem their souls from deceit and violence, and dear shall their blood be in his sight.'))
+story.append(vr(15, 'Yea, he shall live, and unto him shall they give of the gold of Sheba: they shall also pray for him continually, and daily bless him.'))
+story.append(vr(16, 'An handful of corn shall be sown in the earth, even in the top of the mountains, and the fruit thereof shall shake like the trees of Lebanon: and the children shall flourish out of the city like the grass of the earth.'))
+story.append(vr(17, 'His name shall be forever: his name shall endure as long as the Sun: all nations shall bless him, and be blessed in him.'))
+story.append(vr(18, 'Blessed be the <b>Monad</b>, the God of Israel, which only doeth wondrous things.'))
+story.append(vr(19, 'And blessed be his glorious Name forever: and let all the earth be filled with his glory. So be it, even so be it.'))
+story.append(vr(20, 'Here end the prayers of David the son of Jesse.'))
+story.append(spacer(6))
+story.append(P(
+    'Provenance note, so the record stays clean: <b>Psalm 102 is NOT a money psalm.</b> A circulating '
+    'social-media claim files it under &#8220;everyday financial help,&#8221; but the documented '
+    'lineage (Selig; the Hoodoo psalm index) assigns Psalm 102 to <b>grievous illness, affliction, '
+    'and grace for the barren</b> &mdash; health and mercy, not money. It is named here only to keep '
+    'the record straight; it is not part of the prosperity order.',
+    'small'))
 story.append(pagebreak())
 
 # ============================ PROTECTION ============================
@@ -1187,7 +1248,7 @@ mt = Table([
     [Paragraph('<b>Situation</b>', S['small']), Paragraph('<b>Order</b>', S['small']), Paragraph('<b>Candle</b>', S['small'])],
     [Paragraph('Everyday, on rising', S['body_left']), Paragraph('23 → gratitude → 91:11 ×3 at the door', S['body_left']), Paragraph('none', S['small'])],
     [Paragraph('Altar ritual (daily)', S['body_left']), Paragraph('cross → formula → light → 91 → 23 → 118:6-9 → petition → sit → thanks → snuff', S['body_left']), Paragraph('green (standing working)', S['small'])],
-    [Paragraph('Money &amp; prosperity', S['body_left']), Paragraph('altar order with money petition; or Selig 7 mornings of 23', S['body_left']), Paragraph('green or gold', S['small'])],
+    [Paragraph('Money &amp; prosperity', S['body_left']), Paragraph('altar order with money petition; or Selig 7 mornings of 23; or Psalm 72 written amulet worn at the neck', S['body_left']), Paragraph('green or gold', S['small'])],
     [Paragraph('Protection', S['body_left']), Paragraph('91 → 155 → 118:6-9 → 23', S['body_left']), Paragraph('white', S['small'])],
     [Paragraph('Sovereignty / public field', S['body_left']), Paragraph('118:6-9 alone, before posting / confrontation / court / meeting', S['body_left']), Paragraph('none or white', S['small'])],
     [Paragraph('Enemies / court, first sign', S['body_left']), Paragraph('35 (vv.1–10) → 91 → 23; daily until the matter dies', S['body_left']), Paragraph('white or brown', S['small'])],

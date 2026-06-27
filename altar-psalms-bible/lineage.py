@@ -780,6 +780,30 @@ MANIFEST = [
         'verified_by': 'WebSearch in Claude session',
     },
 
+    {
+        'id': 'psalm_72_wealth_amulet',
+        'claim': 'Psalm 72 is a documented Selig prosperity working — a WRITTEN AMULET (write the psalm + holy name Aha on parchment, wear at the neck), promising one "can never come to poverty"',
+        'category': 'selig_kabbalist',
+        'signature': 'Form 3 — the Psalm 72 wealth amulet (documented Selig)',
+        'sources': [
+            {
+                'who': 'Selig, Secrets of the Psalms — Psalm 72 entry (archive.org full text)',
+                'url': 'https://archive.org/stream/godfrey-selig-secrets-of-the-psalms/Godfrey-Selig-Secrets-of-the-Psalms_djvu.txt',
+                'quote': 'Write this Psalm with the name Aha, in the usual manner, upon pure parchment, and suspend it around your neck, and you will become a universal favorite, and find favor and grace from all men; you may then live unconcerned, for you can never come to poverty. The letters of the holy name are taken from the words: Elohim, verse 1; and Jeasshruhu, verse 17.',
+                'supports': 'Documented Selig wealth working for Psalm 72. Form is a written amulet worn at the neck, distinct from the recited/candle Psalm 23 money working. Holy name Aha derived from Elohim (v.1) and Jeasshruhu (v.17).',
+            },
+            {
+                'who': 'Jesterbear — Psalms and Verses in Hoodoo',
+                'url': 'https://www.jesterbear.com/Hoodoo/PsalmsVerses.html',
+                'quote': 'Gain Prosperity and Happiness With Others ... write holy words Aha, Elohim, and Jeaschruhu with the Psalm 72 on a paper and tie it in a bag ... suspend the bag around their neck to become a universal favorite, and find favor and grace from all peoples.',
+                'supports': 'Hoodoo-index corroboration of the Psalm 72 amulet (paper-in-a-bag-at-the-neck variant). Confirms prosperity attribution and the written-amulet mechanism.',
+            },
+        ],
+        'notes': 'Psalm 102 was checked and is NOT a money psalm — Selig assigns it to barren women / grace before God; the Hoodoo index to grievous illness. The "Psalm 102 for everyday financial help" claim circulating on social media is off-lineage. The Reader carries a correction note to keep the record clean.',
+        'verified_on': '2026-06-27',
+        'verified_by': 'WebSearch + WebFetch (archive.org Selig primary text + Jesterbear index) in Claude session',
+    },
+
 ]
 
 
