@@ -94,7 +94,7 @@ def check_now_cues_present_in_source():
     ritual transition. If the count drops below the expected baseline,
     something has regressed."""
     now_call_count = source.count('story.append(now(')
-    BASELINE = 28   # raised 2026-06-21 after full Parts I/IV/V/VI cue pass
+    BASELINE = 40   # raised 2026-06-29 after Psalm 72 amulet make/charge/wear cues
                     # plus petition-paper, cross-diagram, Hebrew-opener,
                     # eyes, candle-out-contingency, and purification cues
     if now_call_count < BASELINE:
@@ -149,7 +149,7 @@ def check_now_cues_present_in_pdf(pdf_text: str):
     if not pdf_text:
         return
     count = len(re.findall(r'NOW\s+[—-]', pdf_text))
-    BASELINE = 28
+    BASELINE = 40
     if count < BASELINE:
         fail(
             f"NOW CUES MISSING FROM PDF: only {count} 'NOW —' markers found, "

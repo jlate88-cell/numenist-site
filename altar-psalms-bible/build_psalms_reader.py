@@ -942,6 +942,7 @@ story.append(P(
 story.append(P('Form 1 — the daily green candle (your standing working)', 'h2'))
 story.append(P('Exactly the Altar Ritual of Part II, with the green candle as the flame and the money petition spoken at step 7. Psalm 23 verse 5 is the money verse — the anointed head, the cup running over. The crown-touch and the slow breath at "my cuppe runneth over" are where the prosperity current seals. Psalm 118:6-9 (step 6) seals you against fear-of-lack before the petition is stated.', 'body'))
 story.append(now('Run the Part II altar order at the green candle. At step 7, speak the money petition aloud into the lit flame: first person, present tense, no future-conditional. <i>&#8220;The Monad is providing my work and my wages now. I receive abundance in alignment with the Monad. I move money cleanly and give thanks.&#8221;</i> If a written money petition is sealed under the candle plate, do not disturb it; the spoken line rides over it into the flame.'))
+story.append(now('<b>To recite Psalm 72 in the daily working:</b> after Psalm 23, before Psalm 118:6-9, speak the whole of Psalm 72 (Form 3 text) aloud into the green flame. This both works the wealth-psalm directly and charges the Psalm 72 amulet set under the candle &mdash; reciting psalms over a curio is the documented charging method (Yronwode). The universal altar order (Part II) stays unchanged; this addition lives only in the green-candle money working.'))
 story.append(P('Form 2 — the seven-morning working (Selig + Yronwode synthesis)', 'h2'))
 story.append(P('<i>Provenance: the literal Selig text gives Psalm 23 with holy name Jah seven times for visions/dreams. The seven-morning anointing form and the Job\'s Tears disposal are documented Hoodoo working tradition (Yronwode / Lucky Mojo / Jesterbear). This is a coherent lineage synthesis, not a single citation.</i>', 'small'))
 story.append(P('<b>·</b> Seven consecutive mornings, on rising, anoint with olive oil mixed with bayberry oil and speak Psalm 23 (the Part I text).', 'step'))
@@ -955,23 +956,38 @@ story.append(P('Speak the abundance as flow for yourself in alignment with the M
 story.append(P('Witness on file: the first morning this working ran in its corrected form (June 8, 2026), the account read $777.10 by 11:04 AM. 7-7-7 reduces to 21 — the World. The working answers.', 'small'))
 story.append(pagebreak())
 
-# ---- Form 3 — the Psalm 72 wealth amulet (documented Selig) ----
-story.append(P('Form 3 — the Psalm 72 wealth amulet (documented Selig)', 'h2'))
+# ---- Form 3 — the Psalm 72 wealth amulet (make, charge, wear) ----
+story.append(P('Form 3 — the Psalm 72 wealth amulet (make, charge, wear)', 'h2'))
 story.append(P(
-    'This is the documented Selig prosperity working for Psalm 72 &mdash; and it is a <b>written '
-    'amulet</b>, not a recitation or a candle. Selig, <i>Secrets of the Psalms</i> (verified against '
-    'the archive.org full text this session): <i>&#8220;Write this Psalm with the name Aha, in the '
-    'usual manner, upon pure parchment, and suspend it around your neck, and you will become a '
-    'universal favorite, and find favor and grace from all men; you may then live unconcerned, for '
-    'you can never come to poverty.&#8221;</i> The holy name <b>Aha</b> is drawn from the words '
-    '<i>Elohim</i> (verse 1) and <i>Jeasshruhu</i> (verse 17).',
+    'The documented Selig prosperity working for Psalm 72 is a <b>written amulet</b>. Selig, '
+    '<i>Secrets of the Psalms</i> (verified against the archive.org full text): <i>&#8220;Write this '
+    'Psalm with the name Aha, in the usual manner, upon pure parchment, and suspend it around your '
+    'neck, and you will become a universal favorite, and find favor and grace from all men; you may '
+    'then live unconcerned, for you can never come to poverty.&#8221;</i> The holy name <b>Aha</b> is '
+    'drawn from the words <i>Elohim</i> (verse 1) and <i>Jeasshruhu</i> (verse 17).',
     'body'))
 story.append(P(
-    'Where Forms 1 and 2 draw money through the spoken / anointed / candle current of Psalm 23, '
-    'Form 3 fixes prosperity as a worn object &mdash; a standing ward against poverty carried on the '
-    'body. The two forms stack: speak 23 at the candle, wear 72 at the neck.',
+    'You were right that there is power in <b>reciting</b> it too &mdash; and the lineage agrees. '
+    'Documented Hoodoo charging (Yronwode / Lucky Mojo): <i>&#8220;Traditional means of charging mojo '
+    'bags and other curios and amulets include asking in the name of the Father, Son and the Holy '
+    'Ghost; reciting psalms from the Holy Bible; passing the bag through incense smoke or candle '
+    'flame; dressing it with anointing oil&hellip; and applying your personal concerns.&#8221;</i> '
+    'So reciting Psalm 72 is not separate from the amulet &mdash; <b>reciting it IS how you charge '
+    'it</b>, and your daily green-candle working (Form 1) is its standing charging-engine.',
     'small'))
-story.append(now('Write the whole of Psalm 72 (text below) plus the holy name <b>Aha</b> on clean parchment in one continuous hand. Fold it toward you (drawing). Carry it at the neck, or sealed in a mojo bag worn against the body. The written word is the working; you do not need to recite it daily once it is set.'))
+
+story.append(P('A. Make the amulet', 'h3'))
+story.append(now('On <b>pure parchment</b> (sheepskin parchment is the documented choice; clean unlined paper or brown kraft paper also carries it), write <b>the whole of Psalm 72</b> (text below) plus the holy name <b>Aha</b>. Write in one continuous hand &mdash; the unbroken line is the working circuit. Red money-ink (Dragon&rsquo;s Blood) is the power/drawing ink; plain ink serves if you do not have it. (Dove&rsquo;s Blood is for love, not money &mdash; do not use it here.)'))
+story.append(now('Fold the parchment <b>toward you</b> (drawing-in, never away). Odd folds only &mdash; <b>three</b> for a general draw, <b>seven</b> for power and completeness. Keep it face-up as you fold. This is the documented Yronwode petition fold.'))
+
+story.append(P('B. Charge the amulet', 'h3'))
+story.append(now('Cross, then speak the lineage formula: <i>&#8220;In the name of the Father, the Son, and the Holy Spirit.&#8221;</i> Hold the holy name <b>Aha</b> in mind.'))
+story.append(now('<b>Recite the whole of Psalm 72 aloud over the folded parchment</b> &mdash; this is the charge. Speak it into the paper. (Reciting the psalm is the documented charging act, not an extra step.)'))
+story.append(now('Pass the amulet through <b>incense smoke</b> &mdash; frankincense or copal on a charcoal disc &mdash; and/or through the green candle&rsquo;s flame. Dress it with a drop of <b>Money Drawing</b> oil. Breathe onto it; speak your name and what you are drawing in.'))
+story.append(now('<b>Set it under (or beside) the standing green candle</b> so your daily Psalm 23 working charges it in the same burn. The amulet feeds on the daily flame; the daily flame is fed by the amulet. This is how Form 3 lives inside Form 1.'))
+
+story.append(P('C. Wear and feed it', 'h3'))
+story.append(now('Once charged, <b>suspend it around your neck</b> (Selig&rsquo;s instruction) or seal it in a mojo bag worn against the body. Feed it weekly: breathe on it, dress it with a touch of Money Drawing oil, and re-recite Psalm 72 &mdash; or simply let it keep charging under the daily candle. A worn working kept fed stays hot; an unfed one goes quiet.'))
 story.append(P('Psalm 72 — the wealth-amulet text', 'h3'))
 story.append(P(
     'Wording verified against BibleGateway 1599 Geneva (GNV) this session. Set in the post-v6 '
@@ -1248,7 +1264,7 @@ mt = Table([
     [Paragraph('<b>Situation</b>', S['small']), Paragraph('<b>Order</b>', S['small']), Paragraph('<b>Candle</b>', S['small'])],
     [Paragraph('Everyday, on rising', S['body_left']), Paragraph('23 → gratitude → 91:11 ×3 at the door', S['body_left']), Paragraph('none', S['small'])],
     [Paragraph('Altar ritual (daily)', S['body_left']), Paragraph('cross → formula → light → 91 → 23 → 118:6-9 → petition → sit → thanks → snuff', S['body_left']), Paragraph('green (standing working)', S['small'])],
-    [Paragraph('Money &amp; prosperity', S['body_left']), Paragraph('altar order with money petition; or Selig 7 mornings of 23; or Psalm 72 written amulet worn at the neck', S['body_left']), Paragraph('green or gold', S['small'])],
+    [Paragraph('Money &amp; prosperity', S['body_left']), Paragraph('altar order with money petition (recite 72 after 23 to work + charge the amulet); or Selig 7 mornings of 23; or Psalm 72 amulet made, charged, worn at the neck', S['body_left']), Paragraph('green or gold', S['small'])],
     [Paragraph('Protection', S['body_left']), Paragraph('91 → 155 → 118:6-9 → 23', S['body_left']), Paragraph('white', S['small'])],
     [Paragraph('Sovereignty / public field', S['body_left']), Paragraph('118:6-9 alone, before posting / confrontation / court / meeting', S['body_left']), Paragraph('none or white', S['small'])],
     [Paragraph('Enemies / court, first sign', S['body_left']), Paragraph('35 (vv.1–10) → 91 → 23; daily until the matter dies', S['body_left']), Paragraph('white or brown', S['small'])],

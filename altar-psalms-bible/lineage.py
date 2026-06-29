@@ -784,7 +784,7 @@ MANIFEST = [
         'id': 'psalm_72_wealth_amulet',
         'claim': 'Psalm 72 is a documented Selig prosperity working — a WRITTEN AMULET (write the psalm + holy name Aha on parchment, wear at the neck), promising one "can never come to poverty"',
         'category': 'selig_kabbalist',
-        'signature': 'Form 3 — the Psalm 72 wealth amulet (documented Selig)',
+        'signature': 'Form 3 — the Psalm 72 wealth amulet (make, charge, wear)',
         'sources': [
             {
                 'who': 'Selig, Secrets of the Psalms — Psalm 72 entry (archive.org full text)',
@@ -797,6 +797,12 @@ MANIFEST = [
                 'url': 'https://www.jesterbear.com/Hoodoo/PsalmsVerses.html',
                 'quote': 'Gain Prosperity and Happiness With Others ... write holy words Aha, Elohim, and Jeaschruhu with the Psalm 72 on a paper and tie it in a bag ... suspend the bag around their neck to become a universal favorite, and find favor and grace from all peoples.',
                 'supports': 'Hoodoo-index corroboration of the Psalm 72 amulet (paper-in-a-bag-at-the-neck variant). Confirms prosperity attribution and the written-amulet mechanism.',
+            },
+            {
+                'who': 'Yronwode / Lucky Mojo (via mojo-bag charging summary) — documented charging method',
+                'url': 'https://arcane-archive.org/occultism/magic/folk/hoodoo/mojo-bags-variant-names-ingredients-usage-1.php',
+                'quote': 'Traditional means of charging mojo bags and other curios and amulets include asking in the name of the Father, Son and the Holy Ghost; reciting psalms from the Holy Bible; passing the bag through incense smoke or candle flame; dressing it with anointing oil; soaking it in whiskey for nine days; and applying your personal concerns.',
+                'supports': 'Resolves the recitation question: reciting psalms over a curio IS a documented charging method, so reciting Psalm 72 over the amulet (and in the daily green-candle working) is lineage-clean, not operator invention. Also grounds the make/charge/wear steps: parchment, fold-toward-you (Paper in My Shoe), incense smoke, anointing oil, breath + name + concern, set under the working candle, feed regularly.',
             },
         ],
         'notes': 'Psalm 102 was checked and is NOT a money psalm — Selig assigns it to barren women / grace before God; the Hoodoo index to grievous illness. The "Psalm 102 for everyday financial help" claim circulating on social media is off-lineage. The Reader carries a correction note to keep the record clean.',
