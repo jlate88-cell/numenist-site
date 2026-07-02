@@ -1,33 +1,31 @@
 {
-  "date": "2026-06-30",
-  "weekday": "Tuesday",
+  "date": "2026-07-01",
+  "weekday": "Wednesday",
   "numerology": {
     "personal_day": {
       "personal_year": 1,
-      "personal_month_raw": 7,
-      "personal_month": 7,
-      "personal_day_raw": 10,
-      "personal_day_compound": 10,
-      "personal_day_reduced": 1,
+      "personal_month_raw": 8,
+      "personal_month": 8,
+      "personal_day_raw": 9,
+      "personal_day_compound": 9,
+      "personal_day_reduced": 9,
       "personal_day_chain": [
-        10,
-        1
+        9
       ]
     },
     "universal_day": {
-      "raw": 19,
-      "compound": 10,
-      "reduced": 1,
+      "raw": 18,
+      "compound": 18,
+      "reduced": 9,
       "chain": [
-        19,
-        10,
-        1
+        18,
+        9
       ]
     },
     "tarot": [
       {
-        "number": 10,
-        "card": "Wheel of Fortune",
+        "number": 18,
+        "card": "Moon",
         "karmic_debt": false
       }
     ],
