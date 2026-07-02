@@ -810,6 +810,42 @@ MANIFEST = [
         'verified_by': 'WebSearch + WebFetch (archive.org Selig primary text + Jesterbear index) in Claude session',
     },
 
+    {
+        'id': 'carry_piece_consecration',
+        'claim': 'A daily-carry protective weapon (armed-security firearm) is taken up under Psalm 91 with a last-resort / never-ego covenant naming St. Michael, cleansed in smoke, grip-anointed (never the mechanism/ammo), and consecrated/re-sealed on Tuesday (Mars/iron day). The COMPONENT correspondences are documented; the assembly into an altar rite is operator construction, labeled as such.',
+        'category': 'operator_construction',
+        'signature': 'The carry piece &mdash; taken up under the shield',
+        'sources': [
+            {
+                'who': 'Catholic Saint Medals — Why is St. Michael the Patron of Police',
+                'url': 'https://catholicsaintmedals.com/why-is-st-michael-patron-of-police/',
+                'quote': 'St. Michael the Archangel is the patron saint of police officers, and he is also the patron saint of those in the military ... his powerful role as God\'s warrior against Satan and his protection of the faithful, particularly those in dangerous professions like law enforcement and the military.',
+                'supports': 'Documents St. Michael as the patron of police, security, and soldiers — the warrior who draws only against evil, in service, not from ego. Grounds naming St. Michael in the carry-piece covenant.',
+            },
+            {
+                'who': 'Knights of Columbus Council 2785 — Prayer to St. Michael, Patron of Police and Soldiers',
+                'url': 'https://www.kofc2785.org/prayer_St._Michael.php',
+                'quote': 'Prayer to St. Michael The Archangel, Patron Saint of Police Officers and Soldiers.',
+                'supports': 'Corroborates the St. Michael protective-patron tradition for those who carry arms in a protective trade.',
+            },
+            {
+                'who': 'Strange & Twisted / Pagan Grimoire — protection magic: iron as the older protective metal',
+                'url': 'https://strangeandtwisted.com/blogs/how-to-guides/how-to-cast-a-protection-spell-the-complete-beginners-guide',
+                'quote': 'Iron is the older protective metal ... cold iron repelled faeries, spirits, and malevolent entities ... iron being the primary protective material in European folk magic for millennia.',
+                'supports': 'Grounds the "iron and steel are the oldest protective metals in the lineage" note, and the Tuesday/Mars (iron\'s day) timing for consecrating a steel weapon.',
+            },
+            {
+                'who': 'Yronwode / Lucky Mojo — documented curio charging method (smoke, oil, name-and-concern, altar)',
+                'url': 'https://arcane-archive.org/occultism/magic/folk/hoodoo/mojo-bags-variant-names-ingredients-usage-1.php',
+                'quote': 'Traditional means of charging mojo bags and other curios and amulets include asking in the name of the Father, Son and the Holy Ghost; reciting psalms from the Holy Bible; passing the bag through incense smoke or candle flame; dressing it with anointing oil ... and applying your personal concerns.',
+                'supports': 'Grounds the mechanics of the consecration — smoke-cleanse, anointing oil, spoken invocation in the lineage formula, set on the altar to charge. Same documented charging stream used for the Psalm 72 amulet.',
+            },
+        ],
+        'notes': 'HONEST PROVENANCE: this is operator_construction, not documented Hoodoo. The parts are lineage — St. Michael as protector-patron of armed protective trades, iron as protective metal, the Yronwode charging mechanics, Psalm 91 as the protection psalm already in Part II, and Passio-aligned Natural Law (force in defense of innocent life is lawful; force from ego initiates harm) — but the assembly of a firearm-consecration into the daily Psalms altar ritual is this book\'s arrangement, built at the operator\'s (Jordan\'s) instruction. Placed under Psalm 91 deliberately so the weapon is subordinate to the divine shield: the last resort held under it, never the first reach. Practical safety embedded in the rite: never oil the mechanism or ammunition; anoint only the grip and wipe it back so the hold is never slick.',
+        'verified_on': '2026-07-01',
+        'verified_by': 'WebSearch (St. Michael patronage + iron-protection + Yronwode charging) in Claude session',
+    },
+
 ]
 
 

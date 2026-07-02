@@ -615,6 +615,17 @@ story.append(vrg(15, 'He shall call upon me, and I wil heare him: I will be with
 story.append(vrg(16, 'With long life wil I satisfie him, and shew him my salvation.', P91_GLOSS))
 story.append(spacer(6))
 story.append(P('The voice changes twice: verses 1–2 are you speaking; verses 3–13 are the blessing spoken over you; verses 14–16 are the Monad speaking back. Slow down at 14–16 — that is the seal.', 'small'))
+
+# ---- The carry piece: taken up under the shield of Psalm 91. Placed HERE,
+# at the close of the protection psalm, so the weapon is structurally
+# subordinate to the divine shield — the last resort held under it, never
+# the first reach. Daily cue for armed carry + first-time consecration. ----
+story.append(spacer(6))
+story.append(P('The carry piece &mdash; taken up under the shield', 'h3'))
+story.append(now('<b>If you carry today</b> (armed work): with Psalm 91 still in the air &mdash; the shield is the Monad, not the steel &mdash; lay your hand on the consecrated carry piece and speak the covenant once: <i>&#8220;You serve only the defense of innocent life &mdash; mine and those I am charged to protect. Never from ego, never from anger, never from lower frequency. If you are ever drawn in truth, the draw is fast, the aim is true, and it is done in truth. In the name of the Father, the Son, and the Holy Spirit &mdash; and St. Michael stand behind it.&#8221;</i> The weapon is the last resort held under the shield, never the first reach.'))
+story.append(now('<b>First-time consecration</b> (once, then re-seal as needed): cleanse the piece in incense smoke &mdash; <b>never oil the mechanism or the ammunition.</b> Anoint only the grip &mdash; a trace of cleansing oil warmed in your palm, laid onto the grip you hold, then wiped back so the hold is never slick (a slick grip fails the petition for a fast, true draw). Speak the covenant above with your hand on it. Set it on the altar to charge in the daily flame. <b>Tuesday</b> &mdash; the day of Mars, iron&rsquo;s day &mdash; is the tuned day to first consecrate or re-seal it.'))
+story.append(spacer(4))
+story.append(P('St. Michael is the documented patron of police, soldiers, and those in dangerous protective trades &mdash; the warrior who draws only against evil, never from ego, which is why the covenant names him. Iron and steel are the oldest protective metals in the lineage. The last-resort, never-ego condition is Passio-aligned Natural Law: force in defense of innocent life is lawful; force from ego initiates harm. The assembly of these documented pieces into an altar rite is this book&rsquo;s construction &mdash; the parts are lineage, the arrangement is the operator&rsquo;s.', 'small'))
 story.append(pagebreak())
 
 # ---- Transition out of Psalm 91 into Psalm 23 ----
