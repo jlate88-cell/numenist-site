@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Numen Reading — Production Integration Preview</title>
+<link rel="stylesheet" href="fonts/fonts.css">
+<link rel="stylesheet" href="numen-enhancements.css">
+
+<style>
+/* Faithful replica of the live Numen reading page styling.
+   Selectors and structure match the production schema seen in
+   public.astrology_readings_cache.reading_json — each section
+   carries a data-section-id matching the engine's section.id. */
+:root{
+  --bg:#06010f; --bg-2:#0d0420; --ink:#f4ecd8; --ink-soft:#c9bfa8;
+  --ink-faint:#6b6480; --gold:#d4a857; --plum:#6a3d8e; --rose:#c75d7a;
+  --line:rgba(212,168,87,0.18);
+  --serif:"Cormorant Garamond",Georgia,serif;
+  --sans:"Inter",-apple-system,system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:radial-gradient(ellipse at top,#13072a 0%,#06010f 60%) fixed; color:var(--ink); font-family:var(--serif);}
+.reading-page{max-width:780px; margin:0 auto; padding:48px 36px 80px;}
+
+.reading-masthead{ text-align:center; padding:0 0 28px; border-bottom:1px solid var(--line); margin-bottom:32px;}
+.reading-masthead .crest{ font-family:var(--serif); font-size:14px; letter-spacing:6px; color:var(--gold); text-transform:uppercase;}
+.reading-masthead h1{ font-family:var(--serif); font-weight:500; font-size:46px; color:var(--ink); margin:14px 0 6px;}
+.reading-masthead .sub{ font-family:var(--sans); font-size:11px; letter-spacing:3px; color:var(--ink-faint); text-transform:uppercase;}
+.reading-masthead .meta{ font-family:var(--sans); font-size:12px; color:var(--ink-soft); margin-top:16px; letter-spacing:1px;}
+
+.reading-section{
+  margin:0 0 44px;
+  padding:0 0 28px;
+  border-bottom:1px solid rgba(212,168,87,0.08);
+}
+.reading-section h2{
+  font-family:var(--serif); font-weight:500; font-size:30px;
+  color:var(--gold); margin:0 0 18px; letter-spacing:0.5px;
+}
+.reading-section p{
+  font-family:var(--serif); font-size:17px; line-height:1.65;
+  color:var(--ink-soft); margin:0 0 14px;
+}
+
+.reading-footer{ text-align:center; font-family:var(--sans); font-size:10px;
+  letter-spacing:2.5px; text-transform:uppercase; color:var(--ink-faint);
+  margin-top:48px; padding-top:24px; border-top:1px solid var(--line);}
+</style>
+</head>
+<body>
+
+<div class="reading-page">
+
+  <header class="reading-masthead">
+    <div class="crest">✶ NUMEN ✶</div>
+    <h1>The Reading of Jordan Ross Atkins</h1>
+    <div class="sub">A SOUL MAP · DRAWN BY THE HEAVENS · COMBINED</div>
+    <div class="meta">Born March 15, 1991 · Flint, Genesee County, Michigan</div>
+  </header>
+
+  <!-- REAL section IDs from the engine, with engine-voice first paragraphs.
+       Each carries a data-section-id matching public.astrology_readings_cache. -->
+
+  <section class="reading-section" data-section-id="sect-lights">
+    <h2>Sect &amp; The Two Lights</h2>
+    <p>Jordan, you were born by DAY. Your Sun sits in your 7th house, above the horizon, which makes yours a diurnal chart, the first thing a Hellenistic astrologer reads. For you that means Jupiter is the sect benefic, your gentler helper; Mars is the in-sect malefic, the harder planet that still works largely in your favor; and Saturn is the out-of-sect malefic, the one whose lessons you earn the hard way.</p>
+    <p>Sun in Pisces 24°52' · 7th house. This is your conscious identity, vitality, and will. In Pisces it works fluidly, through compassion, imagination, and dissolving edges, and by essential dignity it draws on the visionary current of the late degrees.</p>
+  </section>
+
+  <section class="reading-section" data-section-id="ascendant-lord">
+    <h2>Ascendant &amp; Lord of the Geniture</h2>
+    <p>Jordan, your Ascendant, the eastern horizon at your first breath, the most personal point in the entire chart, is Virgo rising at 18°27'. It sets your body, your manner, your whole life-arc, and the first impression you make: a Virgo surface that meets the world precisely, through craft, service, and discerning refinement.</p>
+    <p>The Lord of your Ascendant, the planet that rules Virgo and therefore steers the whole chart, is Mercury. This planet is you-as-protagonist; its condition is your operating budget for the whole life, so read it closely.</p>
+  </section>
+
+  <section class="reading-section" data-section-id="four-pillars">
+    <h2>The Four Pillars (BaZi)</h2>
+    <p>Jordan Ross Atkins, your Four Pillars are 辛未 · 辛卯 · 甲申 · 癸酉. Eight characters total · one Heavenly Stem above and one Earthly Branch below per pillar · inscribed at the moment of your first breath. Your Day Master 甲 Jiǎ (Yang Wood) is the central character; the other six characters are read as they relate to it.</p>
+  </section>
+
+  <div class="reading-footer">✶ Numen · Soul Cartography ✶</div>
+</div>
+
+<script src="numen-enhancements.js"></script>
+<script src="sections-numen.js"></script>
+<script>
+  // Production integration call. In the live Next.js app these values come
+  // from the server (chart fetch from Supabase); here they're inlined to
+  // match Jordan's actual cached reading (verified against the database).
+  NumenEnhancements.init({
+    sectionContainer: '[data-section-id]',
+    sectionTitle:     'h2',
+    sectionBody:      '[data-section-id] p',
+    pageContainer:    '.reading-page',
+    mountTopAfter:    '.reading-masthead',
+
+    user: {
+      name:       'Jordan Ross Atkins',
+      dob:        '1991-03-15',
+      birthHour:  null,         // unknown — engine prose handles gracefully
+      lifePath:   11,
+      expression: 9
+    },
+    chart: {
+      sun:  { sign:'Pisces', deg:24.87, house:7 },
+      moon: { sign:'Pisces', deg:20.00, house:7 },  // exact deg per engine
+      asc:  { sign:'Virgo',  deg:18.45 }
+    },
+
+    // Production-keyed section overlays
+    sections: window.NUMEN_SECTIONS
+  });
+</script>
+
+</body>
+</html>

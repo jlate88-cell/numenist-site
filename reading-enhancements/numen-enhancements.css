@@ -1,0 +1,187 @@
+/* ============================================================
+   NUMEN READING ENHANCEMENTS — additive-only overlay
+   v0.1 · drop-in stylesheet
+   Loads alongside your existing reading page; nothing in here
+   modifies existing markup or text. All selectors begin with
+   .nx- so there are zero collisions with existing CSS.
+   ============================================================ */
+
+:root {
+  --nx-bg:#06010f;
+  --nx-bg-2:#0d0420;
+  --nx-ink:#f4ecd8;
+  --nx-ink-soft:#c9bfa8;
+  --nx-ink-faint:#6b6480;
+  --nx-gold:#d4a857;
+  --nx-plum:#6a3d8e;
+  --nx-rose:#c75d7a;
+  --nx-line:rgba(212,168,87,0.16);
+  --nx-light:#d4a857;
+  --nx-light-bg:rgba(212,168,87,0.07);
+  --nx-shadow:#5b6bb5;
+  --nx-shadow-bg:rgba(70,80,150,0.10);
+  --nx-serif:"Cormorant Garamond","EB Garamond",Georgia,serif;
+  --nx-sans:"Inter",-apple-system,system-ui,sans-serif;
+}
+
+/* ----------- #6 Personal Day banner ----------- */
+.nx-pd-banner {
+  display:flex; align-items:center; gap:14px;
+  background:linear-gradient(90deg,rgba(212,168,87,.12),rgba(106,61,142,.10));
+  border:1px solid var(--nx-line); border-radius:12px;
+  padding:13px 20px; margin:0 0 22px;
+  font-family:var(--nx-sans);
+}
+.nx-pd-banner .nx-pd-glyph { font-size:24px; color:var(--nx-gold); }
+.nx-pd-banner .nx-pd-text { font-size:13px; color:var(--nx-ink-soft); line-height:1.55; }
+.nx-pd-banner .nx-pd-text b { color:var(--nx-gold); font-weight:600; }
+.nx-pd-banner .nx-pd-tag {
+  font-size:9px; color:var(--nx-gold); border:1px solid var(--nx-line);
+  border-radius:20px; padding:3px 10px; margin-left:auto;
+  letter-spacing:2px; text-transform:uppercase; white-space:nowrap;
+}
+
+/* ----------- #8 Audio bar ----------- */
+.nx-audio {
+  display:flex; align-items:center; gap:16px;
+  background:rgba(13,4,32,.7); border:1px solid var(--nx-line);
+  border-radius:40px; padding:11px 22px; margin:0 0 24px;
+  font-family:var(--nx-sans);
+}
+.nx-audio .nx-play {
+  width:34px; height:34px; border-radius:50%;
+  background:var(--nx-gold); color:var(--nx-bg);
+  display:flex; align-items:center; justify-content:center;
+  font-size:14px; cursor:pointer; flex:0 0 auto; border:none;
+}
+.nx-audio .nx-wave { flex:1; height:24px; display:flex; align-items:center; gap:3px; }
+.nx-audio .nx-wave span {
+  flex:1; background:linear-gradient(var(--nx-plum),var(--nx-gold));
+  border-radius:2px; opacity:.5;
+}
+.nx-audio .nx-lbl {
+  font-size:10px; letter-spacing:2px; text-transform:uppercase;
+  color:var(--nx-ink-soft);
+}
+.nx-audio .nx-time { font-size:11px; color:var(--nx-ink-faint); letter-spacing:1px; }
+
+/* ----------- #4 & #7 Duo panel (constellation + chart wheel) ----------- */
+.nx-duo {
+  display:grid; grid-template-columns:1fr 1fr; gap:22px; margin:0 0 24px;
+}
+@media (max-width:760px){ .nx-duo { grid-template-columns:1fr; } }
+.nx-panel {
+  background:rgba(13,4,32,.55); border:1px solid var(--nx-line);
+  border-radius:16px; padding:20px; text-align:center;
+}
+.nx-panel .nx-panel-title {
+  font-family:var(--nx-sans); font-size:10px; letter-spacing:2.5px;
+  text-transform:uppercase; color:var(--nx-ink-faint); margin-bottom:12px;
+}
+
+/* ----------- #2 Hermetic principle badge ----------- */
+.nx-herm-badge {
+  display:inline-flex; flex-direction:column; align-items:center; gap:3px;
+  margin-left:auto;
+}
+.nx-herm-badge .nx-herm-ring {
+  width:42px; height:42px; border-radius:50%;
+  border:1px solid var(--nx-plum); background:rgba(106,61,142,.10);
+  color:var(--nx-plum); font-size:20px;
+  display:flex; align-items:center; justify-content:center;
+}
+.nx-herm-badge .nx-herm-lbl {
+  font-family:var(--nx-sans); font-size:8px; letter-spacing:1.5px;
+  text-transform:uppercase; color:var(--nx-ink-faint);
+}
+.nx-section-row {
+  display:flex; align-items:flex-start; gap:14px;
+  margin:0 0 8px;
+}
+
+/* ----------- #3 & #9 Tarot + Numerology chips ----------- */
+.nx-chips {
+  display:flex; gap:10px; flex-wrap:wrap; margin:14px 0 4px;
+}
+.nx-chip {
+  display:flex; align-items:center; gap:8px;
+  border:1px solid var(--nx-line); border-radius:10px;
+  padding:7px 12px; background:rgba(212,168,87,.04);
+  font-family:var(--nx-sans);
+}
+.nx-chip .nx-chip-glyph {
+  width:22px; height:32px; border:1px solid var(--nx-gold);
+  border-radius:3px; color:var(--nx-gold); font-size:11px;
+  display:flex; align-items:center; justify-content:center;
+}
+.nx-chip .nx-chip-meta { line-height:1.25; }
+.nx-chip .nx-chip-v { font-size:12px; color:var(--nx-ink); font-weight:600; }
+.nx-chip .nx-chip-k {
+  font-size:9px; color:var(--nx-ink-faint);
+  letter-spacing:1px; text-transform:uppercase;
+}
+.nx-chip-num .nx-chip-glyph {
+  background:rgba(106,61,142,.18); border-color:var(--nx-plum); color:var(--nx-plum);
+}
+
+/* ----------- #1 Light / Shadow polarity ----------- */
+.nx-polarity {
+  display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:18px 0 0;
+}
+@media (max-width:760px){ .nx-polarity { grid-template-columns:1fr; } }
+.nx-pol {
+  border-radius:12px; padding:16px 18px; font-family:var(--nx-serif);
+}
+.nx-pol.nx-pol-light {
+  background:var(--nx-light-bg); border:1px solid rgba(212,168,87,.32);
+}
+.nx-pol.nx-pol-shadow {
+  background:var(--nx-shadow-bg); border:1px solid rgba(91,107,181,.32);
+}
+.nx-pol .nx-pol-h {
+  font-family:var(--nx-sans); font-size:10px; letter-spacing:2.5px;
+  text-transform:uppercase; margin-bottom:7px;
+  display:flex; align-items:center; gap:7px;
+}
+.nx-pol-light .nx-pol-h { color:var(--nx-gold); }
+.nx-pol-shadow .nx-pol-h { color:var(--nx-shadow); }
+.nx-pol-h .nx-dot { width:8px; height:8px; border-radius:50%; }
+.nx-pol-light .nx-pol-h .nx-dot {
+  background:var(--nx-gold); box-shadow:0 0 8px var(--nx-gold);
+}
+.nx-pol-shadow .nx-pol-h .nx-dot {
+  background:var(--nx-shadow); box-shadow:0 0 8px var(--nx-shadow);
+}
+.nx-pol p { font-size:15.5px; line-height:1.55; color:var(--nx-ink-soft); }
+
+/* ----------- #5 Working recommendation ----------- */
+.nx-working {
+  margin-top:18px; padding:12px 0 12px 18px;
+  border-left:2px solid var(--nx-gold);
+  background:linear-gradient(90deg,rgba(212,168,87,.06),transparent);
+}
+.nx-working .nx-working-h {
+  font-family:var(--nx-sans); font-size:10px; letter-spacing:2.5px;
+  text-transform:uppercase; color:var(--nx-gold); margin-bottom:6px;
+}
+.nx-working p {
+  font-family:var(--nx-serif); font-size:16px; line-height:1.55; color:var(--nx-ink-soft);
+}
+.nx-working .nx-glyphs { margin-top:8px; font-size:15px; letter-spacing:8px; }
+
+/* ----------- #10 Resonance map ----------- */
+.nx-resonance {
+  background:rgba(13,4,32,.55); border:1px solid var(--nx-line);
+  border-radius:16px; padding:26px; margin:32px 0 0;
+}
+.nx-resonance .nx-reso-title {
+  font-family:var(--nx-serif); font-size:24px; color:var(--nx-gold);
+  margin-bottom:4px; text-align:center;
+}
+.nx-resonance .nx-reso-sub {
+  font-family:var(--nx-sans); font-size:11px; color:var(--nx-ink-faint);
+  text-align:center; margin-bottom:18px; letter-spacing:1px;
+}
+
+/* helper: scope to enhanced container so we never accidentally touch existing styles */
+.nx-host { font-family:var(--nx-serif); }
